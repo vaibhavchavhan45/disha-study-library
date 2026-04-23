@@ -1,0 +1,44 @@
+.crystal_button {
+  position: relative;
+  padding: 10px 24px;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #0d0d1a;;
+  background: linear-gradient(
+    90deg,
+    #22d3ee,
+    #a855f7,
+    #ec4899,
+    #22d3ee,
+    #a855f7,
+    #ec4899
+  );
+  background-size: 300% 100%;
+  animation: crystalFlow 4s linear infinite;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  letter-spacing: 0.02em;
+}
+
+.crystal_button:hover {
+  opacity: 0.9;
+  animation-duration: 5s;
+}
+
+.crystal_button:active {
+  transform: scale(0.95);
+}
+
+@media (min-width: 768px) {
+  .crystal_button {
+    padding: 10px 28px;
+    font-size: 0.875rem;
+  }
+}
+
+@keyframes crystalFlow {
+  0%   { background-position: 0%   50%; }
+  100% { background-position: 100% 50%; }
+}
