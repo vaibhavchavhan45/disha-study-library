@@ -1,0 +1,8 @@
+.feedback-field::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+    transition: color 0.2s;
+}
+
+.feedback-field:focus::placeholder {
+    color: rgba(255, 255, 255, 0.85);
+}

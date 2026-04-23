@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&display=swap');
+
+        .terminal-wrap {
+          font-family: 'JetBrains Mono', monospace;
+          background: #0d1117;
+          height: 100%;
+        }
+
+        .terminal-prompt-user { color: #22c55e; }
+        .terminal-prompt-tilde { color: #60a5fa; }
+        .terminal-prompt-pct   { color: #8b949e; }
+        .terminal-prompt-cmd   { color: #e6edf3; }
+        .terminal-arrow        { color: #60a5fa; }
+        .terminal-label        { color: #8b949e; }
+        .terminal-value        { color: #e6edf3; }
+        .terminal-link         { color: #3b82f6; transition: color 0.15s; }
+        .terminal-link:hover   { color: #60a5fa; }
+        .terminal-bold         { color: #ffffff; font-weight: 600; }
+
+        .terminal-section-hidden {
+          display: none;
+        }
+
+        @media (min-width: 1024px) {
+          .terminal-section-hidden {
+            display: block;
+          }
+        }
+        

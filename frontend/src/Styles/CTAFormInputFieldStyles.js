@@ -1,0 +1,2 @@
+export const inputClass =
+  "w-full bg-transparent border-2 border-white/10 rounded-3xl px-5 py-3.5 text-white placeholder-white/25 text-sm focus:outline-none transition-all duration-300 focus:border-white/20 focus:shadow-[0_0_0_2px_rgba(255,255,255,0.04),0_8px_30px_rgba(0,0,0,0.55)]";

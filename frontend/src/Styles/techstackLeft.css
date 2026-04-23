@@ -1,0 +1,80 @@
+        @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap');
+
+        .code-wrap {
+          font-family: 'JetBrains Mono', monospace;
+        }
+
+        .code-line {
+          position: relative;
+          display: flex;
+          transition: background 0.15s;
+        }
+        .code-line:hover {
+          background: rgba(255,255,255,0.028);
+        }
+        .code-line:hover .line-num {
+          color: rgba(255,255,255,0.35);
+        }
+
+        .line-num {
+          transition: color 0.15s;
+        }
+
+        .glow-violet { text-shadow: 0 0 18px rgba(167,139,250,0.55); }
+        .glow-blue   { text-shadow: 0 0 16px rgba(96,165,250,0.45);  }
+        .glow-emerald{ text-shadow: 0 0 14px rgba(52,211,153,0.4);   }
+        .glow-amber  { text-shadow: 0 0 14px rgba(251,191,36,0.38);  }
+
+        .token-keyword  { color: #c792ea; }
+        .token-var      { color: #82aaff; }
+        .token-op       { color: #89ddff; }
+        .token-bracket  { color: #89ddff; }
+        .token-key      { color: #addb67; }
+        .token-string   { color: #ecc48d; }
+        .token-comment  { color: #546e7a; font-style: italic; }
+        .token-num      { color: #546e7a; }
+        .token-plain    { color: #d4d4d4; }
+        .token-icon-num { color: #4a5568; font-size: 11px; }
+
+        .editor-scrollbar::-webkit-scrollbar {
+          height: 5px;
+        }
+        .editor-scrollbar::-webkit-scrollbar-track {
+          background: transparent;
+        }
+        .editor-scrollbar::-webkit-scrollbar-thumb {
+          background: rgba(255,255,255,0.08);
+          border-radius: 10px;
+        }
+        .editor-scrollbar::-webkit-scrollbar-thumb:hover {
+          background: rgba(255,255,255,0.15);
+        }
+
+        .tab-bar {
+          background: rgba(255,255,255,0.025);
+          border-bottom: 1px solid rgba(255,255,255,0.07);
+        }
+
+        .active-tab {
+          background: rgba(255,255,255,0.05);
+          border-bottom: 2px solid #c792ea;
+          color: rgba(255,255,255,0.85);
+        }
+
+        .item-row {
+          position: relative;
+        }
+        .item-row::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 0;
+          bottom: 0;
+          width: 0;
+          background: linear-gradient(90deg, rgba(167,139,250,0.06), transparent);
+          transition: width 0.2s ease;
+          pointer-events: none;
+        }
+        .item-row:hover::before {
+          width: 100%;
+        }
