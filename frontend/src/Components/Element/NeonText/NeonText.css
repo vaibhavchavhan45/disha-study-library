@@ -1,0 +1,23 @@
+.neon-gradient-text {
+  font-family: inherit;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  display: inline-block;
+  background: linear-gradient(
+    135deg, 
+    #fc56fc 0%,  
+    #f6b3f6 15%, /*   #ff00ff, #ff00ff 15% */
+    #3b82f6 85%,    
+    #00f2fe 100%
+);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent !important;
+  color: transparent !important;
+  -webkit-text-stroke: 1.2px rgba(255, 255, 255, 0.25);
+  filter: drop-shadow(0 0 8px rgba(217, 70, 239, 0.5)) 
+          drop-shadow(0 0 15px rgba(139, 92, 246, 0.4)) 
+          drop-shadow(1px 2px 4px rgba(0, 0, 0, 0.8));
+}
