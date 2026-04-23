@@ -1,0 +1,16 @@
+export const errorMessages = [
+  "My code is trying very hard not to laugh rn",
+  "Bro really said let the keyboard cook and it burned 🔥",
+  "This input has the same energy as 'wifi-password-12345678' 🔐",
+  "That input got the same energy as 'trust me bro' with zero evidence",
+  "That input is giving 'I lie for fun' vibes",
+  "Bro typed that like he just landed from Mars 👽",
+  "Might need to send this to NASA to check this name exists in another universe or Not 🚀",
+  "That name sounds like it got rejected from three planets already",
+  "Bro really created a name no human civilization asked for.",
+  "That input looks AI-generated but with low budget 💀",
+  "Bro uhh typed this name and thought my code wouldn't notice 💀",
+  "Bro gave us a name that even Google Maps can't locate",
+  "That name looks fake even for a fake account 💀",
+  "That name looks like your keyboard gave up halfway and you still submitted it.",
+];

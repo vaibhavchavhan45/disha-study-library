@@ -1,0 +1,1 @@
+export const specialMessages = JSON.parse(process.env.SPECIAL_MESSAGES);
