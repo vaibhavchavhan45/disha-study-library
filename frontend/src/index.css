@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+body {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.syne { font-family: 'Syne', sans-serif; }
+.dm { font-family: 'DM Sans', sans-serif; }
+
+/* Main website — dark theme */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0px 1000px #161622 inset !important;
+  -webkit-text-fill-color: rgba(255, 255, 255, 0.87) !important;
+  caret-color: white;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Admin — standard autofill blue */
+.admin-root input:-webkit-autofill,
+.admin-root input:-webkit-autofill:hover,
+.admin-root input:-webkit-autofill:focus,
+.admin-root input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0px 1000px #e8f0fe inset !important;
+  -webkit-text-fill-color: #1f2937 !important;
+  caret-color: #1f2937;
+  transition: background-color 5000s ease-in-out 0s;
+}
