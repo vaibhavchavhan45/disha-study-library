@@ -1,0 +1,17 @@
+@keyframes serviceFloatZoom {
+      0% {
+        transform: scale(1) translateY(0px);
+      }
+      25% {
+        transform: scale(1.01) translateY(-3px);
+      }
+      50% {
+        transform: scale(1.02) translateY(-6px);
+      }
+      75% {
+        transform: scale(1.01) translateY(-3px);
+      }
+      100% {
+        transform: scale(1) translateY(0px);
+      }
+    }

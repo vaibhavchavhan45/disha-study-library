@@ -1,0 +1,22 @@
+@keyframes logo3DEffect {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    filter: drop-shadow(0 0 15px rgba(99,102,241,0.7));
+  }
+  25% {
+    transform: rotateX(12deg) rotateY(15deg) rotateZ(5deg);
+    filter: drop-shadow(0 0 18px rgba(99,102,241,0.8));
+  }
+  50% {
+    transform: rotateX(-12deg) rotateY(-15deg) rotateZ(-5deg);
+    filter: drop-shadow(0 0 18px rgba(99,102,241,0.8));
+  }
+  75% {
+    transform: rotateX(8deg) rotateY(-10deg) rotateZ(3deg);
+    filter: drop-shadow(0 0 18px rgba(99,102,241,0.8));
+  }
+  100% {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+    filter: drop-shadow(0 0 15px rgba(99,102,241,0.7));
+  }
+}

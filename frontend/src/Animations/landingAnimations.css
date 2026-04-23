@@ -1,0 +1,62 @@
+@keyframes blobCircular {
+    0% { 
+        transform: translate(0px, 0px) scale(1);
+        box-shadow: 0 0 15px rgba(103, 232, 249, 0.9);
+    }
+    25% { 
+        transform: translate(20px, 0px) scale(1.2);
+        box-shadow: 0 0 20px rgba(103, 232, 249, 1);
+    }
+    50% { 
+        transform: translate(0px, 0px) scale(1);
+        box-shadow: 0 0 15px rgba(103, 232, 249, 0.9);
+    }
+    75% { 
+        transform: translate(-20px, 0px) scale(1.08);
+        box-shadow: 0 0 20px rgba(103, 232, 249, 1);
+    }
+    100% { 
+        transform: translate(0px, 0px) scale(1);
+        box-shadow: 0 0 15px rgba(103, 232, 249, 0.9);
+    }
+}
+
+
+
+@keyframes tilt3d {
+  0%   { transform: perspective(600px) rotateX(0deg) rotateY(0deg); }
+  6%   { transform: perspective(600px) rotateX(6deg) rotateY(0deg); }
+  12%  { transform: perspective(600px) rotateX(0deg) rotateY(0deg); }
+  18%  { transform: perspective(600px) rotateX(0deg) rotateY(6deg); }
+  25%  { transform: perspective(600px) rotateX(0deg) rotateY(0deg); }
+  31%  { transform: perspective(600px) rotateX(-6deg) rotateY(0deg); }
+  37%  { transform: perspective(600px) rotateX(0deg) rotateY(0deg); }
+  43%  { transform: perspective(600px) rotateX(0deg) rotateY(-6deg); }
+  50%  { transform: perspective(600px) rotateX(0deg) rotateY(0deg); }
+  56%  { transform: perspective(600px) rotateX(6deg) rotateY(6deg); }
+  62%  { transform: perspective(600px) rotateX(0deg) rotateY(0deg); }
+  68%  { transform: perspective(600px) rotateX(-6deg) rotateY(6deg); }
+  75%  { transform: perspective(600px) rotateX(0deg) rotateY(0deg); }
+  81%  { transform: perspective(600px) rotateX(6deg) rotateY(-6deg); }
+  87%  { transform: perspective(600px) rotateX(0deg) rotateY(0deg); }
+  93%  { transform: perspective(600px) rotateX(-6deg) rotateY(-6deg); }
+  100% { transform: perspective(600px) rotateX(0deg) rotateY(0deg); }
+}
+
+.tilt-3d {
+  animation: tilt3d 16s ease-in-out infinite;
+}
+
+
+@keyframes breathe3d {
+  0%   { transform: perspective(800px) scale(1) rotateX(0deg) rotateY(0deg); }
+  25%  { transform: perspective(800px) scale(1.06) rotateX(4deg) rotateY(1deg); }
+  50%  { transform: perspective(800px) scale(1.08) rotateX(0deg) rotateY(0deg); }
+  75%  { transform: perspective(800px) scale(1.06) rotateX(-4deg) rotateY(-1deg); }
+  100% { transform: perspective(800px) scale(1) rotateX(0deg) rotateY(0deg); }
+}
+
+.breathe-3d {
+  animation: breathe3d 6s ease-in-out infinite;
+}
+

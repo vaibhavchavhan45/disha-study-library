@@ -1,0 +1,10 @@
+.marquee-track {
+  animation: marqueeScroll 40s ease-in-out infinite alternate;
+  width: max-content;
+}
+
+@keyframes marqueeScroll {
+  0% { transform: translateX(0) scale(1); }
+  50% { transform: translateX(-25%) scale(1.02); }
+  100% { transform: translateX(-50%) scale(1); }
+}
