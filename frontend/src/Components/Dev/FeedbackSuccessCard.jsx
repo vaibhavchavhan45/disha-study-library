@@ -1,4 +1,4 @@
-import "../../Animations/FeedbackSuccessAnimation.css"
+import "../../Animations/feedbackSuccessAnimation.css"
 import PremiumButton from "../Buttons/PremiumButton/PremiumButton";
 
 export default function FeedbackSuccessCard({ thankYouRef, onReset }) {
