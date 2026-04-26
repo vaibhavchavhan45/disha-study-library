@@ -39,14 +39,24 @@ function TechStackTerminal() {
               <p>
                 <span className="terminal-arrow mr-2">{">"}</span>
                 <span className="terminal-label">live link: </span>
-                <a
+                {/* Working link */}
+                {/* <a
                   href="https://fluxintel-ai.vercel.app"
                   target="_blank"
                   rel="noreferrer"
                   className="terminal-link font-medium"
                 >
                   fluxintel-ai.vercel.app
-                </a>
+                </a> */}
+
+                {/* Disabled link */}
+                <a
+                  href="#"
+                  onClick={(e) => e.preventDefault()}
+                  className="terminal-link font-medium cursor-not-allowed opacity-50"
+                >
+                  fluxintel-ai.vercel.app
+              </a>
               </p>
             </div>
           </div>
@@ -64,7 +74,7 @@ function TechStackTerminal() {
                 <span className="terminal-arrow mr-2">{">"}</span>
                 <span className="terminal-label">source code: </span>
                 <a
-                  href="https://github.com/vaibhavchavhan45/lab"
+                  href="https://github.com/vaibhavchavhan45/disha-study-library"
                   target="_blank"
                   rel="noreferrer"
                   className="terminal-link font-medium"

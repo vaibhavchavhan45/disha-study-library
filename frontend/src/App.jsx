@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate, useNavigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate, useNavigate, useLocation } from "react-router-dom";
 
 // Public Pages
 import LandingPage from "./Pages/LandingPage";
@@ -26,9 +26,13 @@ import ExStudentsPage from "./admin/pages/ExStudentsPage";
 import ProtectedAdminRoute from "./admin/routes/ProtectedAdminRoute";
 import AdminLayout from "./admin/layouts/AdminLayout";
 
-// Floating pill — visible on every page, routes to /photo-request
 const FloatingPhotoBtn = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const isAdminRoute = location.pathname.startsWith("/admin");
+  if (isAdminRoute) return null;
+
   return (
     <button
       onClick={() => navigate("/photo-request")}
@@ -43,7 +47,6 @@ function App() {
   return (
     <BrowserRouter>
 
-      {/* Floating pill */}
       <FloatingPhotoBtn />
 
       <Routes>

@@ -1,5 +1,5 @@
 import { FaReact, FaNodeJs, FaJsSquare, FaRoute } from "react-icons/fa";
-import { SiTailwindcss, SiExpress, SiPostgresql, SiVite, SiZod } from "react-icons/si";
+import { SiTailwindcss, SiExpress, SiPostgresql, SiVite, SiZod, SiAxios } from "react-icons/si";
 import { RiApps2Line } from "react-icons/ri";
 import { IoLogoCss3, IoMailOutline } from "react-icons/io5";
 import { SiJsonwebtokens } from "react-icons/si";
@@ -40,7 +40,8 @@ export const techStack = [
       { name: "React Icons", icon: RiApps2Line, color: "text-pink-400" },
       { name: "Nodemailer", icon: IoMailOutline, color: "text-emerald-400" },
       { name: "JSON Web Token", icon: SiJsonwebtokens, color: "text-violet-400" },
-      { name: "Bcrypt.js",      icon: TbShieldLock,    color: "text-orange-400" }
+      { name: "Bcrypt.js",      icon: TbShieldLock,    color: "text-orange-400" },
+      { name: "Axios", icon: SiAxios, color: "text-purple-400" },
     ],
   },
 ];
