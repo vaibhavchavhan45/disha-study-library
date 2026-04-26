@@ -79,7 +79,7 @@ function TechStackTerminal() {
                   rel="noreferrer"
                   className="terminal-link font-medium"
                 >
-                  github.com/vaibhavchavhan45/lab
+                  github.com/vaibhavchavhan45
                 </a>
               </p>
             </div>
