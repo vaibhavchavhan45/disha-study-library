@@ -8,7 +8,7 @@ import {
 
 const MAX_ATTEMPTS = 3;
 
-const resetPassword = async (req, res, next) => {
+const forgotResetPassword = async (req, res, next) => {
   try {
     const { email, otp, password } = req.body;
 
@@ -82,4 +82,4 @@ const resetPassword = async (req, res, next) => {
   }
 };
 
-export default resetPassword;
+export default forgotResetPassword;

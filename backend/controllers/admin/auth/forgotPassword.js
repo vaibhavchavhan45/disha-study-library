@@ -44,7 +44,7 @@ const forgotPassword = async (req, res, next) => {
     await sendMail({
       to: normalizedEmail,
       subject: "Admin Password Reset OTP — DISHA Library",
-      html: adminOtpTemplate(otp),
+      html: adminOtpTemplate(otp, "forgot"),
       isAdmin: !isDevAdmin,
     });
 
