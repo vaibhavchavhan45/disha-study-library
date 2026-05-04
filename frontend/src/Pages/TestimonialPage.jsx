@@ -13,10 +13,6 @@ import { mdRows } from "../config/testimonialRotation";
 export default function TestimonialsPage() {
   const navigate = useNavigate();
 
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   const navItems = [
     { id: "1", label: "Home", onClick: () => navigate("/") },
     { id: "2", label: "About", onClick: () => navigate("/about") },

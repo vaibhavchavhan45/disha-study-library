@@ -26,7 +26,7 @@ useEffect(() => {
       }
     }, 100);
   }
-}, [location]);
+}, [location.state?.scrollTo]);
 
   const navItems = [
     { id: "1", label: "About", onClick: () => navigate('/about') },
