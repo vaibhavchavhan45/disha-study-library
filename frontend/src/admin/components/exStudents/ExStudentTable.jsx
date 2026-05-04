@@ -11,7 +11,7 @@ const fmt = (d) =>
 
 const ExStudentTable = ({ list, currentPage, itemsPerPage }) => {
   return (
-    <div className="hidden sm:block overflow-x-auto">
+    <div className="hidden lg:block overflow-x-auto">
       <table className="w-full text-sm">
         <thead>
           <tr className="border-b border-gray-200 bg-gray-100/80 text-xs text-gray-500 uppercase tracking-wide">

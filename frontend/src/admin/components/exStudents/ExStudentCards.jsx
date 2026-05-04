@@ -11,7 +11,7 @@ const fmt = (d) =>
 
 const ExStudentCards = ({ list, currentPage, itemsPerPage }) => {
   return (
-    <div className="sm:hidden space-y-3 p-3">
+    <div className="lg:hidden space-y-3 p-3">
       {list.map((s, i) => {
         const rowNumber = (currentPage - 1) * itemsPerPage + i + 1;
         return (
