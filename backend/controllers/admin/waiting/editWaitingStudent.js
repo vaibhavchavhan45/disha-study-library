@@ -3,7 +3,7 @@ import pool from "../../../db/db.js";
 const editWaitingStudent = async (req, res, next) => {
   try {
     const { id } = req.params;
-    const { name, phone, email, gender, fee_status, photo_url, start_date, expiry_date } = req.body;
+    const { name, phone, email, gender, fee_status, photo_url, start_date, expiry_date, pending_amount } = req.body;
 
     if (!name || !phone || !email) {
       return res.status(400).json({
@@ -33,9 +33,10 @@ const editWaitingStudent = async (req, res, next) => {
            fee_status  = $5,
            photo_url   = $6,
            start_date  = $7,
-           expiry_date = $8
-       WHERE id = $9`,
-      [name, phone, email, gender, fee_status, photo_url || null, start_date || null, expiry_date || null, id]
+           expiry_date = $8,
+           pending_amount = $9
+       WHERE id = $10`,
+      [name, phone, email, gender, fee_status, photo_url || null, start_date || null, expiry_date || null, pending_amount || 0, id]
     );
 
     return res.status(200).json({

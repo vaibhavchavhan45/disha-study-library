@@ -11,6 +11,7 @@ const addWaitingStudent = async (req, res, next) => {
       fee_status,
       start_date,
       expiry_date,
+      pending_amount
     } = req.body;
 
     if (!name || !phone) {
@@ -22,18 +23,9 @@ const addWaitingStudent = async (req, res, next) => {
 
     await pool.query(
       `INSERT INTO waiting_students 
-        (name, phone, email, gender, photo_url, fee_status, start_date, expiry_date)
-       VALUES ($1, $2, $3, $4, $5, $6, $7, $8)`,
-      [
-        name,
-        phone,
-        email || null,
-        gender,
-        photo_url || null,
-        fee_status || "UNPAID",
-        start_date || null,
-        expiry_date || null,
-      ]
+      (name, phone, email, gender, photo_url, fee_status, start_date, expiry_date, pending_amount)
+      VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)`,
+      [name, phone, email || null, gender, photo_url || null, fee_status || "UNPAID", start_date || null, expiry_date || null, pending_amount || 0]
     );
 
     return res.status(201).json({
