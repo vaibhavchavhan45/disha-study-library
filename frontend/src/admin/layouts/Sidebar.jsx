@@ -1,6 +1,6 @@
 import { LogOut, PanelLeftClose, PanelLeftOpen } from "lucide-react";
 import NavItem from "./NavItem";
-import logo from "../../assets/logo2.png";
+import logo from "../../assets/logo2.webp";
 
 export default function Sidebar({
   collapsed,

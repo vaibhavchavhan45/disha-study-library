@@ -1,7 +1,7 @@
 import { Menu } from "lucide-react";
 import Avatar from "./Avatar";
 import ProfileDropdown from "./ProfileDropdown";
-import logo from "../../assets/logo2.png";
+import logo from "../../assets/logo2.webp";
 
 export default function Topbar({
   admin,

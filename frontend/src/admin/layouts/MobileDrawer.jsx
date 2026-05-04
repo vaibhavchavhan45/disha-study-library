@@ -1,6 +1,6 @@
 import { X, LogOut } from "lucide-react";
 import NavItem from "./NavItem";
-import logo from "../../assets/logo2.png";
+import logo from "../../assets/logo2.webp";
 
 export default function MobileDrawer({
   drawerOpen,

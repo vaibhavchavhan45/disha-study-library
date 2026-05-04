@@ -1,6 +1,7 @@
 import { User } from "lucide-react";
 import { getAdminPhoto } from "../utils/adminAssets";
 
+
 export default function Avatar({ adminId, size = "md" }) {
   const dim =
     size === "sm" ? "w-7 h-7" : size === "lg" ? "w-16 h-16" : size === "topbar" ? "w-11 h-11" : "w-9 h-9";

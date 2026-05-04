@@ -13,7 +13,7 @@ import MobileDrawer from "./MobileDrawer";
 import Topbar from "./Topbar";
 
 import { clearAdminAuth, getAdminUser } from "../utils/adminStorage";
-import ResetPasswordModal from "../components/profile/ResetPasswordModal";
+import AdminChangePassword from "../components/profile/AdminChangePassword";
 
 const NAV_ITEMS = [
   { name: "Dashboard", path: "/admin/dashboard", icon: LayoutDashboard },
@@ -23,7 +23,8 @@ const NAV_ITEMS = [
   { name: "Ex Students", path: "/admin/ex-students", icon: Users },
 ];
 
-export default function AdminLayout() {
+
+function AdminLayout() {
   const [collapsed, setCollapsed] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [profileOpen, setProfileOpen] = useState(false);
@@ -76,8 +77,10 @@ export default function AdminLayout() {
       </div>
 
       {showResetPassword && (
-        <ResetPasswordModal onClose={() => setShowResetPassword(false)} />
+        <AdminChangePassword onClose={() => setShowResetPassword(false)} />
       )}
     </div>
   );
 }
+
+export default AdminLayout;

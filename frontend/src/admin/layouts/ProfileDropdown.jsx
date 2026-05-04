@@ -61,7 +61,7 @@ export default function ProfileDropdown({
             </div>
             <div className="text-left">
               <p className="font-medium text-gray-800 leading-tight">
-                Reset Password
+                Change Password
               </p>
               <p className="text-xs text-gray-400 mt-0.5">
                 Change your admin password
