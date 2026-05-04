@@ -3,7 +3,7 @@ import pool from "../../../db/db.js";
 const editSeat = async (req, res, next) => {
   try {
     const { id } = req.params;
-    const { name, phone, email, fee_status, start_date, expiry_date, photo_url } = req.body;
+    const { name, phone, email, fee_status, start_date, expiry_date, photo_url, pending_amount } = req.body;
 
     // Validate required fields
     if (!name || !phone || !email) {
@@ -38,15 +38,11 @@ const editSeat = async (req, res, next) => {
     // Update student details — status stays unchanged
     await pool.query(
       `UPDATE seats
-       SET name        = $1,
-           phone       = $2,
-           email       = $3,
-           fee_status  = $4,
-           start_date  = $5,
-           expiry_date = $6,
-           photo_url   = $7
-       WHERE id = $8`,
-      [name, phone, email, fee_status, start_date, expiry_date, photo_url, id]
+       SET name = $1, phone = $2, email = $3, fee_status = $4,
+       start_date = $5, expiry_date = $6, photo_url = $7,
+       pending_amount = $8
+       WHERE id = $9`,
+      [name, phone, email, fee_status, start_date, expiry_date, photo_url, pending_amount || 0, id]
     );
 
     return res.status(200).json({

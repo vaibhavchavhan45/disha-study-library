@@ -12,6 +12,7 @@ const assignSeat = async (req, res, next) => {
       fee_status,
       start_date,
       expiry_date,
+      pending_amount
     } = req.body;
 
     const seatResult = await pool.query(
@@ -37,17 +38,11 @@ const assignSeat = async (req, res, next) => {
 
     await pool.query(
       `UPDATE seats
-       SET name = $1,
-           phone = $2,
-           email = $3,
-           gender = $4,
-           photo_url = $5,
-           status = 'OCCUPIED',
-           fee_status = $6,
-           start_date = $7,
-           expiry_date = $8
-       WHERE id = $9`,
-      [name, phone, email, gender, photo_url, fee_status, start_date, expiry_date, id]
+       SET name = $1, phone = $2, email = $3, gender = $4, photo_url = $5,
+       status = 'OCCUPIED', fee_status = $6, start_date = $7, expiry_date = $8,
+       pending_amount = $9
+       WHERE id = $10`,
+      [name, phone, email, gender, photo_url, fee_status, start_date, expiry_date, pending_amount || 0, id]
     );
 
     return res.status(200).json({ success: true, message: "Seat assigned successfully" });
