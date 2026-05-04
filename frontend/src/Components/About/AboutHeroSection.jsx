@@ -2,7 +2,7 @@ import Navbar from "../../Components/Navbar";
 import { useNavigate } from "react-router-dom";
 import SectionTitle from "../SectionTitle";
 import ShineText from "../Element/ShineText/ShineText";
-import heroImg from "../../assets/library/heroImg.png";
+import heroImg from "../../assets/library/heroImg.webp";
 import AboutHeroSlider from "./AboutHeroSlider";
 import AboutFeaturesSection from "./AboutFeaturesSection";
 import "../../Animations/aboutHeroAnimation.css";

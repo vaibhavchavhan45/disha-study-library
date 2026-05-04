@@ -1,4 +1,4 @@
-import lib from "../../assets/library/lib.png";
+import lib from "../../assets/library/lib.webp";
 
 import SectionTitle from "../SectionTitle";
 import ShineText from "../Element/ShineText/ShineText";
@@ -73,8 +73,8 @@ export default function AboutAdminSection() {
                     <SectionTitle
                         title1="Leadership Behind"
                         title2="Disha Study Center"
-                        subtitle1="Driven by discipline, clarity, and a commitment to growth which supports focused learning."
-                        subtitle2="A calm, motivating environment where consistency and ambition come together."
+                        subtitle1="Driven by discipline, clarity & commitment for focused learning."
+                        subtitle2="A calm, motivating environment with consistent efforts."
                     />
                 </div>
 

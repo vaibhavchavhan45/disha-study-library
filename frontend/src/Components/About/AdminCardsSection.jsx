@@ -1,5 +1,5 @@
-import adminImg1 from "../../assets/admin/admin1.png";
-import adminImg2 from "../../assets/admin/admin2.png";
+import adminImg1 from "../../assets/admin/admin1.webp";
+import adminImg2 from "../../assets/admin/admin2.webp";
 
 import AdminCard from "./AdminCard";
 

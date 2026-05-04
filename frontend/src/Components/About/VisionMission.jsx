@@ -1,4 +1,4 @@
-import dishaBg from "../../assets/library/disha.png";
+import dishaBg from "../../assets/library/disha.webp";
 
 import VisionMissionHeader from "./VisionMissionHeader";
 import VisionMissionCard from "./VisionMissionCard";
