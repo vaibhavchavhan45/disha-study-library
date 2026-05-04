@@ -14,7 +14,6 @@ import PhotoRequestPage from "./Pages/PhotoRequestPage";
 
 // Admin Pages
 import AdminLogin from "./admin/pages/AdminLogin";
-import AdminForgotRequest from "./admin/pages/AdminForgotRequest";
 import AdminForgotPassword from "./admin/pages/AdminForgotPassword";
 import AdminDashboard from "./admin/pages/AdminDashboard";
 import SeatsPage from "./admin/pages/SeatsPage";
@@ -64,8 +63,7 @@ function App() {
 
         {/* Admin Auth */}
         <Route path="/admin" element={<AdminLogin />} />
-        <Route path="/admin/forgot-password" element={<AdminForgotRequest />} />
-        <Route path="/admin/reset-password/:token" element={<AdminForgotPassword />} />
+        <Route path="/admin/forgot-password" element={<AdminForgotPassword />} />
 
         {/* Admin Protected */}
         <Route
