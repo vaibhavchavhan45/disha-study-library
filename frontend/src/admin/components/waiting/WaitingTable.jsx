@@ -73,7 +73,7 @@ const IconActions = ({ student, onView, onEdit, onAssign, onDelete }) => (
 
 const WaitingTable = ({ list, onView, onEdit, onAssign, onDelete, currentPage, itemsPerPage }) => {
   return (
-    <div className="hidden sm:block overflow-x-auto">
+    <div className="hidden lg:block overflow-x-auto">
       <table className="w-full text-sm">
         <thead>
           <tr className="border-b border-gray-200 bg-gray-100/80 text-xs text-gray-500 uppercase tracking-wide">
@@ -119,11 +119,10 @@ const WaitingTable = ({ list, onView, onEdit, onAssign, onDelete, currentPage, i
                 </td>
 
                 <td className="px-5 py-4">
-                  <span className={`text-xs font-medium px-2.5 py-1 rounded-lg ${
-                    s.fee_status === "PAID" ? "bg-green-50 text-green-600"
-                    : s.fee_status === "PENDING" ? "bg-yellow-50 text-yellow-600"
-                    : "bg-red-50 text-red-600"}`}>
-                    {s.fee_status || "UNPAID"}
+                  <span className={`text-xs font-medium px-2.5 py-1 rounded-lg ${s.fee_status === "PAID" ? "bg-green-50 text-green-600"
+                      : s.fee_status === "PENDING" ? "bg-yellow-50 text-yellow-600"
+                        : "bg-red-50 text-red-600"}`}>
+                    {s.fee_status === "PENDING" ? `₹${s.pending_amount || 0} pending` : s.fee_status || "UNPAID"}
                   </span>
                 </td>
 

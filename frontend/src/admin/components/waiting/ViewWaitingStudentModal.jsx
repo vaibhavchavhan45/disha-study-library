@@ -2,8 +2,8 @@ import { User } from "lucide-react";
 import Modal from "./Modal";
 
 const FEE_STYLES = {
-  PAID:    "bg-green-100 text-green-700",
-  UNPAID:  "bg-red-100 text-red-600",
+  PAID: "bg-green-100 text-green-700",
+  UNPAID: "bg-red-100 text-red-600",
   PENDING: "bg-yellow-100 text-yellow-700",
 };
 
@@ -50,7 +50,9 @@ const ExpiryChip = ({ expiry_date }) => {
 };
 
 const ViewWaitingStudentModal = ({ student, onClose }) => {
-  const { name, phone, email, gender, fee_status, photo_url, start_date, expiry_date } = student;
+  const { name, phone, email, gender, fee_status, photo_url, start_date, expiry_date, pending_amount } = student;
+
+  const isPending = fee_status === "PENDING";
 
   return (
     <Modal onClose={onClose}>
@@ -76,31 +78,70 @@ const ViewWaitingStudentModal = ({ student, onClose }) => {
           </div>
         </div>
 
-        {/* Info Tiles */}
-        <InfoTile label="Email">
-          <p className="text-sm font-medium text-gray-800">{email || "—"}</p>
-        </InfoTile>
+        {isPending ? (
+          <>
+            {/* Row 1 — Email | Phone */}
+            <div className="grid grid-cols-2 gap-3">
+              <InfoTile label="Email">
+                <p className="text-sm font-medium text-gray-800 truncate">{email || "—"}</p>
+              </InfoTile>
+              <InfoTile label="Phone">
+                <p className="text-sm font-medium text-gray-800">{phone || "—"}</p>
+              </InfoTile>
+            </div>
 
-        <div className="grid grid-cols-2 gap-3">
-          <InfoTile label="Phone">
-            <p className="text-sm font-medium text-gray-800">{phone || "—"}</p>
-          </InfoTile>
-          <InfoTile label="Fee Status">
-            <span className={`inline-block text-xs font-semibold px-2.5 py-1 rounded-full mt-0.5 ${FEE_STYLES[fee_status] || "bg-gray-100 text-gray-500"}`}>
-              {fee_status || "—"}
-            </span>
-          </InfoTile>
-        </div>
+            {/* Row 2 — Fee Status | Pending Amount */}
+            <div className="grid grid-cols-2 gap-3">
+              <InfoTile label="Fee Status">
+                <span className={`inline-block text-xs font-semibold px-2.5 py-1 rounded-full mt-0.5 ${FEE_STYLES[fee_status] || "bg-gray-100 text-gray-500"}`}>
+                  {fee_status || "—"}
+                </span>
+              </InfoTile>
+              <InfoTile label="Pending Amount">
+                <p className="text-sm font-medium text-gray-800">₹{pending_amount || 0}</p>
+              </InfoTile>
+            </div>
 
-        <div className="grid grid-cols-2 gap-3">
-          <InfoTile label="Start Date">
-            <p className="text-sm font-medium text-gray-800">{fmt(start_date)}</p>
-          </InfoTile>
-          <InfoTile label="Expiry Date">
-            <p className="text-sm font-medium text-gray-800">{fmt(expiry_date)}</p>
-            <ExpiryChip expiry_date={expiry_date} />
-          </InfoTile>
-        </div>
+            {/* Row 3 — Start Date | Expiry Date */}
+            <div className="grid grid-cols-2 gap-3">
+              <InfoTile label="Start Date">
+                <p className="text-sm font-medium text-gray-800">{fmt(start_date)}</p>
+              </InfoTile>
+              <InfoTile label="Expiry Date">
+                <p className="text-sm font-medium text-gray-800">{fmt(expiry_date)}</p>
+                <ExpiryChip expiry_date={expiry_date} />
+              </InfoTile>
+            </div>
+          </>
+        ) : (
+          <>
+            {/* Default layout — not PENDING */}
+            <InfoTile label="Email">
+              <p className="text-sm font-medium text-gray-800">{email || "—"}</p>
+            </InfoTile>
+
+            <div className="grid grid-cols-2 gap-3">
+              <InfoTile label="Phone">
+                <p className="text-sm font-medium text-gray-800">{phone || "—"}</p>
+              </InfoTile>
+              <InfoTile label="Fee Status">
+                <span className={`inline-block text-xs font-semibold px-2.5 py-1 rounded-full mt-0.5 ${FEE_STYLES[fee_status] || "bg-gray-100 text-gray-500"}`}>
+                  {fee_status || "—"}
+                </span>
+              </InfoTile>
+            </div>
+
+            <div className="grid grid-cols-2 gap-3">
+              <InfoTile label="Start Date">
+                <p className="text-sm font-medium text-gray-800">{fmt(start_date)}</p>
+              </InfoTile>
+              <InfoTile label="Expiry Date">
+                <p className="text-sm font-medium text-gray-800">{fmt(expiry_date)}</p>
+                <ExpiryChip expiry_date={expiry_date} />
+              </InfoTile>
+            </div>
+          </>
+        )}
 
       </div>
     </Modal>
