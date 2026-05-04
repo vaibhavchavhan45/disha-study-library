@@ -1,5 +1,5 @@
-import logo2 from "../assets/logo2.png";
-import self from "../assets/self/self.png"
+import logo2 from "../assets/logo2.webp";
+import self from "../assets/self/self.webp"
 import { useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import Instagram from "../Components/Buttons/SocialIcons/Instagram"
@@ -49,7 +49,7 @@ export default function Footer({ quickLinks = [] }) {
             </div>
 
             <p className="text-white/50 text-sm leading-relaxed text-center xl:text-justify max-w-[300px] md:max-w-[420px] xl:max-w-[260px]" style={{ wordSpacing: "0.1em" }}>
-              A quiet and focused library space in Nagpur, built for students who value consistency, deep focus, and a calm distraction-free environment to study and grow every single day.
+              A quiet and focused library space in Arni, built for students who value consistency, deep focus, and a calm distraction-free environment to study and grow every single day.
             </p>
           </div>
 

@@ -65,7 +65,7 @@ export default function AboutProject() {
                 </div>
 
                 {/* Text */}
-                <p className="flex-1 text-white/85 text-[0.95rem] md:text-[1rem] leading-[1.95] md:leading-[2] text-left md:text-justify font-normal tracking-[0.01em]">
+                <p className="flex-1 text-white/85 text-[0.95rem] md:text-[1rem] leading-[1.95] md:leading-[2] text-justify font-normal tracking-[0.01em]" >
                   {s.text}
                 </p>
               </div>

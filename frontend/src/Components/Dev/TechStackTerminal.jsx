@@ -53,9 +53,9 @@ function TechStackTerminal() {
                 <a
                   href="#"
                   onClick={(e) => e.preventDefault()}
-                  className="terminal-link font-medium cursor-not-allowed opacity-50"
+                  className="terminal-link font-medium cursor-not-allowed"
                 >
-                  fluxintel-ai.vercel.app
+                  fluxintel-ai.in
               </a>
               </p>
             </div>
@@ -79,7 +79,7 @@ function TechStackTerminal() {
                   rel="noreferrer"
                   className="terminal-link font-medium"
                 >
-                  github.com/vaibhavchavhan45
+                  vaibhavchavhan45.ai/github
                 </a>
               </p>
             </div>
@@ -147,7 +147,7 @@ function TechStackTerminal() {
         </div>
 
         <div className="mt-8 xl:mt-20 flex justify-center lg:mt-14">
-          <GithubStarButton href="https://github.com/vaibhavchavhan45/lab" />
+          <GithubStarButton href="https://github.com/vaibhavchavhan45/disha-study-library" />
         </div>
 
       </div>

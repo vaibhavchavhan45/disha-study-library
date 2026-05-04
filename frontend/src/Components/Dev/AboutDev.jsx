@@ -3,7 +3,7 @@ import Instagram from "../Buttons/SocialIcons/Instagram";
 import Github from "../Buttons/SocialIcons/Github";
 import Mail from "../Buttons/SocialIcons/Mail";
 import Linkeden from "../Buttons/SocialIcons/Linkeden";
-import selfPhoto from "../../assets/self/self.png";
+import selfPhoto from "../../assets/self/self.webp";
 import GlowBorderCard from "./GlowBorderCard";
 import NeonText from "../Element/NeonText/NeonText";
 import SectionDivider from "../Element/SectionDivider/SectionDivider";

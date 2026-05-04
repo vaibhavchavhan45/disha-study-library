@@ -1,8 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import StarButton from "../Buttons/StarButton/StarButton";
-import student1 from "../../assets/student1.jpg";
-import student2 from "../../assets/student2.png";
-import logo from "../../assets/logo.png";
+import student1 from "../../assets/student1.webp";
+import student2 from "../../assets/student2.webp";
+import logo from "../../assets/logo.webp";
 import "../../Animations/logoEffectLandingPage.css";
 import "../../Animations/landingAnimations.css";
 import "../../Animations/floatUpLandingPage.css"

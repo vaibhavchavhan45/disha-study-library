@@ -7,10 +7,10 @@ import AboutProject from "../Components/Dev/AboutProject";
 import Feedback from "../Components/Dev/Feedback";
 import DMS from "../Components/Dev/DevMessages";
 import TechStack from "../Components/Dev/TechStack"
-import devA from "../assets/dev/devA.png";
-import devB from "../assets/dev/devB.png";
-import devP from "../assets/dev/devP.png";
-import devD from "../assets/dev/devD.png";
+import devA from "../assets/dev/devA.webp";
+import devB from "../assets/dev/devB.webp";
+import devP from "../assets/dev/devP.webp";
+import devD from "../assets/dev/devD.webp";
 
 export default function DevPage() {
   const navigate = useNavigate();
