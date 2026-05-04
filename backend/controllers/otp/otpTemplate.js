@@ -1,83 +1,52 @@
-// Apple-style minimal OTP email template
 export const getOTPTemplate = (otp) => `
-  <div style="margin:0;padding:0;background-color:#f5f5f7;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;">
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#f5f5f7;padding:40px 16px;">
-      <tr>
-        <td align="center">
+  <div style="margin:0;padding:0;background:#f0f0f5;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;">
 
-          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:480px;background:#ffffff;border-radius:18px;overflow:hidden;border:1px solid #e5e5e5;">
-            
-            <!-- Header -->
-            <tr>
-              <td style="padding:32px 32px 20px;text-align:center;">
-                <p style="margin:0;font-size:13px;letter-spacing:2px;text-transform:uppercase;color:#6e6e73;">
-                  Verification Code
-                </p>
-                <h1 style="margin:14px 0 0;font-size:32px;line-height:1.2;font-weight:600;color:#1d1d1f;">
-                  Disha Study Library
-                </h1>
-              </td>
-            </tr>
+    <div style="max-width:560px;margin:40px auto;background:#ffffff;border-radius:18px;padding:40px 32px;text-align:center;border:1px solid #e5e5ea;">
 
-            <!-- Subtle Divider -->
-            <tr>
-              <td style="padding:0 32px;">
-                <hr style="border:none;border-top:1px solid #ececec;margin:0;">
-              </td>
-            </tr>
+      <!-- Badge -->
+      <div style="display:inline-block;background:#f5f0ff;border:1px solid #d0b8ff;border-radius:8px;padding:5px 14px;margin-bottom:20px;">
+        <span style="font-size:12px;font-weight:600;color:#6c2bd9;letter-spacing:0.08em;text-transform:uppercase;">
+          Verification Code
+        </span>
+      </div>
 
-            <!-- Body -->
-            <tr>
-              <td style="padding:28px 32px 10px;text-align:center;">
-                <p style="margin:0;font-size:18px;line-height:1.7;color:#424245;">
-                  Use the code below to verify your booking request.
-                </p>
-              </td>
-            </tr>
+      <h1 style="margin:0 0 10px;font-size:22px;color:#1d1d1f;font-weight:700;">
+        Disha Study Library
+      </h1>
 
-            <!-- OTP Box -->
-            <tr>
-              <td style="padding:28px 32px 16px;text-align:center;">
-                <div style="display:inline-block;background:#f5f5f7;border:1px solid #d2d2d7;border-radius:20px;padding:22px 36px;">
-                  <span style="font-size:44px;line-height:1;font-weight:600;letter-spacing:16px;color:#1d1d1f;">
-                    ${otp}
-                  </span>
-                </div>
-              </td>
-            </tr>
+      <p style="margin:0 0 28px;font-size:14px;color:#6e6e73;line-height:1.6;">
+        Use the OTP below to verify your booking request.
+      </p>
 
-            <!-- Info -->
-            <tr>
-              <td style="padding:12px 32px 0;text-align:center;">
-                <p style="margin:0;font-size:15px;line-height:1.8;color:#6e6e73;">
-                  This code expires in <strong style="color:#1d1d1f;">60 seconds</strong>.<br>
-                  Do not share this code with anyone.
-                </p>
-              </td>
-            </tr>
+      <!-- OTP Box -->
+      <div style="display:inline-block;background:#0a0a14;border-radius:14px;padding:18px 40px;margin-bottom:28px;">
+        <p style="margin:0 0 4px;font-size:11px;color:#8e8e93;letter-spacing:0.1em;text-transform:uppercase;">
+          One-Time Password
+        </p>
+        <p style="margin:0;font-size:36px;font-weight:700;color:#a78bfa;letter-spacing:0.25em;">
+          ${otp}
+        </p>
+      </div>
 
-            <!-- Footer -->
-            <tr>
-              <td style="padding:32px 32px 28px;text-align:center;">
-                <p style="margin:0;font-size:14px;line-height:1.8;color:#86868b;">
-                  If you did not request this, you can safely ignore this email.
-                </p>
-              </td>
-            </tr>
+      <p style="margin:0 0 6px;font-size:13px;color:#6e6e73;">
+        This code expires in <strong style="color:#d92c2c;">60 seconds</strong>.
+      </p>
 
-            <!-- Bottom -->
-            <tr>
-              <td style="padding:20px 24px;background:#fafafa;border-top:1px solid #e5e5e5;text-align:center;">
-                <p style="margin:0;font-size:13px;color:#a1a1a6;">
-                  This is an automated email from Disha Study Library.
-                </p>
-              </td>
-            </tr>
+      <p style="margin:0 0 28px;font-size:13px;color:#6e6e73;">
+        Do not share this code with anyone.
+      </p>
 
-          </table>
+      <div style="border-top:1px solid #e5e5ea;padding-top:20px;">
+        <p style="margin:0;font-size:12px;color:#8e8e93;line-height:1.6;">
+          If you did not request this, you can safely ignore this email.
+        </p>
+      </div>
 
-        </td>
-      </tr>
-    </table>
+    </div>
+
+    <p style="text-align:center;font-size:12px;color:#8e8e93;margin-top:12px;">
+      Disha Study Library &mdash; Automated Email &copy; ${new Date().getFullYear()}
+    </p>
+
   </div>
 `;
