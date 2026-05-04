@@ -1,8 +1,8 @@
 import { User } from "lucide-react";
 
 const FEE_STYLES = {
-  PAID:    "bg-green-100 text-green-700",
-  UNPAID:  "bg-red-100 text-red-600",
+  PAID: "bg-green-100 text-green-700",
+  UNPAID: "bg-red-100 text-red-600",
   PENDING: "bg-yellow-100 text-yellow-700",
 };
 
@@ -49,8 +49,7 @@ const ExpiryChip = ({ expiry_date }) => {
 };
 
 const ViewStudentModal = ({ seat, onClose }) => {
-  const { seat_number, status, name, phone, email, fee_status, start_date, expiry_date, photo_url } = seat;
-
+  const { seat_number, status, name, phone, email, fee_status, start_date, expiry_date, photo_url, pending_amount } = seat;
   return (
     <div className="fixed inset-0 bg-black/40 z-50 flex items-center justify-center px-4">
       <div className="bg-white rounded-2xl shadow-xl w-full max-w-md overflow-hidden">
@@ -68,9 +67,8 @@ const ViewStudentModal = ({ seat, onClose }) => {
           <div className="flex-1 min-w-0 pt-1">
             <p className="text-xs text-gray-400 mb-0.5">Seat #{seat_number}</p>
             <p className="text-lg font-semibold text-gray-900 truncate">{name || "—"}</p>
-            <span className={`inline-block mt-1.5 text-[11px] font-semibold px-3 py-0.5 rounded-full ${
-              status === "OCCUPIED" ? "bg-orange-100 text-orange-600" : "bg-green-100 text-green-600"
-            }`}>
+            <span className={`inline-block mt-1.5 text-[11px] font-semibold px-3 py-0.5 rounded-full ${status === "OCCUPIED" ? "bg-orange-100 text-orange-600" : "bg-green-100 text-green-600"
+              }`}>
               {status}
             </span>
           </div>
@@ -99,6 +97,11 @@ const ViewStudentModal = ({ seat, onClose }) => {
                 {fee_status || "—"}
               </span>
             </InfoTile>
+            {fee_status === "PENDING" && (
+              <InfoTile label="Pending Amount">
+                <p className="text-sm font-medium text-gray-800">₹{pending_amount || 0}</p>
+              </InfoTile>
+            )}
           </div>
 
           <div className="grid grid-cols-2 gap-3">

@@ -10,7 +10,7 @@ const AssignModal = ({ seat, onClose, onSuccess }) => {
   const [form, setForm] = useState({
     name: "", phone: "", email: "",
     fee_status: "UNPAID", start_date: "", expiry_date: "",
-    photo_url: "",
+    photo_url: "", pending_amount: 0,
   });
   const [loading, setLoading] = useState(false);
   const [uploading, setUploading] = useState(false);
@@ -35,12 +35,12 @@ const AssignModal = ({ seat, onClose, onSuccess }) => {
       data.append("upload_preset", config.cloudinary_upload_preset);
 
       const res = await fetch(
-              urlConfig.cloudinaryUploadUrl, 
-              { 
-                method: "POST", 
-                body: data 
-              }
-            );
+        urlConfig.cloudinaryUploadUrl,
+        {
+          method: "POST",
+          body: data
+        }
+      );
 
       const result = await res.json();
       if (!result.secure_url) throw new Error("Upload failed");
@@ -119,6 +119,9 @@ const AssignModal = ({ seat, onClose, onSuccess }) => {
             { value: "PENDING", label: "Pending" },
           ]}
         />
+        {form.fee_status === "PENDING" && (
+          <Input label="Pending Amount (₹)" name="pending_amount" type="number" placeholder="Enter unpaid amount" value={form.pending_amount} onChange={handle} />
+        )}
         <div className="grid grid-cols-2 gap-3">
           <Input label="Start Date" name="start_date" type="date" value={form.start_date} onChange={handle} />
           <Input label="Expiry Date" name="expiry_date" type="date" value={form.expiry_date} onChange={handle} />

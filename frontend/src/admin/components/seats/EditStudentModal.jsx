@@ -15,6 +15,7 @@ const EditStudentModal = ({ seat, onClose, onSuccess }) => {
     start_date: seat.start_date ? seat.start_date.slice(0, 10) : "",
     expiry_date: seat.expiry_date ? seat.expiry_date.slice(0, 10) : "",
     photo_url: seat.photo_url || "",
+    pending_amount: seat.pending_amount || 0,
   });
   const [loading, setLoading] = useState(false);
   const [uploading, setUploading] = useState(false);
@@ -33,10 +34,10 @@ const EditStudentModal = ({ seat, onClose, onSuccess }) => {
       data.append("upload_preset", config.cloudinary_upload_preset);
 
       const res = await fetch(
-        urlConfig.cloudinaryUploadUrl, 
-        { 
-          method: "POST", 
-          body: data 
+        urlConfig.cloudinaryUploadUrl,
+        {
+          method: "POST",
+          body: data
         }
       );
 
@@ -130,6 +131,9 @@ const EditStudentModal = ({ seat, onClose, onSuccess }) => {
             { value: "PENDING", label: "Pending" },
           ]}
         />
+        {form.fee_status === "PENDING" && (
+          <Input label="Pending Amount (₹)" name="pending_amount" type="number" placeholder="Enter unpaid amount" value={form.pending_amount} onChange={handle} />
+        )}
         <div className="grid grid-cols-2 gap-3">
           <Input label="Start Date" name="start_date" type="date" value={form.start_date} onChange={handle} />
           <Input label="Expiry Date" name="expiry_date" type="date" value={form.expiry_date} onChange={handle} />
