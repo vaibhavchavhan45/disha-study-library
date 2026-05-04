@@ -1,8 +1,8 @@
 const fmt = (d) =>
   d ? new Date(d).toLocaleDateString("en-IN", { day: "2-digit", month: "short", year: "numeric" }) : "—";
 
-const BOARD = ["HSC (12th)", "SSC Board (10th)", "JEE / NEET / CET"];
-const STATE = ["MPSC", "Saral Seva Bharti", "Police Bharti"];
+const BOARD   = ["HSC (12th)", "SSC Board (10th)", "JEE / NEET / CET"];
+const STATE   = ["MPSC", "Saral Seva Bharti", "Police Bharti"];
 const CENTRAL = ["SSC CGL", "Banking / IBPS"];
 
 const getFieldBadgeClass = (field) => {
@@ -14,7 +14,7 @@ const getFieldBadgeClass = (field) => {
 
 const InquiryTable = ({ list, currentPage, itemsPerPage }) => {
   return (
-    <div className="hidden sm:block overflow-x-auto">
+    <div className="hidden lg:block overflow-x-auto">
       <table className="w-full text-sm">
         <thead>
           <tr className="border-b border-gray-200 bg-gray-100/80 text-xs text-gray-500 uppercase tracking-wide">

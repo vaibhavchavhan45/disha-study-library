@@ -16,7 +16,7 @@ const getFieldBadgeClass = (field) => {
 
 const InquiryCards = ({ list, currentPage, itemsPerPage }) => {
   return (
-    <div className="sm:hidden space-y-3 p-3">
+    <div className="lg:hidden space-y-3 p-3">
       {list.map((b, i) => {
         const rowNumber = (currentPage - 1) * itemsPerPage + i + 1;
         return (
