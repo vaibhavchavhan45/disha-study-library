@@ -1,13 +1,13 @@
-import slide1 from "../assets/slider/study-atmo1.png"
-import slide2 from "../assets/slider/study-center2.png"
-import slide3 from "../assets/slider/focused-learning3.png"
-import slide4 from "../assets/slider/resource4.png"
-import slide5 from "../assets/slider/tech-support5.png"
-import slide6 from "../assets/slider/comfort6.png"
-import slide7 from "../assets/slider/interior7.png"
-import slide8 from "../assets/slider/discipline.png"
-import slide9 from "../assets/slider/study-hall9.png"
-import slide10 from "../assets/slider/heroImg.png"
+import slide1 from "../assets/slider/study-atmo1.webp"
+import slide2 from "../assets/slider/study-center2.webp"
+import slide3 from "../assets/slider/focused-learning3.webp"
+import slide4 from "../assets/slider/resource4.webp"
+import slide5 from "../assets/slider/tech-support5.webp"
+import slide6 from "../assets/slider/comfort6.webp"
+import slide7 from "../assets/slider/interior7.webp"
+import slide8 from "../assets/slider/discipline.webp"
+import slide9 from "../assets/slider/study-hall9.webp"
+import slide10 from "../assets/slider/heroImg.webp"
 
 export const heroSlideImages = [
   { id: 1, src: slide1, alt: "Hero Slide 1" },

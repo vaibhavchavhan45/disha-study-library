@@ -1,13 +1,13 @@
-import chair from "../assets/facilities/chair.png"
-import wifi from "../assets/facilities/wifi.jpg"
-import ro from "../assets/facilities/ro.jpg"
-import cctv from "../assets/facilities/cctv.jpeg"
-import roof from "../assets/facilities/roof.png"
-import news from "../assets/facilities/news.png"
-import power from "../assets/facilities/power.jpg"
-import env from "../assets/facilities/env.png"
-import silent from "../assets/facilities/silent.jpg"
-import seats from "../assets/facilities/seats.png"
+import chair from "../assets/facilities/chair.webp"
+import wifi from "../assets/facilities/wifi.webp"
+import ro from "../assets/facilities/ro.webp"
+import cctv from "../assets/facilities/cctv.webp"
+import roof from "../assets/facilities/roof.webp"
+import news from "../assets/facilities/news.webp"
+import power from "../assets/facilities/power.webp"
+import env from "../assets/facilities/env.webp"
+import silent from "../assets/facilities/silent.webp"
+import seats from "../assets/facilities/seats.webp"
 
 export const facilities = [
     { id: 1, title: "Cozy Sitting Space", content: "Study in comfort with ergonomic chairs and spacious areas for productive learning.", image: chair },

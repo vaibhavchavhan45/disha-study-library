@@ -1,25 +1,25 @@
-import chetan from "../assets/testimonialsPage/chetan.jpg"
-import g1 from "../assets/testimonialsPage/g1.png"
-import akshay from "../assets/testimonialsPage/akshay.png"
-import g2 from "../assets/testimonialsPage/g2.png"
-import b2 from "../assets/testimonialsPage/b2.png"
-import g3 from "../assets/testimonialsPage/g3.png"
-import b3 from "../assets/testimonialsPage/b3.png"
-import g4 from "../assets/testimonialsPage/g4.png"
-import g5 from "../assets/testimonialsPage/g5.png"
-import g7 from "../assets/testimonialsPage/g7.png"
-import b4 from "../assets/testimonialsPage/b4.png"
-import g6 from "../assets/testimonialsPage/g6.png"
-import b5 from "../assets/testimonialsPage/b5.png"
-import g8 from "../assets/testimonialsPage/g8.png"
-import b1 from "../assets/testimonialsPage/b1.png"
+import chetan from "../assets/testimonialsPage/chetan.webp"
+import g1 from "../assets/testimonialsPage/g1.webp"
+import akshay from "../assets/testimonialsPage/akshay.webp"
+import g2 from "../assets/testimonialsPage/g2.webp"
+import bhosa from "../assets/testimonialsPage/bhosa.webp"
+import g3 from "../assets/testimonialsPage/g3.webp"
+import b3 from "../assets/testimonialsPage/b3.webp"
+import g4 from "../assets/testimonialsPage/g4.webp"
+import g5 from "../assets/testimonialsPage/g5.webp"
+import g7 from "../assets/testimonialsPage/g7.webp"
+import b4 from "../assets/testimonialsPage/b4.webp"
+import g6 from "../assets/testimonialsPage/g6.webp"
+import b5 from "../assets/testimonialsPage/b5.webp"
+import g8 from "../assets/testimonialsPage/g8.webp"
+import b1 from "../assets/testimonialsPage/b1.webp"
 
 export const testimonialsPageImages = [
   { id: 1,  name: "Chetan Chavhan",    loc: "IBPS Banking · Arni",       photo: chetan,  quote: "Disha completely changed how I study. The silence and atmosphere here is unlike any café or home setup. Incredibly Awesome! ", rating: 5 },
   { id: 2,  name: "Priya Pawar",       loc: "UPSC Aspirant · Arni",      photo: g1,      quote: "Best study space in Arni. Seats are comfortable, lighting is perfect, and everyone around you is serious about studying.", rating: 5 },
   { id: 3,  name: "Akki PD",           loc: "SSC-GD · Dolamba",          photo: akshay,  quote: "Since joining Disha, I finish my daily targets every single day. The environment builds consistency you just can't find at home.", rating: 5 },
   { id: 4,  name: "Sneha Jadhao",      loc: "MBA Prep · Arni",           photo: g2,      quote: "The staff is polite, the place is always clean, and the vibe is so calming. I recommend Disha Library to every serious student.", rating: 4 },
-  { id: 5,  name: "Vivek Patil",       loc: "NEET Qualified · Arni",     photo: b2,      quote: "I cracked NEET after studying at Disha Library for 6 months. The consistency this place builds is something you can't get anywhere else.", rating: 5 },
+  { id: 5,  name: "Vivek Patil",       loc: "NEET Qualified · Bhosa",    photo: bhosa,   quote: "I cracked NEET after studying at Disha Library for 6 months. The consistency this place builds is something you can't get anywhere else.", rating: 5 },
   { id: 6,  name: "Neha SM",           loc: "Law Entrance · Mahagaon",   photo: g3,      quote: "Every morning I look forward to coming here. It's not just a library, it's a community of serious, focused students.", rating: 5 },
   { id: 7,  name: "Mayur Pawar",       loc: "MPSC Cleared · Satara",     photo: b3,      quote: "Cleared MPSC Pre in first attempt. Disha was my second home for over a year. Never going back to studying anywhere else.", rating: 5 },
   { id: 8,  name: "Riya Thakur",       loc: "Commerce · Heti",           photo: g4,      quote: "Affordable, peaceful and productive. Disha Library is the best study library in Arni, no doubt about it.", rating: 4 },

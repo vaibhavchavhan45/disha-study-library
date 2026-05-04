@@ -1,6 +1,6 @@
-import studySpacesImg from "../assets/study/spaces.png";
-import resourcesImg from "../assets/study/resources.png";
-import techImg from "../assets/study/tech.png";
+import studySpacesImg from "../assets/study/spaces.webp";
+import resourcesImg from "../assets/study/resources.webp";
+import techImg from "../assets/study/tech.webp";
 
 
 export const features = [
