@@ -1,4 +1,11 @@
-const adminOtpTemplate = (otp) => {
+const adminOtpTemplate = (otp, type = "login") => {
+
+  const heading = type === "login" ? "Admin Login OTP" : "Forgot Password OTP";
+
+  const subtext = type === "login"
+    ? `A login attempt was made to the <strong style="color:#1d1d1f;">DISHA Library Admin Panel</strong>.<br/>Use the OTP below to complete your identity verification.`
+    : `A password reset was requested for the <strong style="color:#1d1d1f;">DISHA Library Admin Panel</strong>.<br/>Use the OTP below to reset your password.`;
+
   return `
     <div style="margin:0;padding:0;background:#f0f0f5;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;">
 
@@ -12,12 +19,11 @@ const adminOtpTemplate = (otp) => {
         </div>
 
         <h1 style="margin:0 0 10px;font-size:22px;color:#1d1d1f;font-weight:700;">
-          Admin Login OTP
+          ${heading}
         </h1>
 
         <p style="margin:0 0 28px;font-size:14px;color:#6e6e73;line-height:1.6;">
-          A login attempt was made to the <strong style="color:#1d1d1f;">DISHA Library Admin Panel</strong>.<br/>
-          Use the OTP below to complete your identity verification.
+          ${subtext}
         </p>
 
         <!-- OTP Box -->
