@@ -9,7 +9,6 @@ const config = {
   emailPass: process.env.EMAIL_PASS,
   emailAdmin1: process.env.EMAIL_ADMIN_1,
   emailAdmin2: process.env.EMAIL_ADMIN_2,
-  recaptchaSecret: process.env.RECAPTCHA_SECRET_KEY,
   devEmail: process.env.DEV_EMAIL,
   jwtSecret: process.env.JWT_SECRET,
   clientUrl: process.env.CLIENT_URL
