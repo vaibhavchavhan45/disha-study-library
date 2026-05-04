@@ -99,7 +99,7 @@ function WaitingPage () {
     <div className="space-y-6 relative">
 
       {/* Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
         <div className="min-w-0">
           <h1 className="text-3xl font-semibold tracking-tight text-gray-900">Waiting List</h1>
           <p className="text-sm text-gray-500 mt-1">Manage students who are currently waiting for a seat.</p>

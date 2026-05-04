@@ -1,66 +1,42 @@
-import { useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
-import { Eye, EyeOff, ShieldAlert, ArrowLeft } from "lucide-react";
-import { resetPasswordApi } from "../services/authApi";
-import { getAdminUser } from "../utils/adminStorage";
-import { useAttemptTracker, validateNewPasswords } from "../hooks/useAdminAuth";
-import Navbar from "../../Components/Navbar";
-import { inputCls, labelCls, cardStyle } from "../components/styles/authLoginStyles";
-import { clearAdminAuth } from "../utils/adminStorage";
+import { useState, useRef, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { forgotPasswordApi, resetPasswordApi } from "../services/authApi";
+import { validateNewPasswords } from "../hooks/useAdminAuth";
+import AuthPageWrapper from "../components/forgotUI/AuthPageWrapper";
+import SuccessCard from "../components/forgotUI/SuccessCard";
+import EmailStep from "../components/forgotUI/EmailStep";
+import OTPStep from "../components/forgotUI/OTPStep";
+import NewPasswordStep from "../components/forgotUI/NewPasswordStep";
 
+const OTP_LENGTH    = 6;
+const TIMER_SECONDS = 60;
+const MAX_RESEND    = 3;
 
-// tiny dark password input
-function PasswordField({ label, value, onChange, placeholder, disabled }) {
-  const [show, setShow] = useState(false);
-  return (
-    <div>
-      <label className={labelCls}>{label}</label>
-      <div className="relative">
-        <input
-          type={show ? "text" : "password"}
-          value={value}
-          onChange={onChange}
-          disabled={disabled}
-          placeholder={placeholder}
-          className={inputCls + " pr-11"}
-        />
-        <button
-          type="button"
-          onClick={() => setShow((p) => !p)}
-          className="absolute right-3 top-1/2 -translate-y-1/2 text-white/25 hover:text-white/60 transition"
-        >
-          {show ? <EyeOff size={16} /> : <Eye size={16} />}
-        </button>
-      </div>
-    </div>
-  );
-}
-
-// component
 const AdminForgotPassword = () => {
-  const { token } = useParams();
   const navigate = useNavigate();
 
-  // grab email from logged-in admin if available
-  const admin = getAdminUser();
-  const email = admin?.email || "";
+  const [step, setStep] = useState("email");
+  const [email, setEmail] = useState("");
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
-  const {
-    status,
-    attemptsLeft,
-    timeLeft,
-    errorMsg,
-    setErrorMsg,
-    registerFailedAttempt,
-    registerSuccess,
-    clearError,
-    isBlocked,
-  } = useAttemptTracker(email);
+  const [otpCode, setOtpCode] = useState("");
+  const [otpInvalid, setOtpInvalid] = useState(false);
+  const [otpVerified, setOtpVerified] = useState(false);
+  const [otpBusy, setOtpBusy] = useState(false);
+  const [timer, setTimer] = useState(TIMER_SECONDS);
+  const [resendCount, setResendCount] = useState(0);
+  const [resendBusy, setResendBusy] = useState(false);
+  const intervalRef = useRef(null);
 
-  const [confirmEmail, setConfirmEmail] = useState("");
+  const boxRefs = [
+    useRef(null), useRef(null), useRef(null),
+    useRef(null), useRef(null), useRef(null),
+  ];
+
   const [newPass, setNewPass] = useState("");
   const [confirmPass, setConfirmPass] = useState("");
-  const [loading, setLoading] = useState(false);
+  const [resetBusy, setResetBusy] = useState(false);
 
   const navItems = [
     { id: "1", label: "Home",  onClick: () => navigate("/") },
@@ -68,213 +44,142 @@ const AdminForgotPassword = () => {
     { id: "3", label: "Admin", onClick: () => navigate("/admin") },
   ];
 
-  const goToAdmin = () => {
-    clearAdminAuth();
-    navigate("/admin", { replace: true });
+  useEffect(() => {
+    return () => clearInterval(intervalRef.current);
+  }, []);
+
+  const startTimer = () => {
+    clearInterval(intervalRef.current);
+    setTimer(TIMER_SECONDS);
+    intervalRef.current = setInterval(() => {
+      setTimer((prev) => {
+        if (prev <= 1) { clearInterval(intervalRef.current); return 0; }
+        return prev - 1;
+      });
+    }, 1000);
   };
 
-  // submit
-  const handleSubmit = async (e) => {
+  const handleSendOTP = async (e) => {
     e.preventDefault();
-    if (isBlocked) return;
-
-    if (!confirmEmail) {
-      setErrorMsg("Please confirm your email address.");
-      return;
-    }
-
-    const validationError = validateNewPasswords(newPass, confirmPass);
-    if (validationError) {
-      setErrorMsg(validationError);
-      return;
-    }
-
+    setError("");
+    if (!email) return setError("Please enter your admin email.");
     try {
       setLoading(true);
-      clearError();
-
-      const data = await resetPasswordApi(token, {
-        password: newPass,
-        email: confirmEmail,
-      });
-
-      if (!data.success) {
-        registerFailedAttempt(data.message || "Something went wrong. Please try again.");
-        return;
-      }
-
-      registerSuccess();
-
+      await forgotPasswordApi({ email });
+      setStep("otp");
+      startTimer();
     } catch (err) {
       const status = err.response?.status;
-      if (status === 400) {
-        registerFailedAttempt("This link has expired. Request a new one.");
-      } else {
-        registerFailedAttempt("Something went wrong. Please try again.");
-      }
+      if (status === 404) setError("We both know the truth, you're not an admin. So stop trying and start studying.");
+      else setError("Something went wrong. Please try again.");
     } finally {
       setLoading(false);
     }
   };
 
-  // render
+  const verifyOTP = (code) => {
+    const target = code || otpCode;
+    if (!target || target.length !== OTP_LENGTH) return;
+    setOtpVerified(true);
+    setStep("password");
+  };
+
+  const handleResend = async () => {
+    if (resendCount >= MAX_RESEND || resendBusy) return;
+    try {
+      setResendBusy(true);
+      setOtpCode("");
+      setOtpInvalid(false);
+      setError("");
+      await forgotPasswordApi({ email });
+      setResendCount((c) => c + 1);
+      startTimer();
+    } catch {
+      setError("Failed to resend OTP. Please try again.");
+    } finally {
+      setResendBusy(false);
+    }
+  };
+
+  const handleResetPassword = async (e) => {
+    e.preventDefault();
+    setError("");
+    const validationError = validateNewPasswords(newPass, confirmPass);
+    if (validationError) return setError(validationError);
+    try {
+      setResetBusy(true);
+      await resetPasswordApi({ email, otp: otpCode, password: newPass });
+      setStep("success");
+    } catch (err) {
+      const msg = err.response?.data?.message || "Something went wrong.";
+      if (msg.includes("Invalid OTP") || msg.includes("expired") || msg.includes("attempts")) {
+        setOtpVerified(false);
+        setOtpInvalid(true);
+        setOtpCode("");
+        setStep("otp");
+      }
+      setError(msg);
+    } finally {
+      setResetBusy(false);
+    }
+  };
+
   return (
-    <div
-      style={{ background: "radial-gradient(ellipse at top, #0f2d3d 0%, #09101f 40%, #060812 70%)" }}
-      className="min-h-screen w-full flex flex-col"
-    >
-      <Navbar navItems={navItems} />
+    <AuthPageWrapper navItems={navItems}>
 
-      <div className="flex-1 flex items-center justify-center px-4 py-12 pt-24 dm">
-        <div style={cardStyle} className="p-8">
+      {step === "email" && (
+        <EmailStep
+          email={email}
+          setEmail={(val) => { setEmail(val); setError(""); }}
+          error={error}
+          loading={loading}
+          onSubmit={handleSendOTP}
+          onBack={() => navigate("/admin")}
+        />
+      )}
 
-          {/* header */}
-          {status !== "success" && (
-            <div className="text-center mb-7">
-              <h1 className="syne text-2xl font-bold text-white tracking-tight">
-                {isBlocked ? "Access Restricted" : "Reset Password"}
-              </h1>
-              <p className="text-white/35 text-sm mt-1">
-                {isBlocked
-                  ? status === "locked"
-                    ? "Too many failed attempts."
-                    : "Password was recently changed."
-                  : "Confirm your email and set a new password."}
-              </p>
-            </div>
-          )}
+      {step === "otp" && (
+        <OTPStep
+          email={email}
+          otpCode={otpCode}
+          setOtpCode={setOtpCode}
+          otpVerified={otpVerified}
+          otpInvalid={otpInvalid}
+          otpBusy={otpBusy}
+          timer={timer}
+          resendCount={resendCount}
+          resendBusy={resendBusy}
+          boxRefs={boxRefs}
+          onVerify={verifyOTP}
+          onResend={handleResend}
+          onBack={() => { setStep("email"); setOtpCode(""); setError(""); clearInterval(intervalRef.current); }}
+          error={error}
+        />
+      )}
 
-          {/* blocked */}
-          {isBlocked && (
-            <div className="text-center py-6 space-y-5">
-              <ShieldAlert size={32} className="mx-auto text-rose-400 mb-3" />
-              <p className="text-white/50 text-sm">Try again in</p>
-              <p className="text-rose-400 font-bold text-2xl mt-1">{timeLeft}</p>
+      {step === "password" && (
+        <NewPasswordStep
+          newPass={newPass}
+          setNewPass={(val) => { setNewPass(val); setError(""); }}
+          confirmPass={confirmPass}
+          setConfirmPass={(val) => { setConfirmPass(val); setError(""); }}
+          error={error}
+          resetBusy={resetBusy}
+          onSubmit={handleResetPassword}
+          onBack={() => navigate("/admin")}
+        />
+      )}
 
-              {/* back button on blocked screen */}
-              <button
-                type="button"
-                onClick={goToAdmin}
-                className="flex items-center gap-1.5 mx-auto text-white/30 hover:text-white/60 text-xs transition-colors"
-              >
-                <ArrowLeft size={13} />
-                Back to Admin Login
-              </button>
-            </div>
-          )}
+      {step === "success" && (
+        <SuccessCard
+          heading="Password Reset Successful!"
+          subtext="Your password has been updated. Login with your new credentials."
+          buttonLabel="Go to Admin Login →"
+          onButtonClick={() => navigate("/admin", { replace: true })}
+        />
+      )}
 
-          {/* form */}
-          {!isBlocked && status !== "success" && (
-            <form onSubmit={handleSubmit} className="space-y-5">
-
-              {/* confirm email */}
-              <div>
-                <label className={labelCls}>Confirm Email</label>
-                <input
-                  type="email"
-                  autoComplete="username"
-                  value={confirmEmail}
-                  onChange={(e) => { setConfirmEmail(e.target.value); clearError(); }}
-                  placeholder="Re-enter your admin email"
-                  className={inputCls}
-                />
-              </div>
-
-              {/* new password */}
-              <PasswordField
-                label="New Password"
-                autoComplete="new-password"
-                placeholder="Min 8 chars, uppercase, number, special"
-                value={newPass}
-                onChange={(e) => { setNewPass(e.target.value); clearError(); }}
-                disabled={loading}
-              />
-
-              {/* confirm password */}
-              <PasswordField
-                label="Confirm Password"
-                autoComplete="new-password"
-                placeholder="Re-enter new password"
-                value={confirmPass}
-                onChange={(e) => { setConfirmPass(e.target.value); clearError(); }}
-                disabled={loading}
-              />
-
-              {/* attempts warning */}
-              {status === "error" && attemptsLeft <= 2 && (
-                <p className="text-amber-400 text-xs text-center">
-                  {attemptsLeft} attempt{attemptsLeft !== 1 ? "s" : ""} left before lockout.
-                </p>
-              )}
-
-              {/* error message */}
-              {errorMsg && (
-                <p className="text-rose-400 text-xs text-center">{errorMsg}</p>
-              )}
-
-              {/* submit */}
-              <div className="flex justify-center pt-1">
-                <button
-                  type="submit"
-                  disabled={loading}
-                  className="syne bg-white text-black text-sm font-semibold rounded-xl px-10 py-2.5 tracking-wide disabled:opacity-60 disabled:cursor-not-allowed"
-                >
-                  {loading ? "Updating…" : "Reset Password"}
-                </button>
-              </div>
-
-              {/* back to admin login — below form */}
-              <div className="flex justify-center pt-1">
-                <button
-                  type="button"
-                  onClick={goToAdmin}
-                  className="flex items-center gap-1.5 text-white/30 hover:text-white/60 text-xs transition-colors"
-                >
-                  <ArrowLeft size={13} />
-                  Back to Admin Login
-                </button>
-              </div>
-
-            </form>
-          )}
-
-          {/* success card */}
-          {status === "success" && (
-            <div className="text-center py-6 space-y-5">
-              <div className="flex justify-center">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="w-14 h-14 text-green-400"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                >
-                  <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" fill="none" />
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M8 12l3 3 5-5"
-                  />
-                </svg>
-              </div>
-              <p className="text-green-400 font-semibold text-lg">Password changed successfully!</p>
-              <p className="text-white/50 text-sm leading-relaxed max-w-xs mx-auto">
-                Your password is updated. Login with your new credentials.
-              </p>
-              <button
-                type="button"
-                onClick={goToAdmin}
-                className="syne bg-white text-black text-sm font-semibold rounded-xl px-8 py-2.5 tracking-wide"
-              >
-                Go to Admin Login →
-              </button>
-            </div>
-          )}
-
-        </div>
-      </div>
-    </div>
+    </AuthPageWrapper>
   );
 };
 
