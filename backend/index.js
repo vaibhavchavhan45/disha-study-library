@@ -32,6 +32,8 @@ app.use("/api/ex-students", exStudentRoutes);
 app.use("/api/inquiries", inquiryRoutes);
 app.use("/api/dashboard", dashboardRoutes);
 
+app.get("/health", (req, res) => res.send("OK"));
+
 app.use(errorHandler);
 
 app.listen(port, "0.0.0.0", () => {
