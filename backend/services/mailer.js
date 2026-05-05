@@ -9,6 +9,8 @@ const transporter = nodemailer.createTransport({
     user: emailUser,
     pass: emailPass,
   },
+  port: 587,
+  secure: false,
   family: 4, // Force IPv6. If mail does not work on some networks, change this to 4.
 });
 
