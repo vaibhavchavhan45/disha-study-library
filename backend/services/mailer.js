@@ -9,7 +9,7 @@ const transporter = nodemailer.createTransport({
     user: emailUser,
     pass: emailPass,
   },
-  family: 6, // Force IPv6. If mail does not work on some networks, change this to 4.
+  family: 4, // Force IPv6. If mail does not work on some networks, change this to 4.
 });
 
 export const sendMail = async ({ to, subject, html, replyTo, isAdmin }) => {
