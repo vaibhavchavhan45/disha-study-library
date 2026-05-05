@@ -11,7 +11,8 @@ const config = {
   emailAdmin2: process.env.EMAIL_ADMIN_2,
   devEmail: process.env.DEV_EMAIL,
   jwtSecret: process.env.JWT_SECRET,
-  clientUrl: process.env.CLIENT_URL
+  clientUrl: process.env.CLIENT_URL,
+  brevoApiKey: process.env.BREVO_API_KEY,
 };
 
 export default config;

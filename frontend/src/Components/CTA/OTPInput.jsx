@@ -151,7 +151,7 @@ const OTPInput = forwardRef(({ onVerified, onOtpSent }, ref) => {
               ? "Too many attempts. Please try again later."
               : resendCount > 0
                 ? "OTP has been sent to your Gmail."
-                : "Enter the 4-digit code sent to your Gmail."}
+                : <><strong>OTP</strong> sent to your Gmail. If not received, check your <strong>spam</strong> folder.</>}
           </p>
 
           <OTPBoxes
