@@ -4,15 +4,15 @@ import akshay from "../assets/testimonialsPage/akshay.webp"
 import g2 from "../assets/testimonialsPage/g2.webp"
 import bhosa from "../assets/testimonialsPage/bhosa.webp"
 import g3 from "../assets/testimonialsPage/g3.webp"
-import b3 from "../assets/testimonialsPage/b3.webp"
+import ram from "../assets/testimonialsPage/ram.webp"
 import g4 from "../assets/testimonialsPage/g4.webp"
-import g5 from "../assets/testimonialsPage/g5.webp"
+import vikesh from "../assets/testimonialsPage/vikesh.webp"
 import g7 from "../assets/testimonialsPage/g7.webp"
-import b4 from "../assets/testimonialsPage/b4.webp"
+import tanmay from "../assets/testimonialsPage/tanmay.webp"
 import g6 from "../assets/testimonialsPage/g6.webp"
-import b5 from "../assets/testimonialsPage/b5.webp"
+import rahul from "../assets/testimonialsPage/rahul.webp"
 import g8 from "../assets/testimonialsPage/g8.webp"
-import b1 from "../assets/testimonialsPage/b1.webp"
+import golu from "../assets/testimonialsPage/golu.webp"
 
 export const testimonialsPageImages = [
   { id: 1,  name: "Chetan Chavhan",    loc: "IBPS Banking · Arni",       photo: chetan,  quote: "Disha completely changed how I study. The silence and atmosphere here is unlike any café or home setup. Incredibly Awesome! ", rating: 5 },
@@ -21,13 +21,13 @@ export const testimonialsPageImages = [
   { id: 4,  name: "Sneha Jadhao",      loc: "MBA Prep · Arni",           photo: g2,      quote: "The staff is polite, the place is always clean, and the vibe is so calming. I recommend Disha Library to every serious student.", rating: 4 },
   { id: 5,  name: "Vivek Patil",       loc: "NEET Qualified · Bhosa",    photo: bhosa,   quote: "I cracked NEET after studying at Disha Library for 6 months. The consistency this place builds is something you can't get anywhere else.", rating: 5 },
   { id: 6,  name: "Neha SM",           loc: "Law Entrance · Mahagaon",   photo: g3,      quote: "Every morning I look forward to coming here. It's not just a library, it's a community of serious, focused students.", rating: 5 },
-  { id: 7,  name: "Mayur Pawar",       loc: "MPSC Cleared · Satara",     photo: b3,      quote: "Cleared MPSC Pre in first attempt. Disha was my second home for over a year. Never going back to studying anywhere else.", rating: 5 },
+  { id: 7,  name: "Ramkumar Jadhao",   loc: "MPSC Combined · Umari",     photo: ram,      quote: "Cracked MPSC Pre in first attempt, Preparing for Mains. Disha was my second home for over a year. Never going back to studying anywhere else.", rating: 5 },
   { id: 8,  name: "Riya Thakur",       loc: "Commerce · Heti",           photo: g4,      quote: "Affordable, peaceful and productive. Disha Library is the best study library in Arni, no doubt about it.", rating: 4 },
-  { id: 9,  name: "Vaishnavi Rathod",  loc: "JEE Aspirant · Umari",      photo: g5,      quote: "The high-speed WiFi and power outlets make it perfect for online exam prep too. Highly recommend Disha.", rating: 4 },
+  { id: 9,  name: "Vikesh Rathod",     loc: "MPSC · Umari",              photo: vikesh,      quote: "The high-speed WiFi and power outlets make it perfect for online exam prep too. Highly recommend Disha.", rating: 4 },
   { id: 10, name: "Komal Patil",       loc: "CA Inter · Jawala",         photo: g7,      quote: "I love how the all students maintains discipline. No noise, no distractions, just pure focus all day long.", rating: 5 },
-  { id: 11, name: "Siddharth Rao",     loc: "SSC CGL · Arni",            photo: b4,      quote: "Targeting SSC CGL in first attempt. Disha is providing me the environment and discipline I need to get success.", rating: 5 },
+  { id: 11, name: "Tanmay Jadhao",     loc: "MPSC / Saral Seva · Umari", photo: tanmay,  quote: "Targeting MPSC & Saral Seva simultaneously. Disha is providing me the environment and discipline I need to get success.", rating: 5 },
   { id: 12, name: "Ankita More",       loc: "12th Boards · Loni",        photo: g6,      quote: "Scored 92% in boards. Disha's calm atmosphere and focused students made all the difference in my preparation.", rating: 5 },
-  { id: 13, name: "Shivam Wankhede",   loc: "CA Foundation · Asara",     photo: b5,      quote: "Preparing at Disha for the CA exams from months. Peaceful, focused and very affordable for students.", rating: 4 },
+  { id: 13, name: "Rahul Kamble",      loc: "NEET · Arni",               photo: rahul,      quote: "Preparing at Disha for the NEET exams from months. Peaceful, focused and very affordable for students.", rating: 4 },
   { id: 14, name: "Shruti Patel",      loc: "BCA Student · Arni",        photo: g8,      quote: "Perfect for long study sessions. Clean, quiet and motivating. I study here every single day without fail.", rating: 5 },
-  { id: 15, name: "Rohit Rathod",      loc: "SDE Intern · Arni",         photo: b1,      quote: "Disha is where serious students come to get serious results. The environment is unmatched in Arni.", rating: 5 },
+  { id: 15, name: "Rohit Rathod",      loc: "SDE Intern · Arni",         photo: golu,      quote: "Disha is where serious students come to get serious results. The environment is unmatched in Arni.", rating: 5 },
 ];
