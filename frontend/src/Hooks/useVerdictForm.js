@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { config } from "../config/config";
 
 const STORAGE_KEY = "verdict_submissions";
-const MAX_PER_DAY = 100;
+const MAX_PER_DAY = 2;
 
 function getTodayKey() {
   return new Date().toISOString().split("T")[0];
