@@ -11,7 +11,7 @@ const getRandomMessage = (messages) => {
 };
 
 export const getMessageService = async (name, isValid) => {
-  validateMessage({ name, isValid }); //zod validation
+  validateMessage({ name, isValid });
 
   const trimmed = name?.trim();
   const normalized = trimmed?.toLowerCase();
@@ -22,10 +22,12 @@ export const getMessageService = async (name, isValid) => {
   if (!isValid) {
     message = getRandomMessage(errorMessages);
     messageType = "error";
-  } else if (specialMessages[normalized]) {
+  } 
+  else if (specialMessages[normalized]) {
     message = getRandomMessage(specialMessages[normalized]);
     messageType = "success";
-  } else {
+  } 
+  else {
     message = getRandomMessage(defaultMessages);
     messageType = "success";
   }

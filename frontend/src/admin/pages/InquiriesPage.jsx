@@ -2,19 +2,19 @@ import { useEffect, useMemo, useState } from "react";
 import axios from "axios";
 import { getAdminToken } from "../utils/adminStorage";
 import { config } from "../../config/config";
-import InquiryTable      from "../components/inquiries/InquiryTable";
-import InquiryCards      from "../components/inquiries/InquiryCards";
-import Pagination        from "../components/waiting/Pagination";
+import InquiryTable from "../components/inquiries/InquiryTable";
+import InquiryCards from "../components/inquiries/InquiryCards";
+import Pagination from "../components/waiting/Pagination";
 import SearchSortToolbar from "../components/common/SearchSortToolbar";
 import { ITEMS_PER_PAGE } from "../data/items";
 
 
 function InquiriesPage () {
-  const [list, setList]               = useState([]);
-  const [loading, setLoading]         = useState(true);
-  const [error, setError]             = useState("");
-  const [search, setSearch]           = useState("");
-  const [sortOrder, setSortOrder]     = useState("asc");
+  const [list, setList] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+  const [search, setSearch] = useState("");
+  const [sortOrder, setSortOrder] = useState("asc");
   const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {

@@ -60,7 +60,6 @@ export default function TermsAndConditions() {
         ))}
 
         {/* Contact */}
-        {/* Contact */}
         <div className="mt-12 p-6 rounded-2xl border border-white/10 bg-white/5">
           <p className="text-white/40 text-xs uppercase tracking-widest mb-2">Get in touch</p>
           <h2 className="text-white text-lg font-bold mb-4">Contact Us</h2>

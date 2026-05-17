@@ -11,14 +11,7 @@ export default function AboutAdminSection() {
         <section className="relative w-full overflow-hidden py-10 sm:py-12 md:py-14 lg:py-16">
             {/* Background library image */}
             <div
-                className="
-                    absolute inset-0
-                    bg-no-repeat
-                    bg-top
-                    bg-cover
-                    sm:bg-top
-                    md:bg-center
-                "
+                className="absolute inset-0 bg-no-repeat bg-top bg-cover sm:bg-top md:bg-center"
                 style={{
                     backgroundImage: `url(${lib})`,
                 }}
@@ -31,8 +24,7 @@ export default function AboutAdminSection() {
                     style={{
                         backgroundImage: `
                             linear-gradient(180deg, rgba(6,8,18,0.62) 0%, rgba(6,8,18,0.76) 36%, rgba(6,8,18,0.89) 72%, rgba(6,8,18,0.96) 100%),
-                            linear-gradient(90deg, rgba(6,8,18,0.82) 0%, rgba(6,8,18,0.34) 48%, rgba(6,8,18,0.72) 100%)
-                        `,
+                            linear-gradient(90deg, rgba(6,8,18,0.82) 0%, rgba(6,8,18,0.34) 48%, rgba(6,8,18,0.72) 100%)`,
                     }}
                 />
             </div>
@@ -44,8 +36,7 @@ export default function AboutAdminSection() {
                     style={{
                         backgroundImage: `
                             linear-gradient(180deg, rgba(6,8,18,0.42) 0%, rgba(6,8,18,0.58) 28%, rgba(6,8,18,0.76) 60%, rgba(6,8,18,0.90) 100%),
-                            linear-gradient(90deg, rgba(6,8,18,0.74) 0%, rgba(6,8,18,0.42) 42%, rgba(6,8,18,0.68) 100%)
-                        `,
+                            linear-gradient(90deg, rgba(6,8,18,0.74) 0%, rgba(6,8,18,0.42) 42%, rgba(6,8,18,0.68) 100%)`,
                     }}
                 />
             </div>
@@ -57,7 +48,7 @@ export default function AboutAdminSection() {
             </div>
 
             <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 xl:px-10">
-                {/* ── TOP LABEL ── */}
+                {/* TOP LABEL */}
                 <div className="flex justify-center">
                     <div className="mb-4 flex items-center justify-center gap-3 sm:mb-5 sm:gap-4 md:mb-6">
                         <span className="h-px w-10 bg-gradient-to-r from-transparent to-white/25 sm:w-14 md:w-16" />
@@ -68,7 +59,7 @@ export default function AboutAdminSection() {
                     </div>
                 </div>
 
-                {/* ── TITLE / SUBTITLE ── */}
+                {/* TITLE / SUBTITLE */}
                 <div className="mb-10 text-center sm:mb-12 md:mb-14 lg:mb-16">
                     <SectionTitle
                         title1="Leadership Behind"
@@ -78,10 +69,10 @@ export default function AboutAdminSection() {
                     />
                 </div>
 
-                {/* ── ADMINS SHOWCASE ── */}
+                {/* ADMINS SHOWCASE */}
                 <AdminCardsSection />
 
-                {/* ── PRESENCE & CONTACT ── */}
+                {/* PRESENCE & CONTACT */}
                 <AdminContactSection />
             </div>
         </section>

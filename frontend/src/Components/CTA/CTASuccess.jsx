@@ -4,7 +4,6 @@ import "../../Animations/ctaSuccess.css"
 export default function CTASuccess() {
   return (
     <div className="flex flex-col items-center gap-6 py-8 text-center">
-      {/* Circles with bigger tick */}
       <div style={{ position: "relative", width: "100px", height: "100px" }}>
         {/* Outer ring */}
         <div style={{

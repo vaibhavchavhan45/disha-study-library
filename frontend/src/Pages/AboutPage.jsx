@@ -13,12 +13,12 @@ export default function AboutPage() {
            <AboutAdminSection />
            <VisionMissionSection />
            <Footer
-                   quickLinks={[
-                     { label: "Home",       onClick: () => navigate("/") },
-                     { label: "Facilities", onClick: () => navigate("/facilities") },
-                     { label: "Gallery",    onClick: () => navigate("/gallery") },
-                     { label: "Testimonials", onClick: () => navigate("/testimonial") },
-                   ]} 
+                quickLinks={[
+                    { label: "Home", onClick: () => navigate("/") },
+                    { label: "Facilities", onClick: () => navigate("/facilities") },
+                    { label: "Gallery", onClick: () => navigate("/gallery") },
+                    { label: "Testimonials", onClick: () => navigate("/testimonial") },
+                ]} 
             />
         </div>
     )

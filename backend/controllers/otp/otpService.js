@@ -1,7 +1,6 @@
 import { sendMail } from "../../services/mailer.js";
 import { DEV_EMAILS } from "../../config/devConfig.js";
 import { MAX_ATTEMPTS } from "../../Data/maxAttempts.js";
-
 import {
   getBlockByIP,
   insertBlock,
@@ -11,14 +10,12 @@ import {
   updateOTPAttempts,
   deleteOTP,
 } from "./otpRepository.js";
-
 import { validateSendOTP, validateVerifyOTP } from "./otpValidation.js";
 import { getOTPTemplate } from "./otpTemplate.js";
 import { generateOTP } from "../otp/otpHelper.js";
 
-// Main logic for sending OTP
+// send OTP logic
 export const sendOTPService = async (email, ip) => {
-  // Validate email input
   validateSendOTP(email);
 
   const normalizedEmail = email?.trim().toLowerCase();
@@ -26,7 +23,7 @@ export const sendOTPService = async (email, ip) => {
   // Check if this IP already has a block record
   const block = await getBlockByIP(ip);
 
-  // If not a dev email, apply block logic
+  // apply block logic
   if (!DEV_EMAILS.includes(normalizedEmail)) {
     if (block && block.blocked_until && new Date() < block.blocked_until) {
       throw {
@@ -69,7 +66,7 @@ export const sendOTPService = async (email, ip) => {
   return { message: "OTP sent successfully." };
 };
 
-// Main logic for verifying OTP
+// verify OTP logic
 export const verifyOTPService = async ({ email, otp }) => {
   validateVerifyOTP(email, otp);
 

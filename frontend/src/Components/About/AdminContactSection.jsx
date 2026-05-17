@@ -21,7 +21,7 @@ export default function AdminContactSection() {
                 </div>
             </div>
 
-            {/* ── PREMIUM GLASS CARD ── */}
+            {/* GLASS CARD */}
             <div
                 className="relative mt-5 sm:mt-7 overflow-hidden rounded-[24px] sm:rounded-[32px]"
                 style={{
@@ -59,14 +59,13 @@ export default function AdminContactSection() {
                 <div
                     className="pointer-events-none absolute -bottom-24 -right-24 h-56 w-56 rounded-full"
                     style={{
-                        background:
-                            "radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 65%)",
+                        background: "radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 65%)",
                     }}
                 />
 
                 {/* 3-col grid */}
                 <div className="grid grid-cols-1 md:grid-cols-3">
-                    {/* ── Address ── */}
+                    {/* Address */}
                     <ContactInfoCard
                         label="Address"
                         title="Disha Study Center"
@@ -147,12 +146,10 @@ export default function AdminContactSection() {
                             <span
                                 className="text-[14px] sm:text-[15px] font-semibold tracking-[-0.012em] leading-none transition-all duration-300 group-hover:translate-x-[1px]"
                                 style={{
-                                    background:
-                                        "linear-gradient(90deg, #4285F4 0%, #34A853 38%, #EA4335 72%)",
+                                    background: "linear-gradient(90deg, #4285F4 0%, #34A853 38%, #EA4335 72%)",
                                     WebkitBackgroundClip: "text",
                                     WebkitTextFillColor: "transparent",
-                                    textShadow:
-                                        "0 1px 10px rgba(66,133,244,0.08)",
+                                    textShadow: "0 1px 10px rgba(66,133,244,0.08)",
                                 }}
                             >
                                 Get Directions
@@ -164,12 +161,11 @@ export default function AdminContactSection() {
                     <div
                         className="md:hidden h-px mx-8 sm:mx-10"
                         style={{
-                            background:
-                                "linear-gradient(90deg, transparent, rgba(255,255,255,0.07) 20%, rgba(255,255,255,0.07) 80%, transparent)",
+                            background: "linear-gradient(90deg, transparent, rgba(255,255,255,0.07) 20%, rgba(255,255,255,0.07) 80%, transparent)",
                         }}
                     />
 
-                    {/* ── Contact ── */}
+                    {/* Contact */}
                     <ContactInfoCard
                         label="Contact"
                         title="Admin Contacts"
@@ -222,7 +218,7 @@ export default function AdminContactSection() {
                         }}
                     />
 
-                    {/* ── Social ── */}
+                    {/* Social */}
                     <ContactInfoCard
                         label="Connect"
                         title="Stay in Touch"
@@ -242,25 +238,23 @@ export default function AdminContactSection() {
                     </ContactInfoCard>
                 </div>
 
-                {/* vertical divider — col 1 | 2 */}
+                {/* vertical divider: col 1 or 2*/}
                 <div
                     className="pointer-events-none absolute inset-y-0 hidden md:block"
                     style={{
                         left: "33.333%",
                         width: "1px",
-                        background:
-                            "linear-gradient(180deg, transparent 0%, rgba(255,255,255,0.07) 8%, rgba(255,255,255,0.07) 92%, transparent 100%)",
+                        background: "linear-gradient(180deg, transparent 0%, rgba(255,255,255,0.07) 8%, rgba(255,255,255,0.07) 92%, transparent 100%)",
                     }}
                 />
 
-                {/* vertical divider — col 2 | 3 */}
+                {/* vertical divider: col 2 or 3 */}
                 <div
                     className="pointer-events-none absolute inset-y-0 hidden md:block"
                     style={{
                         left: "66.666%",
                         width: "1px",
-                        background:
-                            "linear-gradient(180deg, transparent 0%, rgba(255,255,255,0.07) 8%, rgba(255,255,255,0.07) 92%, transparent 100%)",
+                        background: "linear-gradient(180deg, transparent 0%, rgba(255,255,255,0.07) 8%, rgba(255,255,255,0.07) 92%, transparent 100%)",
                     }}
                 />
             </div>

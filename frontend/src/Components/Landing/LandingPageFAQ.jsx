@@ -39,32 +39,29 @@ export default function LandingPageFAQ() {
                     className="w-full flex items-center justify-between gap-4 text-left py-5 sm:py-5 md:py-6"
                   >
                     <h3
-                      className={`text-[15px] sm:text-base md:text-lg font-medium leading-relaxed transition-all duration-300 cursor-pointer ${
-                        isOpen
+                      className={`text-[15px] sm:text-base md:text-lg font-medium leading-relaxed transition-all duration-300 cursor-pointer ${isOpen
                           ? "text-white drop-shadow-[0_0_8px_rgba(103,232,249,0.12)]"
                           : "text-white/90"
-                      }`}
+                        }`}
                     >
                       {faq.question}
                     </h3>
 
                     <div
-                      className={`shrink-0 w-8 h-8 sm:w-9 sm:h-9 rounded-full flex items-center justify-center text-lg sm:text-xl font-light transition-all duration-300 cursor-pointer ${
-                        isOpen
+                      className={`shrink-0 w-8 h-8 sm:w-9 sm:h-9 rounded-full flex items-center justify-center text-lg sm:text-xl font-light transition-all duration-300 cursor-pointer ${isOpen
                           ? "rotate-45 text-cyan-300 bg-cyan-400/5"
                           : "rotate-0 text-white/60 bg-transparent"
-                      }`}
+                        }`}
                     >
                       +
                     </div>
                   </button>
 
                   <div
-                    className={`grid transition-all duration-500 ease-in-out ${
-                      isOpen
+                    className={`grid transition-all duration-500 ease-in-out ${isOpen
                         ? "grid-rows-[1fr] opacity-100"
                         : "grid-rows-[0fr] opacity-0"
-                    }`}
+                      }`}
                   >
                     <div className="overflow-hidden">
                       <div className="pb-5 sm:pb-5 md:pb-6">
@@ -77,11 +74,10 @@ export default function LandingPageFAQ() {
 
                   {/* subtle underline */}
                   <div
-                    className={`h-px w-full transition-all duration-300 ${
-                      isOpen
+                    className={`h-px w-full transition-all duration-300 ${isOpen
                         ? "bg-gradient-to-r from-transparent via-cyan-300/20 to-transparent"
                         : "bg-white/6"
-                    }`}
+                      }`}
                   />
                 </div>
               );

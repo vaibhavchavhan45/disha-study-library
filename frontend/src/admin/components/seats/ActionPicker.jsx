@@ -68,7 +68,6 @@ const ActionPicker = ({ seat, onClose, onSelect }) => (
           </button>
         </>
       )}
-
     </div>
   </SeatModal>
 );

@@ -11,8 +11,8 @@ import LoginForm from "../components/loginUI/LoginForm";
 import OTPStep from "../components/loginUI/OTPStep";
 
 const TIMER_SECONDS = 60;
-const MAX_RESEND    = 3;
-const OTP_LENGTH    = 6;
+const MAX_RESEND = 3;
+const OTP_LENGTH = 6;
 
 function AdminLogin() {
   const navigate = useNavigate();
@@ -28,7 +28,6 @@ function AdminLogin() {
   const [otpInvalid, setOtpInvalid] = useState(false);
   const [otpBusy, setOtpBusy] = useState(false);
   const [otpVerified, setOtpVerified] = useState(false);
-
   const [timer, setTimer] = useState(TIMER_SECONDS);
   const [resendCount, setResendCount] = useState(0);
   const [resendBusy, setResendBusy] = useState(false);

@@ -20,7 +20,6 @@ export default function LandingPageFacilities() {
 
         <FacilitiesGrid />
 
-        {/* See More Button */}
         <div className="flex justify-center mt-4">
           <SeeMore onClick={() => navigate("/facilities")} label="See More" />
         </div>

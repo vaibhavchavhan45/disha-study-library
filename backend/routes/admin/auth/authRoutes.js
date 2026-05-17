@@ -22,7 +22,7 @@ authRoutes.post("/report-suspicious", reportSuspicious);
 
 // Protected Routes (jwt)
 authRoutes.post("/change-password", authMiddleware, changePassword);
-authRoutes.get( "/profile", authMiddleware, getProfile);
-authRoutes.put( "/profile", authMiddleware, updateProfile);
+authRoutes.get("/profile", authMiddleware, getProfile);
+authRoutes.put("/profile", authMiddleware, updateProfile);
 
 export default authRoutes;

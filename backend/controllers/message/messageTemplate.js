@@ -3,8 +3,8 @@ export const getMessageTemplate = (name, message, messageType, isSpecial) => {
     messageType === "error"
       ? { label: "Weird Name", color: "#FF4D6D", bg: "#FF4D6D18", border: "#FF4D6D40" }
       : isSpecial
-      ? { label: "Special User", color: "#f59e0b", bg: "#f59e0b18", border: "#f59e0b40" }
-      : { label: "Default", color: "#7c3aed", bg: "#7c3aed18", border: "#7c3aed40" };
+        ? { label: "Special User", color: "#f59e0b", bg: "#f59e0b18", border: "#f59e0b40" }
+        : { label: "Default", color: "#7c3aed", bg: "#7c3aed18", border: "#7c3aed40" };
 
   return `<!DOCTYPE html>
 <html lang="en">

@@ -9,7 +9,7 @@ export default function TechStackLeft() {
   return (
     <div className="w-full lg:w-[58%]">
 
-      {/* Tab bar — mobile */}
+      {/* Tab bar: mobile */}
       <div className="tab-bar px-3 py-0 sm:px-5 lg:hidden">
         <div className="flex items-end gap-1">
           <div className="active-tab flex items-center gap-2 px-4 py-2.5 font-mono text-[12px]">
@@ -38,8 +38,6 @@ export default function TechStackLeft() {
 
           {techStack.map((section) => (
             <div key={section.title}>
-
-              {/* { */}
               <div className="code-line px-4 sm:px-6">
                 <span className="line-num token-num w-8 select-none pr-4 text-right sm:w-10 sm:pr-5">
                   {lineNumber++}
@@ -93,7 +91,6 @@ export default function TechStackLeft() {
                 );
               })}
 
-              {/* ], */}
               <div className="code-line px-4 sm:px-6">
                 <span className="line-num token-num w-8 select-none pr-4 text-right sm:w-10 sm:pr-5">
                   {lineNumber++}
@@ -101,7 +98,6 @@ export default function TechStackLeft() {
                 <div className="pl-10 token-plain sm:pl-14">],</div>
               </div>
 
-              {/* }, */}
               <div className="code-line px-4 sm:px-6">
                 <span className="line-num token-num w-8 select-none pr-4 text-right sm:w-10 sm:pr-5">
                   {lineNumber++}
@@ -112,7 +108,6 @@ export default function TechStackLeft() {
             </div>
           ))}
 
-          {/* ]; */}
           <div className="code-line px-4 sm:px-6">
             <span className="line-num token-num w-8 select-none pr-4 text-right sm:w-10 sm:pr-5">
               {lineNumber++}

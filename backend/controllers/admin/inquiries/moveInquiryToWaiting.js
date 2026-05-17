@@ -20,7 +20,7 @@ const moveInquiryToWaiting = async (req, res, next) => {
 
     await pool.query(
       `INSERT INTO waiting_students (name, phone, email, gender, photo_url, fee_status)
-       VALUES ($1, $2, $3, $4, NULL, 'UNPAID')`,   // ← added photo_url + fee_status
+       VALUES ($1, $2, $3, $4, NULL, 'UNPAID')`,
       [inquiry.name, inquiry.phone, inquiry.email, inquiry.gender]
     );
 

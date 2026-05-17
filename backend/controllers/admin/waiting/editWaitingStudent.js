@@ -26,13 +26,13 @@ const editWaitingStudent = async (req, res, next) => {
 
     await pool.query(
       `UPDATE waiting_students
-       SET name        = $1,
-           phone       = $2,
-           email       = $3,
-           gender      = $4,
-           fee_status  = $5,
-           photo_url   = $6,
-           start_date  = $7,
+       SET name = $1,
+           phone = $2,
+           email = $3,
+           gender = $4,
+           fee_status = $5,
+           photo_url = $6,
+           start_date = $7,
            expiry_date = $8,
            pending_amount = $9
        WHERE id = $10`,

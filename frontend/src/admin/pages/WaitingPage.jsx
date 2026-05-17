@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
 import { Plus } from "lucide-react";
 import { getWaitingListApi, deleteWaitingStudentApi } from "../services/waitingApi";
-import AddWaitingStudentModal  from "../components/waiting/AddWaitingStudentModal";
-import AssignWaitingSeatModal  from "../components/waiting/AssignWaitingSeatModal";
+import AddWaitingStudentModal from "../components/waiting/AddWaitingStudentModal";
+import AssignWaitingSeatModal from "../components/waiting/AssignWaitingSeatModal";
 import ViewWaitingStudentModal from "../components/waiting/ViewWaitingStudentModal";
 import EditWaitingStudentModal from "../components/waiting/EditWaitingStudentModal";
 import ConfirmDeleteModal from "../components/waiting/ConfirmDeleteModal";
@@ -13,7 +13,7 @@ import SearchSortToolbar from "../components/common/SearchSortToolbar";
 import { ITEMS_PER_PAGE } from "../data/items";
 
 
-function WaitingPage () {
+function WaitingPage() {
   const [list, setList] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -68,11 +68,11 @@ function WaitingPage () {
     const q = search.trim().toLowerCase();
     const searched = q
       ? list.filter((s) =>
-          s.name?.toLowerCase().includes(q) ||
-          s.phone?.toLowerCase().includes(q) ||
-          s.email?.toLowerCase().includes(q) ||
-          s.fee_status?.toLowerCase().includes(q)
-        )
+        s.name?.toLowerCase().includes(q) ||
+        s.phone?.toLowerCase().includes(q) ||
+        s.email?.toLowerCase().includes(q) ||
+        s.fee_status?.toLowerCase().includes(q)
+      )
       : list;
 
     return [...searched].sort((a, b) => {
@@ -191,10 +191,10 @@ function WaitingPage () {
       )}
 
       {/* Modals */}
-      {showAdd    && !anyModalOpen || showAdd    ? <AddWaitingStudentModal onClose={() => setShowAdd(false)}    onSuccess={handleSuccess} /> : null}
-      {viewing    && !showAdd                    ? <ViewWaitingStudentModal student={viewing}  onClose={() => setViewing(null)} /> : null}
-      {editing    && !showAdd && !viewing        ? <EditWaitingStudentModal student={editing}  onClose={() => setEditing(null)} onSuccess={handleSuccess} /> : null}
-      {assigning  && !showAdd && !viewing && !editing ? <AssignWaitingSeatModal student={assigning} onClose={() => setAssigning(null)} onSuccess={handleSuccess} /> : null}
+      {showAdd && !anyModalOpen || showAdd ? <AddWaitingStudentModal onClose={() => setShowAdd(false)} onSuccess={handleSuccess} /> : null}
+      {viewing && !showAdd ? <ViewWaitingStudentModal student={viewing} onClose={() => setViewing(null)} /> : null}
+      {editing && !showAdd && !viewing ? <EditWaitingStudentModal student={editing} onClose={() => setEditing(null)} onSuccess={handleSuccess} /> : null}
+      {assigning && !showAdd && !viewing && !editing ? <AssignWaitingSeatModal student={assigning} onClose={() => setAssigning(null)} onSuccess={handleSuccess} /> : null}
       {deletingStudent ? (
         <ConfirmDeleteModal
           onClose={() => setDeletingStudent(null)}

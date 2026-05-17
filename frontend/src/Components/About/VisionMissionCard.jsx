@@ -13,22 +13,19 @@ export default function VisionMissionCard({
     return (
         <div className="mx-auto max-w-5xl">
             <div
-                className={`grid grid-cols-1 ${
-                    reverse
+                className={`grid grid-cols-1 ${reverse
                         ? "lg:grid-cols-[1.1fr_0.9fr]"
                         : "lg:grid-cols-[0.9fr_1.1fr]"
-                } gap-10 md:gap-12 lg:gap-16 items-start`}
+                    } gap-10 md:gap-12 lg:gap-16 items-start`}
             >
                 {/* Title Side */}
                 <div
-                    className={`${
-                        reverse ? "order-1 lg:order-2 text-right" : ""
-                    }`}
+                    className={`${reverse ? "order-1 lg:order-2 text-right" : ""
+                        }`}
                 >
                     <div
-                        className={`mb-5 flex items-center gap-3 ${
-                            align === "right" ? "justify-end" : ""
-                        }`}
+                        className={`mb-5 flex items-center gap-3 ${align === "right" ? "justify-end" : ""
+                            }`}
                     >
                         <span
                             className={`h-px w-10 bg-gradient-to-r ${gradientLine}`}
@@ -53,14 +50,12 @@ export default function VisionMissionCard({
 
                 {/* Content Side */}
                 <div
-                    className={`relative ${
-                        reverse ? "order-2 lg:order-1" : ""
-                    }`}
+                    className={`relative ${reverse ? "order-2 lg:order-1" : ""
+                        }`}
                 >
                     <div
-                        className={`pointer-events-none absolute -top-8 ${
-                            align === "right" ? "right-0" : "left-0"
-                        } h-32 w-32 rounded-full ${glowColor} blur-[90px]`}
+                        className={`pointer-events-none absolute -top-8 ${align === "right" ? "right-0" : "left-0"
+                            } h-32 w-32 rounded-full ${glowColor} blur-[90px]`}
                     />
 
                     <div className="relative">

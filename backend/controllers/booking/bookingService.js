@@ -3,11 +3,7 @@ import config from "../../config/config.js";
 import { DEV_EMAILS } from "../../config/devConfig.js";
 import { validateBooking } from "./bookingValidation.js";
 import { getBookingTemplate } from "./bookingTemplate.js";
-import {
-  checkTodayBooking,
-  insertBooking,
-  getAllBookings,
-} from "./bookingRepository.js";
+import { checkTodayBooking, insertBooking, getAllBookings } from "./bookingRepository.js";
 
 
 const { emailAdmin1, emailAdmin2 } = config;
@@ -19,11 +15,11 @@ export const submitBookingService = async (data) => {
 
   //Change Name to Proper case e.g. vaibhav -> Vaibhav
   const formattedFullNameOfUser = fullName
-  ?.trim()
-  .toLowerCase()
-  .split(" ")
-  .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-  .join(" ");
+    ?.trim()
+    .toLowerCase()
+    .split(" ")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
 
   // validation
   validateBooking({
@@ -66,7 +62,7 @@ export const submitBookingService = async (data) => {
     }),
     replyTo: `${formattedFullNameOfUser} <${normalizedEmail}>`,
     isAdmin: true,
-});
+  });
 
   return { message: "Booking submitted successfully." };
 };

@@ -13,6 +13,8 @@ import exStudentRoutes from "./routes/admin/exStudents/exStudentRoutes.js";
 import inquiryRoutes from "./routes/admin/inquiries/inquiryRoutes.js";
 import dashboardRoutes from "./routes/admin/dashboard/dashboardRoutes.js";
 
+import verdictRoutes from "./routes/verdictRoutes.js";
+
 const app = express();
 const { port } = config;
 
@@ -31,6 +33,8 @@ app.use("/api/waiting", waitingRoutes);
 app.use("/api/ex-students", exStudentRoutes);
 app.use("/api/inquiries", inquiryRoutes);
 app.use("/api/dashboard", dashboardRoutes);
+
+app.use("/api/verdict", verdictRoutes);
 
 app.get("/health", (req, res) => res.send("OK"));
 

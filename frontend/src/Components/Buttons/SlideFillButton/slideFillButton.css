@@ -11,12 +11,10 @@
   justify-content: center;
 
   /* White liquid glass initial state */
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.18) 0%,
-    rgba(255, 255, 255, 0.07) 50%,
-    rgba(255, 255, 255, 0.12) 100%
-  );
+  background: linear-gradient(135deg,
+      rgba(255, 255, 255, 0.18) 0%,
+      rgba(255, 255, 255, 0.07) 50%,
+      rgba(255, 255, 255, 0.12) 100%);
 
   border: 1px solid rgba(255, 255, 255, 0.28);
 
@@ -39,11 +37,9 @@
   width: 84%;
   height: 40%;
   border-radius: 999px;
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.18) 0%,
-    rgba(255, 255, 255, 0.04) 100%
-  );
+  background: linear-gradient(180deg,
+      rgba(255, 255, 255, 0.18) 0%,
+      rgba(255, 255, 255, 0.04) 100%);
   z-index: 1;
 }
 
@@ -53,13 +49,11 @@
   inset: 0;
   width: 0%;
   border-radius: inherit;
-  background: linear-gradient(
-    90deg,
-    rgba(251, 113, 133, 1) 0%,
-    rgba(129, 140, 248, 1) 33%,
-    rgba(34, 211, 238, 1) 66%,
-    rgba(196, 181, 253, 1) 100%
-  );
+  background: linear-gradient(90deg,
+      rgba(251, 113, 133, 1) 0%,
+      rgba(129, 140, 248, 1) 33%,
+      rgba(34, 211, 238, 1) 66%,
+      rgba(196, 181, 253, 1) 100%);
   z-index: 0;
 }
 
@@ -95,6 +89,7 @@
   from {
     width: 0%;
   }
+
   to {
     width: 100%;
   }

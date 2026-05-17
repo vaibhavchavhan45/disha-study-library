@@ -4,16 +4,7 @@ import { getGenderForSeat } from "../../../Data/seatGender.js";
 const assignSeat = async (req, res, next) => {
   try {
     const { id } = req.params;
-    const {
-      name,
-      phone,
-      email,
-      photo_url,
-      fee_status,
-      start_date,
-      expiry_date,
-      pending_amount
-    } = req.body;
+    const { name, phone, email, photo_url, fee_status, start_date, expiry_date, pending_amount } = req.body;
 
     const seatResult = await pool.query(
       "SELECT * FROM seats WHERE id = $1",
@@ -30,7 +21,7 @@ const assignSeat = async (req, res, next) => {
       return res.status(400).json({ success: false, message: "Only empty seats can be assigned" });
     }
 
-    // Gender is strictly derived from seat_number
+    // Gender is derived acc to seat_number
     const gender = getGenderForSeat(seat.seat_number);
     if (!gender) {
       return res.status(400).json({ success: false, message: "Invalid seat number." });

@@ -11,12 +11,12 @@ import ViewStudentModal from "./ViewStudentModal";
 import EditStudentModal from "./EditStudentModal";
 
 const SeatsSection = () => {
-  const [gender, setGender]             = useState("GIRLS");
-  const [girlsSeats, setGirlsSeats]     = useState([]);
-  const [boysSeats, setBoysSeats]       = useState([]);
-  const [loading, setLoading]           = useState(true);
+  const [gender, setGender] = useState("GIRLS");
+  const [girlsSeats, setGirlsSeats] = useState([]);
+  const [boysSeats, setBoysSeats] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [selectedSeat, setSelectedSeat] = useState(null);
-  const [activeModal, setActiveModal]   = useState(null);
+  const [activeModal, setActiveModal] = useState(null);
 
   const fetchBoth = async () => {
     try {
@@ -36,16 +36,15 @@ const SeatsSection = () => {
 
   useEffect(() => { fetchBoth(); }, []);
 
-  const handleSeatClick    = (seat)   => { setSelectedSeat(seat); setActiveModal("picker"); };
+  const handleSeatClick = (seat) => { setSelectedSeat(seat); setActiveModal("picker"); };
   const handleActionSelect = (action) => setActiveModal(action);
-  const handleClose        = ()       => { setSelectedSeat(null); setActiveModal(null); };
-  const handleSuccess      = ()       => { handleClose(); fetchBoth(); };
+  const handleClose = () => { setSelectedSeat(null); setActiveModal(null); };
+  const handleSuccess = () => { handleClose(); fetchBoth(); };
 
   const activeSeats = gender === "GIRLS" ? girlsSeats : boysSeats;
 
   return (
     <div>
-
       {/* Toggle */}
       <div className="flex bg-gray-100 rounded-xl p-1 gap-1 w-36 mb-3">
         {["GIRLS", "BOYS"].map((g) => (
@@ -87,13 +86,12 @@ const SeatsSection = () => {
       </div>
 
       {/* Modals */}
-      {selectedSeat && activeModal === "picker"  && <ActionPicker     seat={selectedSeat} onClose={handleClose} onSelect={handleActionSelect} />}
-      {selectedSeat && activeModal === "assign"  && <AssignModal      seat={selectedSeat} onClose={handleClose} onSuccess={handleSuccess} />}
-      {selectedSeat && activeModal === "remove"  && <RemoveModal      seat={selectedSeat} onClose={handleClose} onSuccess={handleSuccess} />}
-      {selectedSeat && activeModal === "replace" && <ReplaceModal     seat={selectedSeat} onClose={handleClose} onSuccess={handleSuccess} />}
+      {selectedSeat && activeModal === "picker"  && <ActionPicker seat={selectedSeat} onClose={handleClose} onSelect={handleActionSelect} />}
+      {selectedSeat && activeModal === "assign"  && <AssignModal seat={selectedSeat} onClose={handleClose} onSuccess={handleSuccess} />}
+      {selectedSeat && activeModal === "remove"  && <RemoveModal seat={selectedSeat} onClose={handleClose} onSuccess={handleSuccess} />}
+      {selectedSeat && activeModal === "replace" && <ReplaceModal seat={selectedSeat} onClose={handleClose} onSuccess={handleSuccess} />}
       {selectedSeat && activeModal === "view"    && <ViewStudentModal seat={selectedSeat} onClose={handleClose} />}
       {selectedSeat && activeModal === "edit"    && <EditStudentModal seat={selectedSeat} onClose={handleClose} onSuccess={handleSuccess} />}
-
     </div>
   );
 };

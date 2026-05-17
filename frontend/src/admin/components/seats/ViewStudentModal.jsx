@@ -30,13 +30,16 @@ const ExpiryChip = ({ expiry_date }) => {
   if (daysLeft <= 0) {
     style = "bg-red-100 text-red-600";
     label = "Expired";
-  } else if (daysLeft <= 7) {
+  }
+  else if (daysLeft <= 7) {
     style = "bg-red-100 text-red-600";
     label = `Expires in ${daysLeft} day${daysLeft === 1 ? "" : "s"}`;
-  } else if (daysLeft <= 30) {
+  }
+  else if (daysLeft <= 30) {
     style = "bg-yellow-100 text-yellow-700";
     label = `Expires in ${daysLeft} days`;
-  } else {
+  }
+  else {
     style = "bg-green-100 text-green-700";
     label = `Expires in ${daysLeft} days`;
   }
@@ -113,7 +116,6 @@ const ViewStudentModal = ({ seat, onClose }) => {
               <ExpiryChip expiry_date={expiry_date} />
             </InfoTile>
           </div>
-
         </div>
       </div>
     </div>

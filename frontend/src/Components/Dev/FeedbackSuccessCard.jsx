@@ -81,7 +81,7 @@ export default function FeedbackSuccessCard({ thankYouRef, onReset }) {
 
       {/* Reset button */}
       <PremiumButton onClick={onReset} minWidth="230px">
-          Submit another response
+        Submit another response
       </PremiumButton>
     </div>
   );

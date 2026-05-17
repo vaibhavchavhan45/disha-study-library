@@ -10,7 +10,6 @@ const Modal = ({ title, subtitle, onClose, children }) => {
         className="relative w-full max-w-xl bg-white rounded-3xl shadow-2xl px-4 sm:px-5 pt-3 pb-5"
         onClick={(e) => e.stopPropagation()}
       >
-
         {/* X button — mobile only */}
         <button
           onClick={onClose}
@@ -34,7 +33,6 @@ const Modal = ({ title, subtitle, onClose, children }) => {
             <X size={26} />
           </button>
         </div>
-
         {children}
       </div>
     </div>

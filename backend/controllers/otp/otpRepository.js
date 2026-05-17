@@ -37,8 +37,7 @@ export const saveOTPRecord = async (email, otp) => {
 // Get latest OTP record for an email
 export const getLatestOTP = async (email) => {
   const res = await pool.query(
-    `SELECT * 
-     FROM otp_store 
+    `SELECT * FROM otp_store 
      WHERE email = $1 
      ORDER BY created_at DESC 
      LIMIT 1`,

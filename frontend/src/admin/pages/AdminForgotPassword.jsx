@@ -8,9 +8,9 @@ import EmailStep from "../components/forgotUI/EmailStep";
 import OTPStep from "../components/forgotUI/OTPStep";
 import NewPasswordStep from "../components/forgotUI/NewPasswordStep";
 
-const OTP_LENGTH    = 6;
+const OTP_LENGTH = 6;
 const TIMER_SECONDS = 60;
-const MAX_RESEND    = 3;
+const MAX_RESEND = 3;
 
 const AdminForgotPassword = () => {
   const navigate = useNavigate();

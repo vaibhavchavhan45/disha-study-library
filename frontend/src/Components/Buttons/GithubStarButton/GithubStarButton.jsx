@@ -1,4 +1,4 @@
-function GithubStarButton({ href="#" }) {
+function GithubStarButton({ href = "#" }) {
   return (
     <a
       href={href}

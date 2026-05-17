@@ -82,9 +82,8 @@ export default function FeedbackFormFields({
               value={form.category}
               onChange={onFormChange}
               required
-              className={`w-full px-4 py-3 text-sm bg-transparent outline-none transition-all duration-200 ${
-                form.category ? "text-white" : "text-white/40 focus:text-white/85"
-              }`}
+              className={`w-full px-4 py-3 text-sm bg-transparent outline-none transition-all duration-200 ${form.category ? "text-white" : "text-white/40 focus:text-white/85"
+                }`}
             >
               {categories.map((c) => (
                 <option
@@ -179,15 +178,15 @@ export default function FeedbackFormFields({
 
         {/* Submit */}
         <div className="flex justify-center mt-3">
-  <PremiumButton
-  type="submit"
-  disabled={submitting}
-  submitting={submitting}
-  minWidth="220px"
->
-  {submitting ? "Submitting..." : "Submit Feedback"}
-</PremiumButton>
-</div>
+          <PremiumButton
+            type="submit"
+            disabled={submitting}
+            submitting={submitting}
+            minWidth="220px"
+          >
+            {submitting ? "Submitting..." : "Submit Feedback"}
+          </PremiumButton>
+        </div>
       </form>
     </>
   );

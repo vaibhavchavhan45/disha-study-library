@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route, Navigate, useNavigate, useLocation } from "react-router-dom";
+import useDraggable from "./Hooks/useDraggable";
 
 // Public Pages
 import LandingPage from "./Pages/LandingPage";
@@ -28,14 +29,32 @@ import AdminLayout from "./admin/layouts/AdminLayout";
 const FloatingPhotoBtn = () => {
   const navigate = useNavigate();
   const location = useLocation();
+  const { pos, hasMoved, onMouseDown, onTouchStart, onTouchMove, onTouchEnd } = useDraggable(
+    window.innerWidth - 180,
+    window.innerHeight - 70
+  );
 
   const isAdminRoute = location.pathname.startsWith("/admin");
   if (isAdminRoute) return null;
 
+  const handleMouseUp = () => {
+    if (!hasMoved.current) navigate("/photo-request");
+  };
+
+  const handleTouchEnd = () => {
+    onTouchEnd();
+    if (!hasMoved.current) navigate("/photo-request");
+  };
+
   return (
     <button
-      onClick={() => navigate("/photo-request")}
-      className="fixed bottom-6 right-6 z-50 flex items-center gap-2 bg-white/10 hover:bg-white/15 backdrop-blur-md border border-white/15 text-white/70 hover:text-white text-xs font-medium px-4 py-2.5 rounded-full shadow-lg transition-all duration-200"
+      onMouseDown={onMouseDown}
+      onMouseUp={handleMouseUp}
+      onTouchStart={onTouchStart}
+      onTouchMove={onTouchMove}
+      onTouchEnd={handleTouchEnd}
+      style={{ left: pos.x, top: pos.y, position: "fixed", zIndex: 50, cursor: "grab", userSelect: "none", touchAction: "none" }}
+      className="flex items-center gap-2 bg-white/10 hover:bg-white/15 backdrop-blur-md border border-white/15 text-white/70 hover:text-white text-xs font-medium px-4 py-2.5 rounded-full shadow-lg transition-colors duration-200"
     >
       📸 Feature Your Photo
     </button>

@@ -19,11 +19,10 @@ export default function MobileDrawer({
       )}
 
       <div
-        className={`fixed top-0 left-0 h-full w-60 bg-white z-50 shadow-xl flex flex-col transition-transform duration-300 md:hidden ${
-          drawerOpen ? "translate-x-0" : "-translate-x-full"
-        }`}
+        className={`fixed top-0 left-0 h-full w-60 bg-white z-50 shadow-xl flex flex-col transition-transform duration-300 md:hidden ${drawerOpen ? "translate-x-0" : "-translate-x-full"
+          }`}
       >
-        {/* Header — matches sidebar */}
+        {/* Header (like sidebar) */}
         <div className="flex flex-col items-center justify-center px-3 py-4 border-b border-gray-100 shrink-0 relative">
           <button
             onClick={() => setDrawerOpen(false)}

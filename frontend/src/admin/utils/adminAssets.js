@@ -8,5 +8,5 @@ const photoMap = {
   3: admin2Photo,
 };
 
-// Passing admin.id, it returns the hardcoded imported photo
+// Passing admin.id, returns the hardcoded imported photo
 export const getAdminPhoto = (adminId) => photoMap[adminId] ?? null;

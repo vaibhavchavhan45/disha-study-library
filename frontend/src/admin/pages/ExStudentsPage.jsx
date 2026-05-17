@@ -1,17 +1,17 @@
 import { useEffect, useMemo, useState } from "react";
 import { getExStudentsApi } from "../services/exStudentApi";
-import ExStudentTable   from "../components/exStudents/ExStudentTable";
-import ExStudentCards   from "../components/exStudents/ExStudentCards";
-import Pagination       from "../components/waiting/Pagination";
+import ExStudentTable from "../components/exStudents/ExStudentTable";
+import ExStudentCards from "../components/exStudents/ExStudentCards";
+import Pagination from "../components/waiting/Pagination";
 import SearchSortToolbar from "../components/common/SearchSortToolbar";
 import { ITEMS_PER_PAGE } from "../data/items";
 
 
-function ExStudentsPage () {
-  const [list, setList]               = useState([]);
-  const [loading, setLoading]         = useState(true);
-  const [error, setError]             = useState("");
-  const [search, setSearch]           = useState("");
+function ExStudentsPage() {
+  const [list, setList] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+  const [search, setSearch] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {

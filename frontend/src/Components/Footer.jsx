@@ -12,7 +12,6 @@ export default function Footer({ quickLinks = [] }) {
   const navigate = useNavigate();
   const location = useLocation();
 
-  //route to Top
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -53,6 +52,7 @@ export default function Footer({ quickLinks = [] }) {
             </p>
           </div>
 
+          {/* Layout */}
           {/* Mobile: Grid (1, 2, 1, hr & license) */}
           {/* md/lg: Grid(1, 3, hr & license) */}
           {/* xl: Grid(4, hr & license) */}
@@ -174,7 +174,12 @@ export default function Footer({ quickLinks = [] }) {
             </div>
           </button>
 
-          <p className="text-white/30 text-xs">Made with ❤️</p>
+          <p className="text-white/30 text-xs">Made with <span style={{
+            background: "linear-gradient(135deg, #ff3040, #ff69b4)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            fontSize: "25px",
+          }}>♥</span></p>
         </div>
 
       </div>

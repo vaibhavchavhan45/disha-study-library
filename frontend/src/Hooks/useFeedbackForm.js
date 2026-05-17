@@ -39,8 +39,6 @@ export default function useFeedbackForm() {
     setSubmitting(false);
     return;
   }
-
-
     try {
       
       const response = await fetch(`${config.vite_api_url}/api/feedback`, {

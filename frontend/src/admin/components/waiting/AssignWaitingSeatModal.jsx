@@ -8,12 +8,12 @@ const fmt = (d) =>
   d ? new Date(d).toLocaleDateString("en-IN", { day: "2-digit", month: "short", year: "numeric" }) : "—";
 
 const AssignWaitingSeatModal = ({ student, onClose, onSuccess }) => {
-  const [seats, setSeats]       = useState([]);
-  const [seatId, setSeatId]     = useState("");
+  const [seats, setSeats] = useState([]);
+  const [seatId, setSeatId] = useState("");
   const [feeStatus, setFeeStatus] = useState(student.fee_status || "UNPAID");
-  const [loading, setLoading]   = useState(false);
+  const [loading, setLoading] = useState(false);
   const [fetching, setFetching] = useState(true);
-  const [error, setError]       = useState("");
+  const [error, setError] = useState("");
 
   useEffect(() => {
     const load = async () => {

@@ -5,9 +5,9 @@ const WaitingToolbar = ({ search, setSearch }) => {
     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
       <div>
         <h2 className="text-xl font-semibold text-gray-900">Waiting Students</h2>
-<p className="text-sm text-gray-500 mt-1">
-  Search and manage students by name, phone, email, or fee status.
-</p>
+        <p className="text-sm text-gray-500 mt-1">
+          Search and manage students by name, phone, email, or fee status.
+        </p>
       </div>
 
       <div className="relative w-full sm:max-w-sm">

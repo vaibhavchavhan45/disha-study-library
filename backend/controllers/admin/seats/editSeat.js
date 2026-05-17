@@ -35,7 +35,7 @@ const editSeat = async (req, res, next) => {
       });
     }
 
-    // Update student details — status stays unchanged
+    // Update student details
     await pool.query(
       `UPDATE seats
        SET name = $1, phone = $2, email = $3, fee_status = $4,

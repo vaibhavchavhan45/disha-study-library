@@ -17,7 +17,7 @@ const getSeats = async (req, res, next) => {
 
     const result = await pool.query(query, values);
 
-    // Auto-update PAID → UNPAID if expiry passed
+    // Auto-update PAID, UNPAID if expiry passed
     const now = new Date();
     const updatePromises = result.rows
       .filter(seat =>

@@ -8,7 +8,7 @@ import BlockedScreen from "./BlockedScreen";
 import ChangePasswordHeader from "../changeUI/ChangePasswordHeader";
 import ChangePasswordForm from "../changeUI/ChangePasswordForm";
 import ChangePasswordFooter from "../changeUI/ChangePasswordFooter";
-
+import { isLocked, isOnCooldown, validatePassword } from "../../utils/passwordUtils";
 import {
   getAttempts,
   setAttempts,
@@ -19,12 +19,6 @@ import {
   LOCKOUT_MS,
   COOLDOWN_MS
 } from "../../utils/storageUtils";
-
-import {
-  isLocked,
-  isOnCooldown,
-  validatePassword
-} from "../../utils/passwordUtils";
 
 import { ADMIN_DEV_EMAILS } from "../../../config/devConfig";
 

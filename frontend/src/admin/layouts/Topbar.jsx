@@ -13,7 +13,7 @@ export default function Topbar({
 }) {
   return (
     <>
-      {/* ── Desktop ── */}
+      {/* Desktop */}
       <div className="hidden md:block sticky top-0 z-30 px-4 pt-3 pb-1">
         <header
           className="
@@ -78,7 +78,7 @@ export default function Topbar({
         </header>
       </div>
 
-      {/* ── Mobile ── */}
+      {/* Mobile */}
       <div className="md:hidden sticky top-0 z-30 px-3 pt-2 pb-1">
         <header
           className="

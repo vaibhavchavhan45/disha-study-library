@@ -25,10 +25,10 @@ const getDashboardStats = async (req, res, next) => {
     return res.status(200).json({
       success: true,
       stats: {
-        totalSeats:     Number(totalSeats.rows[0].count),
-        occupiedSeats:  Number(occupiedSeats.rows[0].count),
-        emptySeats:     Number(emptySeats.rows[0].count),
-        waitingCount:   Number(waitingCount.rows[0].count),
+        totalSeats: Number(totalSeats.rows[0].count),
+        occupiedSeats: Number(occupiedSeats.rows[0].count),
+        emptySeats: Number(emptySeats.rows[0].count),
+        waitingCount: Number(waitingCount.rows[0].count),
         inquiriesCount: Number(inquiriesCount.rows[0].count),
       },
     });

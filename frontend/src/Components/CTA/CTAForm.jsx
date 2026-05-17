@@ -16,7 +16,7 @@ export default function CTAForm() {
   const formRef = useRef(null);
   const otpRef = useRef(null);
 
-  //bring successCard in the center
+  // successCard in the center of page
   useEffect(() => {
   if (submitted && formRef.current) {
     setTimeout(() => {

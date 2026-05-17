@@ -18,7 +18,7 @@ function TechStackTerminal() {
 
         <div className="space-y-10">
 
-          {/* CMD 1 — always visible */}
+          {/* CMD 1 */}
           <div>
             <p className="break-all">
               <span className="terminal-prompt-user">vaibhavchavhan45@dev</span>
@@ -56,12 +56,12 @@ function TechStackTerminal() {
                   className="terminal-link font-medium cursor-not-allowed"
                 >
                   fluxintel-ai.in
-              </a>
+                </a>
               </p>
             </div>
           </div>
 
-          {/* CMD 2 — always visible */}
+          {/* CMD 2 */}
           <div>
             <p className="break-all">
               <span className="terminal-prompt-user">vaibhavchavhan45@dev</span>
@@ -85,7 +85,7 @@ function TechStackTerminal() {
             </div>
           </div>
 
-          {/* CMD 3 — lg only */}
+          {/* CMD 3 — lg+ only */}
           <div className="terminal-section-hidden">
             <p className="break-all">
               <span className="terminal-prompt-user">vaibhavchavhan45@dev</span>
@@ -112,7 +112,7 @@ function TechStackTerminal() {
             </div>
           </div>
 
-          {/* CMD 4 — lg only */}
+          {/* CMD 4 — lg+ only */}
           <div className="terminal-section-hidden">
             <p className="break-all">
               <span className="terminal-prompt-user">vaibhavchavhan45@dev</span>
@@ -127,7 +127,7 @@ function TechStackTerminal() {
             </div>
           </div>
 
-          {/* CMD 5 — lg only */}
+          {/* CMD 5: lg+ only */}
           <div className="terminal-section-hidden">
             <p className="break-all">
               <span className="terminal-prompt-user">vaibhavchavhan45@dev</span>

@@ -38,7 +38,6 @@ export const reserveSeatApi = async (id, data) => {
   return response.data;
 };
 
-// Edit existing student's details without changing seat occupancy
 export const editSeatApi = async (id, data) => {
   const response = await seatApi.put(`/${id}/edit`, data, authHeader());
   return response.data;

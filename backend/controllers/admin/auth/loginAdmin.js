@@ -45,7 +45,7 @@ const loginAdmin = async (req, res, next) => {
     // Save OTP to admin_otp_store with purpose = 'login'
     await saveAdminOTPRecord(normalizedEmail, otp, "login");
 
-    // Bypass email check — dev admin can always receive OTP without any block
+    // Bypass email check (admin)
     const isDevAdmin = ADMIN_DEV_EMAILS.includes(normalizedEmail);
 
     // Send OTP email using admin-specific template

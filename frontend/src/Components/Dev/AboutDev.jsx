@@ -145,23 +145,23 @@ export default function AboutDev() {
                       {/* single paragraph */}
                       <p className="mt-6 text-justify text-sm leading-7 text-white/72 md:text-[15px] md:leading-7">
                         <span className="font-semibold text-white">Hi everyone, 👋</span>{" "}
-                  I'm a Software developer who builds websites and real-world
-                  applications, turning ideas into working products through code.
-                  I specialize in simplifying complex architectures and making them
-                  usable in everyday life. I enjoy building practical systems that
-                  challenge me to think deeper, solve harder problems, and grow with
-                  every build.
+                        I'm a Software developer who builds websites and real-world
+                        applications, turning ideas into working products through code.
+                        I specialize in simplifying complex architectures and making them
+                        usable in everyday life. I enjoy building practical systems that
+                        challenge me to think deeper, solve harder problems, and grow with
+                        every build.
                       </p>
                     </div>
 
                     {/* Social section */}
                     <div className="mt-6 flex w-full items-center justify-center gap-4 lg:justify-start">
                       <div className="rounded-[18px] border border-white/8 bg-white/[0.03] p-[3px] shadow-[0_10px_28px_rgba(0,0,0,0.18)]">
-                        <Mail href="https://mail.google.com/mail/?view=cm&fs=1&to=chavhanvaibhav708@gmail.com&su=Website%20%2F%20Project%20Inquiry&body=Hello%20Vaibhav%2C%20I%20came%20across%20your%20website%20and%20would%20like%20to%20connect%20with%20you%20regarding%20a%20project%20or%20collaboration."/>
+                        <Mail href="https://mail.google.com/mail/?view=cm&fs=1&to=chavhanvaibhav708@gmail.com&su=Website%20%2F%20Project%20Inquiry&body=Hello%20Vaibhav%2C%20I%20came%20across%20your%20website%20and%20would%20like%20to%20connect%20with%20you%20regarding%20a%20project%20or%20collaboration." />
                       </div>
 
                       <div className="rounded-[18px] border border-white/8 bg-white/[0.03] p-[3px] shadow-[0_10px_28px_rgba(0,0,0,0.18)]">
-                        <Instagram href="https://instagram.com/vaibhavchavhan45"/>
+                        <Instagram href="https://instagram.com/vaibhavchavhan45" />
                       </div>
 
                       <div className="rounded-[18px] border border-white/8 bg-white/[0.03] p-[3px] shadow-[0_10px_28px_rgba(0,0,0,0.18)]">
@@ -169,7 +169,7 @@ export default function AboutDev() {
                       </div>
 
                       <div className="rounded-[18px] border border-white/8 bg-white/[0.03] p-[3px] shadow-[0_10px_28px_rgba(0,0,0,0.18)]">
-                        <Linkeden href="https://www.linkedin.com/in/vaibhavchavhan/"/>
+                        <Linkeden href="https://www.linkedin.com/in/vaibhavchavhan/" />
                       </div>
                     </div>
                   </div>

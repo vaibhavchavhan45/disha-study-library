@@ -6,16 +6,16 @@ export default function GalleryGrid({ showAll = false }) {
   const [selectedImg, setSelectedImg] = useState(null);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
-useEffect(() => {
-  const handleResize = () => {
-    setIsMobile(window.innerWidth < 768);
-  };
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
 
-  handleResize();
-  window.addEventListener("resize", handleResize);
+    handleResize();
+    window.addEventListener("resize", handleResize);
 
-  return () => window.removeEventListener("resize", handleResize);
-}, []);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const images = showAll ? galleryImages : galleryImages.slice(0, 8);
 
@@ -33,9 +33,8 @@ useEffect(() => {
               <div
                 key={img.id}
                 className={`overflow-hidden rounded-xl cursor-pointer border border-white/10
-${
-  row.length === 1 ? "aspect-[16/9]" : "aspect-[4/3]"
-}`}
+                    ${row.length === 1 ? "aspect-[16/9]" : "aspect-[4/3]"
+                  }`}
                 onClick={() => setSelectedImg(img)}
               >
                 <img

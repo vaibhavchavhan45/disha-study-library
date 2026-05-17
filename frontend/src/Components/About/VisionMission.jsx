@@ -7,37 +7,35 @@ export default function VisionMissionSection() {
     return (
         <section className="relative w-full overflow-hidden pt-8 pb-14 sm:pt-10 sm:pb-16 md:pt-12 md:pb-20 lg:pt-14 lg:pb-24">
             {/* Background image */}
-<div
-className="absolute inset-0 bg-no-repeat bg-cover bg-[center_100%] sm:bg-[center_95%] md:bg-center"    style={{
-        backgroundImage: `url(${dishaBg})`,
-    }}
-/>
+            <div
+                className="absolute inset-0 bg-no-repeat bg-cover bg-[center_100%] sm:bg-[center_95%] md:bg-center" style={{
+                    backgroundImage: `url(${dishaBg})`,
+                }}
+            />
 
-{/* Mobile / Small device overlays */}
-<div className="absolute inset-0 md:hidden">
-    <div
-        className="absolute inset-0"
-        style={{
-            backgroundImage: `
+            {/* Mobile / Small device overlays */}
+            <div className="absolute inset-0 md:hidden">
+                <div
+                    className="absolute inset-0"
+                    style={{
+                        backgroundImage: `
                 linear-gradient(180deg, rgba(6,8,18,0.64) 0%, rgba(6,8,18,0.78) 36%, rgba(6,8,18,0.90) 72%, rgba(6,8,18,0.97) 100%),
-                linear-gradient(90deg, rgba(6,8,18,0.84) 0%, rgba(6,8,18,0.36) 48%, rgba(6,8,18,0.74) 100%)
-            `,
-        }}
-    />
-</div>
+                linear-gradient(90deg, rgba(6,8,18,0.84) 0%, rgba(6,8,18,0.36) 48%, rgba(6,8,18,0.74) 100%)`,
+                    }}
+                />
+            </div>
 
-{/* md and above overlays (same as before) */}
-<div className="absolute inset-0 hidden md:block">
-    <div
-        className="absolute inset-0"
-        style={{
-            backgroundImage: `
+            {/* md and above overlays (same as before) */}
+            <div className="absolute inset-0 hidden md:block">
+                <div
+                    className="absolute inset-0"
+                    style={{
+                        backgroundImage: `
                 linear-gradient(180deg, rgba(6,8,18,0.42) 0%, rgba(6,8,18,0.58) 28%, rgba(6,8,18,0.76) 60%, rgba(6,8,18,0.90) 100%),
-                linear-gradient(90deg, rgba(6,8,18,0.74) 0%, rgba(6,8,18,0.42) 42%, rgba(6,8,18,0.68) 100%)
-            `,
-        }}
-    />
-</div>
+                linear-gradient(90deg, rgba(6,8,18,0.74) 0%, rgba(6,8,18,0.42) 42%, rgba(6,8,18,0.68) 100%)`,
+                    }}
+                />
+            </div>
 
             {/* Ambient glow */}
             <div className="pointer-events-none absolute inset-0">

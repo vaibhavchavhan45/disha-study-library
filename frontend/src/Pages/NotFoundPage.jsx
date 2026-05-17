@@ -30,7 +30,7 @@ export default function NotFoundPage() {
         <div className="absolute left-[8%] bottom-[18%] h-[220px] w-[220px] rounded-full bg-sky-500/10 blur-[110px]" />
       </div>
 
-      {/* MAIN CONTENT (NO BOX) */}
+      {/* MAIN CONTENT */}
       <main className="relative z-10 flex-1 flex items-center justify-center px-4 sm:px-6 md:px-8 py-10 sm:py-12 md:py-14">
         <div className="w-full max-w-[920px] text-center">
           <div className="px-2 sm:px-6 md:px-10 py-8 sm:py-10 md:py-12">

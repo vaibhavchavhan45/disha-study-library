@@ -30,7 +30,7 @@ export const formatTimeLeft = (untilTs) => {
   return `${m}m`;
 };
 
-//  password rules (no currentPassword — for forgot flow)
+
 export const validateNewPasswords = (newPassword, confirmPassword) => {
   if (!newPassword)                         return "Please enter a new password.";
   if (newPassword.length < 8)               return "Minimum 8 characters required.";
@@ -43,7 +43,6 @@ export const validateNewPasswords = (newPassword, confirmPassword) => {
 };
 
 // useAdminLoginGuard (Redirects to dashboard if already logged in. Use in AdminLogin.)
- 
 export const useAdminLoginGuard = () => {
   const navigate = useNavigate();
   useEffect(() => {
@@ -76,7 +75,7 @@ export const useAttemptTracker = (email) => {
   }, [email]);
 
   const registerFailedAttempt = (msg) => {
-    // bypass — no lockout, just show error
+    // bypass: no lockout, show error
     if (isDev(email)) {
       setErrorMsg(msg);
       setStatus("error");

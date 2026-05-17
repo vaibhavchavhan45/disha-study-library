@@ -14,7 +14,7 @@ function Navbar({ navItems }) {
       <div className="max-w-7xl mx-auto">
         <div className="flex items-center justify-between bg-white/10 backdrop-blur-2xl border border-white/25 rounded-full px-4 sm:px-5 md:px-6 lg:px-6 py-1.5 sm:py-2 md:py-2 lg:py-2 shadow-xl">
 
-          {/* Left side - Logo + Name */}
+          {/* Left side: Logo + Name */}
           <div className="flex items-center gap-2 sm:gap-2.5 md:gap-3 lg:gap-3">
             <img src={logo2} alt="logo" className="w-[35px] h-[35px] sm:w-[40px] sm:h-[40px] md:w-[42px] md:h-[42px] lg:w-[45px] lg:h-[45px] rounded-full object-cover" />
             <div className="flex flex-col leading-tight">
@@ -56,7 +56,7 @@ function Navbar({ navItems }) {
             </button>
           </div>
 
-          {/* Hamburger - Mobile */}
+          {/* Hamburger: Mobile */}
           <div
             className={`lg:hidden cursor-pointer flex flex-col items-center justify-center gap-[6px] sm:gap-[6.5px] w-[28px] h-[28px] sm:w-[30px] sm:h-[30px] transition-transform duration-300 ${menuOpen ? "-rotate-90" : ""}`}
             onClick={() => setMenuOpen(!menuOpen)}

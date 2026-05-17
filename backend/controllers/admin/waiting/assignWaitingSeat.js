@@ -53,14 +53,14 @@ const assignWaitingSeat = async (req, res, next) => {
 
     await pool.query(
       `UPDATE seats
-       SET name        = $1,
-           phone       = $2,
-           email       = $3,
-           gender      = $4,
-           photo_url   = $5,
-           status      = 'OCCUPIED',
-           fee_status  = $6,
-           start_date  = $7,
+       SET name = $1,
+           phone = $2,
+           email = $3,
+           gender = $4,
+           photo_url = $5,
+           status = 'OCCUPIED',
+           fee_status = $6,
+           start_date = $7,
            expiry_date = $8
        WHERE id = $9`,
       [
@@ -70,7 +70,7 @@ const assignWaitingSeat = async (req, res, next) => {
         gender,
         waitingStudent.photo_url || null,
         fee_status || waitingStudent.fee_status || "UNPAID",
-        waitingStudent.start_date  || null,
+        waitingStudent.start_date || null,
         waitingStudent.expiry_date || null,
         seatId,
       ]

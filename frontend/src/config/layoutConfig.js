@@ -5,15 +5,15 @@
 export const cardLayouts = {
   mobile: {
     cols: 2,
-    rows: [2, 1, 1, 2, 2, 2]  // 2+2+1+1+2+2 = 10 cards
+    rows: [2, 1, 1, 2, 2, 2]  
   },
   tablet: {
     cols: 3,
-    rows: [3, 3, 1, 3]  // 3+3+1+3 = 10 cards
+    rows: [3, 3, 1, 3] 
   },
   desktop: {
     cols: 4,
-    rows: [4, 1, 1, 4]  // 4+1+1+4 = 10 cards
+    rows: [4, 1, 1, 4] 
   }
 };
 

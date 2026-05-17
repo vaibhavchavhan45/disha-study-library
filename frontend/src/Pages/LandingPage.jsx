@@ -9,6 +9,8 @@ import CTASection from "../Components/CTA/CTASection";
 import LandingPageFAQ from "../Components/Landing/LandingPageFAQ";
 import Footer from "../Components/Footer"
 
+import VoiceYourVerdict from "../Components/Verdict/VoiceYourVerdict";
+
 function LandingPage() {
   const navigate = useNavigate();
   const location = useLocation();
@@ -48,6 +50,7 @@ useEffect(() => {
         <CTASection  />
       </div>
       <LandingPageFAQ />
+      <VoiceYourVerdict />
       <Footer quickLinks={[
           { label: "About", onClick: () => navigate("/about") },
           { label: "Facilities", onClick: () => navigate("/facilities") },

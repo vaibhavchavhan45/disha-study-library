@@ -28,7 +28,7 @@ export default function Sidebar({
           {collapsed ? <PanelLeftOpen size={18} /> : <PanelLeftClose size={18} />}
         </button>
 
-        {/* Always in DOM — fades in/out smoothly */}
+        {/* fades in/out smoothly */}
         <div
           className={`flex flex-col items-center transition-all duration-300 mt-1 ${
             collapsed ? "opacity-0 pointer-events-none" : "opacity-100"

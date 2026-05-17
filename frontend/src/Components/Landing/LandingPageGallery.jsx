@@ -37,7 +37,7 @@ export default function LandingPageGallery() {
 
       </div>
 
-      {/* Marquee — full width */}
+      {/* full width Marquee */}
       <div className="w-full overflow-hidden" style={{
         maskImage: "linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)",
         WebkitMaskImage: "linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%)"

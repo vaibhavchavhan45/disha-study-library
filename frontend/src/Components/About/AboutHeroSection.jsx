@@ -22,39 +22,37 @@ export default function AboutHeroSection() {
 
   return (
     <section className="relative w-full overflow-hidden">
-  {/* Background image */}
-  <div
-    className="absolute inset-0 bg-no-repeat bg-cover bg-top sm:bg-top md:bg-center"
-    style={{
-      backgroundImage: `url(${heroImg})`,
-    }}
-  />
+      {/* Background image */}
+      <div
+        className="absolute inset-0 bg-no-repeat bg-cover bg-top sm:bg-top md:bg-center"
+        style={{
+          backgroundImage: `url(${heroImg})`,
+        }}
+      />
 
-  {/* Mobile / Small device overlays */}
-  <div className="absolute inset-0 md:hidden">
-    <div
-      className="absolute inset-0"
-      style={{
-        backgroundImage: `
+      {/* Mobile / Small device overlays */}
+      <div className="absolute inset-0 md:hidden">
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `
           linear-gradient(180deg, rgba(6,8,18,0.62) 0%, rgba(6,8,18,0.76) 36%, rgba(6,8,18,0.89) 72%, rgba(6,8,18,0.96) 100%),
-          linear-gradient(90deg, rgba(6,8,18,0.82) 0%, rgba(6,8,18,0.34) 48%, rgba(6,8,18,0.72) 100%)
-        `,
-      }}
-    />
-  </div>
+          linear-gradient(90deg, rgba(6,8,18,0.82) 0%, rgba(6,8,18,0.34) 48%, rgba(6,8,18,0.72) 100%)`,
+          }}
+        />
+      </div>
 
-  {/* md and above overlays (same as before) */}
-  <div className="absolute inset-0 hidden md:block">
-    <div
-      className="absolute inset-0"
-      style={{
-        backgroundImage: `
+      {/* md and above overlays (same as before) */}
+      <div className="absolute inset-0 hidden md:block">
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `
           linear-gradient(180deg, rgba(6,8,18,0.42) 0%, rgba(6,8,18,0.58) 28%, rgba(6,8,18,0.76) 60%, rgba(6,8,18,0.90) 100%),
-          linear-gradient(90deg, rgba(6,8,18,0.74) 0%, rgba(6,8,18,0.42) 42%, rgba(6,8,18,0.68) 100%)
-        `,
-      }}
-    />
-  </div>
+          linear-gradient(90deg, rgba(6,8,18,0.74) 0%, rgba(6,8,18,0.42) 42%, rgba(6,8,18,0.68) 100%)`,
+          }}
+        />
+      </div>
       {/* subtle premium texture */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 opacity-[0.03] [background-image:linear-gradient(rgba(255,255,255,0.07)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.07)_1px,transparent_1px)] [background-size:52px_52px] [mask-image:linear-gradient(to_bottom,transparent,black_18%,black_84%,transparent)]" />

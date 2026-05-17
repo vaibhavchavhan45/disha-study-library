@@ -47,7 +47,7 @@ const OTPInput = forwardRef(({ onVerified, onOtpSent }, ref) => {
   }, [email]);
 
   const renderResendSection = () => {
-    // 3 wrong attempts — stop timer and  resend dikhao
+    // 3 wrong attempts
     if (maxAttemptsExceeded) {
       if (resendCount <= MAX_RESEND) {
         return (

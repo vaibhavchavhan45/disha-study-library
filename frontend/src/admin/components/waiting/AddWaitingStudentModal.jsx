@@ -171,7 +171,6 @@ const AddWaitingStudentModal = ({ onClose, onSuccess }) => {
           className="w-full rounded-2xl bg-gray-900 text-white py-2.5 text-sm font-medium hover:bg-black transition disabled:opacity-60">
           {loading ? "Adding Student..." : "Add Student"}
         </button>
-
       </div>
     </Modal>
   );

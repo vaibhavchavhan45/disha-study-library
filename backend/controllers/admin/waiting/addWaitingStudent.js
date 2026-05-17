@@ -2,17 +2,7 @@ import pool from "../../../db/db.js";
 
 const addWaitingStudent = async (req, res, next) => {
   try {
-    const {
-      name,
-      phone,
-      email,
-      gender,
-      photo_url,
-      fee_status,
-      start_date,
-      expiry_date,
-      pending_amount
-    } = req.body;
+    const { name, phone, email, gender, photo_url, fee_status, start_date, expiry_date, pending_amount } = req.body;
 
     if (!name || !phone) {
       return res.status(400).json({

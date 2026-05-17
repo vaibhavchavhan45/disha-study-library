@@ -73,12 +73,7 @@ export default function DeveloperMessageSection() {
 
               {/* Line 2 */}
               <p
-                className="mt-1 font-semibold leading-[1.5] text-white
-                           text-[1.02rem]
-                           sm:text-[1.08rem]
-                           md:text-[1.14rem]
-                           lg:text-[1.18rem]"
-              >
+                className="mt-1 font-semibold leading-[1.5] text-white text-[1.02rem] sm:text-[1.08rem] md:text-[1.14rem] lg:text-[1.18rem]">
                 {message}
               </p>
             </div>

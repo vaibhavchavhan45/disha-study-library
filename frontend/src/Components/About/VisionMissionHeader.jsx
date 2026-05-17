@@ -4,7 +4,7 @@ import ShineText from "../Element/ShineText/ShineText";
 export default function VisionMissionHeader() {
     return (
         <>
-            {/* ── TOP LABEL ── */}
+            {/* TOP LABEL */}
             <div className="flex justify-center">
                 <div className="mb-4 sm:mb-5 md:mb-6 flex items-center justify-center gap-3 sm:gap-4">
                     <span className="h-px w-10 sm:w-14 md:w-16 bg-gradient-to-r from-transparent to-white/25" />
@@ -15,7 +15,7 @@ export default function VisionMissionHeader() {
                 </div>
             </div>
 
-            {/* ── TITLE / SUBTITLE ── */}
+            {/* TITLE / SUBTITLE */}
             <div className="mb-14 sm:mb-16 md:mb-20 text-center">
                 <SectionTitle
                     title1="Vision and Mission"

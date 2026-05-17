@@ -44,7 +44,7 @@ function AdminLayout() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex">
+    <div className="admin-root min-h-screen bg-gray-50 flex">
       <Sidebar
         collapsed={collapsed}
         setCollapsed={setCollapsed}

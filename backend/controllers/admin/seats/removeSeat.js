@@ -44,13 +44,13 @@ const removeSeat = async (req, res, next) => {
 
     await pool.query(
       `UPDATE seats
-       SET name        = NULL,
-           phone       = NULL,
-           email       = NULL,
-           photo_url   = NULL,
-           status      = 'EMPTY',
-           fee_status  = NULL,
-           start_date  = NULL,
+       SET name = NULL,
+           phone = NULL,
+           email = NULL,
+           photo_url = NULL,
+           status = 'EMPTY',
+           fee_status = NULL,
+           start_date = NULL,
            expiry_date = NULL
        WHERE id = $1`,
       [id]

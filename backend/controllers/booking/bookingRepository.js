@@ -22,8 +22,7 @@ export const insertBooking = async ({
   await pool.query(
     `
     INSERT INTO bookings (full_name, email, phone, field_of_preparation)
-    VALUES ($1, $2, $3, $4)
-    `,
+    VALUES ($1, $2, $3, $4)`,
     [fullName, email, phone, fieldOfPreparation]
   );
 };

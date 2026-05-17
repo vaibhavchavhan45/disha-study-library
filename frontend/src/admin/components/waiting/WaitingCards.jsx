@@ -20,10 +20,10 @@ const getDaysLeft = (expiry_date) => {
 const fmt = (d) =>
   d
     ? new Date(d).toLocaleDateString("en-IN", {
-        day: "2-digit",
-        month: "short",
-        year: "numeric",
-      })
+      day: "2-digit",
+      month: "short",
+      year: "numeric",
+    })
     : "—";
 
 /* expiry badge */
@@ -58,9 +58,8 @@ const FeeBadge = ({ fee_status, pending_amount }) => {
 
   return (
     <span
-      className={`text-[11px] font-semibold px-2.5 py-1 rounded-full ${
-        map[fee_status] ?? map.UNPAID
-      }`}
+      className={`text-[11px] font-semibold px-2.5 py-1 rounded-full ${map[fee_status] ?? map.UNPAID
+        }`}
     >
       {label}
     </span>
@@ -70,11 +69,10 @@ const FeeBadge = ({ fee_status, pending_amount }) => {
 /* gender pill */
 const GenderPill = ({ gender }) => (
   <span
-    className={`text-[10px] font-bold tracking-wider px-2.5 py-1 rounded-full uppercase ${
-      gender === "GIRLS"
+    className={`text-[10px] font-bold tracking-wider px-2.5 py-1 rounded-full uppercase ${gender === "GIRLS"
         ? "bg-pink-50 text-pink-600 border border-pink-200"
         : "bg-sky-50 text-sky-600 border border-sky-200"
-    }`}
+      }`}
   >
     {gender}
   </span>
@@ -147,9 +145,8 @@ const WaitingCard = ({
 
   return (
     <div
-      className={`rounded-2xl bg-white border shadow-sm p-4 transition-shadow hover:shadow-md ${
-        isExpired ? "border-red-200" : "border-gray-200"
-      }`}
+      className={`rounded-2xl bg-white border shadow-sm p-4 transition-shadow hover:shadow-md ${isExpired ? "border-red-200" : "border-gray-200"
+        }`}
     >
       {/* top row */}
       <div className="flex items-start gap-3">

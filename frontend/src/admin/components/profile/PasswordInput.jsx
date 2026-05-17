@@ -25,10 +25,7 @@ export default function PasswordInput({
           onChange={onChange}
           disabled={disabled}
           placeholder={placeholder}
-          className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 pr-11 text-sm
-                     text-gray-800 placeholder-gray-400 outline-none ring-0
-                     focus:border-gray-400 focus:bg-white transition-all duration-200
-                     disabled:opacity-50 disabled:cursor-not-allowed"
+          className="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3 pr-11 text-sm text-gray-800 placeholder-gray-400 outline-none ring-0 focus:border-gray-400 focus:bg-white transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
         />
 
         {/* Toggle visibility */}
