@@ -51,7 +51,8 @@ const removeSeat = async (req, res, next) => {
            status = 'EMPTY',
            fee_status = NULL,
            start_date = NULL,
-           expiry_date = NULL
+           expiry_date = NULL,
+           pending_amount = 0
        WHERE id = $1`,
       [id]
     );
