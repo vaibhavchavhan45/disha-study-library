@@ -1,10 +1,11 @@
 import pool from "../../../db/db.js";
 import { getGenderForSeat } from "../../../Data/seatGender.js";
 
+
 const replaceSeat = async (req, res, next) => {
   try {
     const { id } = req.params;
-    const { name, phone, email, photo_url, fee_status, start_date, expiry_date } = req.body;
+    const { name, phone, email, photo_url, fee_status, start_date, expiry_date, pending_amount } = req.body;
 
     const seatResult = await pool.query(
       "SELECT * FROM seats WHERE id = $1",
@@ -49,13 +50,19 @@ const replaceSeat = async (req, res, next) => {
            status = 'OCCUPIED',
            fee_status = $6,
            start_date = $7,
-           expiry_date = $8
-       WHERE id = $9`,
-      [name, phone, email, gender, photo_url, fee_status, start_date, expiry_date, id]
+           expiry_date = $8,
+           pending_amount = $9
+       WHERE id = $10`,
+      [name, phone, email, gender, photo_url, fee_status, start_date, expiry_date,  pending_amount || 0, id]
     );
 
-    return res.status(200).json({ success: true, message: "Seat replaced successfully" });
-  } catch (error) {
+    return res.status(200).json({ 
+        success: true, 
+        message: "Seat replaced successfully" 
+    });
+  } 
+  
+  catch (error) {
     next(error);
   }
 };
