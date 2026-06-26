@@ -61,8 +61,9 @@ const assignWaitingSeat = async (req, res, next) => {
            status = 'OCCUPIED',
            fee_status = $6,
            start_date = $7,
-           expiry_date = $8
-       WHERE id = $9`,
+           expiry_date = $8,
+           pending_amount = $9
+        WHERE id = $10`,  
       [
         waitingStudent.name,
         waitingStudent.phone,
@@ -72,6 +73,7 @@ const assignWaitingSeat = async (req, res, next) => {
         fee_status || waitingStudent.fee_status || "UNPAID",
         waitingStudent.start_date || null,
         waitingStudent.expiry_date || null,
+        waitingStudent.pending_amount || 0,
         seatId,
       ]
     );
