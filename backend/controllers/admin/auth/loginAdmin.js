@@ -1,5 +1,6 @@
 import pool from "../../../db/db.js";
 import bcrypt from "bcryptjs";
+import config from "../../../config/config.js";
 import { ADMIN_DEV_EMAILS } from "../../../config/devConfig.js";
 import { sendMail } from "../../../services/mailer.js";
 import { saveAdminOTPRecord } from "./adminOtpRepository.js";
@@ -36,6 +37,15 @@ const loginAdmin = async (req, res, next) => {
       return res.status(401).json({
         success: false,
         message: "Invalid password",
+      });
+    }
+
+    // Demo email
+    if (normalizedEmail === config.demoAdminEmail) {
+      await saveAdminOTPRecord(normalizedEmail, "000000", "login");
+      return res.status(200).json({
+        success: true,
+        message: "Enter demo OTP as 000000",
       });
     }
 

@@ -13,6 +13,7 @@ const config = {
   jwtSecret: process.env.JWT_SECRET,
   clientUrl: process.env.CLIENT_URL,
   brevoApiKey: process.env.BREVO_API_KEY,
+  demoAdminEmail: process.env.DEMO_ADMIN_EMAIL,
 };
 
 export default config;
