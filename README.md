@@ -1,304 +1,251 @@
 # Disha Study Library
 
-A full-stack web application for **Disha Study Library** — a self-study space management system that handles seat bookings, student inquiries, OTP verification, admin dashboard, and more.
-
----
+A full-stack web application for **Disha Study Library**, a self-study space. It handles seat bookings, student inquiries, OTP verification and an admin dashboard for day-to-day library management.
 
 ## What This Project Does
 
-Disha Study Library's website serves two audiences:
+**Students and visitors**
+- Browse the library, its facilities, gallery and testimonials.
+- Submit a seat booking request through an OTP-verified form.
+- Send messages and leave feedback.
 
-- **Students / Visitors** — Browse the library, view facilities, read testimonials, submit a seat booking inquiry via OTP-verified form, send messages, and leave feedback.
-- **Admin** — A protected dashboard to manage seats, a waiting list, inquiries, ex-students, and admin account settings.
-
----
+**Admin**
+- Use a protected dashboard to manage seats, the waiting list, inquiries and ex-students.
+- Manage their own account and password.
 
 ## Tech Stack
 
 ### Frontend
-| Tech | Purpose |
-|------|---------|
+
+| Technology | Purpose |
+|------------|---------|
 | React 19 + Vite | UI framework and build tool |
 | React Router DOM v7 | Client-side routing |
-| Tailwind CSS v4 | Utility-first styling |
-| Lucide React + React Icons | Icon libraries |
-| EmailJS | Contact email from the browser |
-
+| Tailwind CSS v4 | Styling |
+| Axios | API requests |
+| Lucide React + React Icons | Icons |
+| Cloudinary | Student photo uploads |
 
 ### Backend
-| Tech | Purpose |
-|------|---------|
+
+| Technology | Purpose |
+|------------|---------|
 | Express v5 | REST API server |
 | PostgreSQL + pg | Primary database |
 | bcryptjs | Password hashing |
-| jsonwebtoken | Admin JWT auth |
-| nodemailer | Transactional emails via Gmail |
+| jsonwebtoken | Admin JWT authentication |
+| Brevo (`@getbrevo/brevo`) | Transactional emails (OTPs, alerts, notifications) |
 | Zod | Request validation |
-| dotenv | Environment config |
-
----
+| dotenv | Environment configuration |
 
 ## Project Structure
 
-The project is divided into two main parts: **Backend** and **Frontend**, each organized based on responsibility.
+### Backend
 
----
+- `config` - URLs and developer settings
+- `controllers` - request logic:
+  - `admin` - auth, seats, waiting list, inquiries, dashboard, ex-students
+  - `booking` - booking creation and retrieval
+  - `feedback` - feedback handling
+  - `message` - contact messages
+  - `otp` - OTP send, verify and resend
+- `Data` - static messages, error strings and seat configuration
+- `db` - PostgreSQL connection
+- `middlewares` - JWT authentication and global error handling
+- `routes` - public and admin API routes
+- `services` - reusable logic such as the email service
+- `validation` - Zod schemas
+- `index.js` - entry point
 
-## Backend
+### Frontend
 
-The backend follows a modular architecture where each folder has a clearly defined role.
-
-- **config** → Application-level configurations such as URLs and developer settings.
-
-- **controllers**  
-  Handles request logic:
-  - `admin` → Authentication, seat management, waiting list, inquiries, dashboard, and ex-students  
-  - `booking` → Booking creation and retrieval  
-  - `feedback` → Feedback handling  
-  - `message` → Contact messages  
-  - `otp` → OTP send, verify, resend  
-
-- **data** → Static messages, error strings, and seat configuration.
-
-- **db** → PostgreSQL connection setup.
-
-- **middlewares** → JWT authentication and global error handling.
-
-- **routes** → API route definitions (public and admin).
-
-- **services** → Reusable logic such as email handling.
-
-- **validation** → Zod schemas for request validation.
-
-- **index.js** → Application entry point.
-
----
-
-## Frontend
-
-The frontend is built with a component-based structure, separating public UI and admin functionality.
-
-- **admin** → Admin panel (feature-based structure with pages, components, hooks, and services).
-
-- **components** → Shared UI elements (Navbar, Footer, CTA, etc.).
-
-- **pages** → Public-facing pages.
-
-- **routes** → Application routing.
-
-- **services** → API interaction layer.
-
-- **hooks** → Custom React hooks.
-
-- **layouts** → Shared layout wrappers.
-
-- **config** → Environment variables and API configuration.
-
-- **data** → Static content (FAQ, testimonials, gallery).
-
-- **styles** → Shared styling.
-
-- **animations** → CSS animations.
-
-- **App.jsx** → Main app with routing.
-
-- **index.html** → Root HTML file.
-
----
+- `admin` - admin panel, organised by feature (pages, components, hooks, services, routes, layouts)
+- `Components` - shared UI such as Navbar, Footer and CTA
+- `Pages` - public pages
+- `Services` - API layer
+- `Hooks` - custom React hooks
+- `config` - environment and API configuration
+- `Data` - static content such as FAQ, testimonials and gallery
+- `Styles` and `Animations` - shared styling and CSS animations
+- `App.jsx` - main app with routing
 
 ## Admin Module
 
-The admin panel is accessible at `/admin`. It is protected by JWT authentication with a two-step OTP verification on login.
+The admin panel lives at `/admin`. Login is protected by JWT with a second OTP verification step.
 
-- **components**  
-  Feature-specific UI modules:
-  - `exStudents` → Manage ex-student records  
-  - `inquiries` → Handle student inquiries  
-  - `profile` → Admin account and profile management  
-  - `seats` → Seat allocation and management  
-  - `waiting` → Waiting list management  
-
-- **pages** → Defines all admin views.
-
-- **routes** → Handles admin navigation and protected routes.
-
-- **services** → API communication layer.
-
-- **hooks** → Reusable state and logic handling.
-
-- **layouts** → Shared admin layout structure.
-
-
-**Features:**
-- Dashboard with live stats
-- Seat management (assign, remove, replace, edit)
-- Waiting list management
+**Features**
+- Dashboard with live stats (total, occupied and empty seats, waiting list and inquiries)
+- Seat management: assign, edit, replace and remove
+- Gender-based seat zones, checked on every assignment
+- Waiting list management, including assigning a waiting student to a seat
 - Inquiry management
-- Ex-student records
+- Ex-student records, created automatically when a seat is removed or replaced
 - Profile and password management
-- Forgot / reset password via email link
+- Forgot and reset password through email
+- Suspicious-login reporting
 
----
+**Feature modules** (`admin/components`): `exStudents`, `inquiries`, `profile`, `seats`, `waiting`
+
+## Demo Access
+
+To explore the admin panel without your own credentials:
+
+| Field | Value |
+|-------|-------|
+| Email | `demo@disha.com` |
+| Password | `DemoPassword@123` |
+| OTP | `000000` |
+
+> The OTP is fixed for the demo account, so no email is required.
 
 ## Getting Started
 
 ### Prerequisites
 
-- Node.js v18+
-- PostgreSQL database
-- Gmail account (for nodemailer) with App Password enabled
-- Cloudinary account (for photo uploads)
+- Node.js v18 or higher
+- A PostgreSQL database
+- A Brevo account with an API key and a verified sender email
+- A Cloudinary account for photo uploads
 
-### 1. Clone the Repository
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/vaibhavchavhan45/disha-study-library.git
 cd disha-study-library
 ```
 
-### 2. Backend Setup
+### 2. Backend setup
 
 ```bash
 cd Backend
 npm install
 ```
 
-Create a `.env` file in the `Backend/` directory:
+Create `Backend/.env`:
 
 ```env
-PORT=5000
-DATABASE_URL=postgresql://user:password@localhost:5432/disha_db
-EMAIL_USER=your-gmail@gmail.com
-EMAIL_PASS=your-noidemailer-16-digit-key
-EMAIL_ADMIN_1=admin1@gmail.com
-EMAIL_ADMIN_2=admin2@gmail.com
-DEV_EMAIL=dev@gmail.com
-JWT_SECRET=your-super-secret-jwt-key
-CLIENT_URL=http://localhost:5173
+PORT=5000                                  # Server port (default 5000)
+DATABASE_URL=your-db-url
+JWT_SECRET=your-super-secret-jwt-key       # Secret used to sign JWTs
+CLIENT_URL=http://localhost:5173           # Frontend URL
+BREVO_API_KEY=your-brevo-api-key           # Used to send all emails
+EMAIL_USER=your-verified-sender-email      # Sender address verified in Brevo
+EMAIL_PASS=your-email-password             # Not used by the Brevo mailer
+EMAIL_ADMIN_1=admin1@example.com           # Primary admin email
+EMAIL_ADMIN_2=admin2@example.com           # Secondary admin email
+DEV_EMAIL=dev@example.com                  # Developer notification email
+DEMO_ADMIN_EMAIL=demo@disha.com            # Demo admin account
 ```
-
-Start the backend server:
 
 ```bash
 node index.js
 ```
 
-> Server runs on `http://localhost:5000`
+> The server runs on `http://localhost:5000`.
 
-### 3. Frontend Setup
+### 3. Frontend setup
 
 ```bash
 cd Frontend
 npm install
 ```
 
-Create a `.env` file in the `Frontend/` directory:
+Create `Frontend/.env`:
 
 ```env
-VITE_API_URL=http://localhost:5000
+VITE_API_URL=http://localhost:5000                       # Backend API base URL
 VITE_CLOUDINARY_CLOUD_NAME=your-cloudinary-cloud-name
-VITE_CLOUDINARY_UPLOAD_PRESET=your-upload-preset
+VITE_CLOUDINARY_UPLOAD_PRESET=your-upload-preset         # Unsigned upload preset
 ```
-
-Start the frontend dev server:
 
 ```bash
 npm run dev
 ```
 
-> App runs on `http://localhost:5173`
-
----
+> The app runs on `http://localhost:5173`.
 
 ## API Endpoints
 
-### Public APIs
+Protected routes need the header `Authorization: Bearer <token>`.
+
+### Public
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
-| POST | `/api/otp/send` | Send OTP to user |
-| POST | `/api/otp/verify` | Verify OTP |
-| POST | `/api/booking/submit` | Submit seat booking form |
-| GET | `/api/booking/all` | Get all bookings |
-| POST | `/api/message` | Send contact message |
+| POST | `/api/otp/send` | Send an OTP to the user |
+| POST | `/api/otp/verify` | Verify the OTP |
+| POST | `/api/booking/submit` | Submit a seat booking request |
+| POST | `/api/message` | Send a contact message |
 | POST | `/api/feedback` | Submit feedback |
 
-### Admin Auth APIs
+### Admin authentication
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
 | POST | `/api/auth/login` | Admin login |
-| POST | `/api/auth/verify-otp` | Verify admin OTP |
-| POST | `/api/auth/forgot-password` | Initiate password reset |
-| POST | `/api/auth/reset-password` | Reset password via token |
+| POST | `/api/auth/verify-otp` | Verify the admin OTP |
+| POST | `/api/auth/forgot-password` | Start a password reset |
+| POST | `/api/auth/reset-password` | Reset the password |
+| POST | `/api/auth/report-suspicious` | Report a suspicious login |
 | POST | `/api/auth/change-password` | Change password (protected) |
-| GET | `/api/auth/profile` | Get admin profile (protected) |
-| PUT | `/api/auth/profile` | Update admin profile (protected) |
+| GET / PUT | `/api/auth/profile` | Get or update admin profile (protected) |
 
-### Admin (Protected — JWT Required)
+### Admin (JWT required)
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
 | GET | `/api/seats` | Get all seats |
-| PUT | `/api/seats/:id/assign` | Assign seat to student |
-| PUT | `/api/seats/:id/remove` | Remove student from seat |
-| PUT | `/api/seats/:id/replace` | Replace seat occupant |
+| PUT | `/api/seats/:id/assign` | Assign a seat to a student |
 | PUT | `/api/seats/:id/edit` | Edit seat details |
-| GET/POST | `/api/waiting` | Get / add waiting list students |
-| PUT | `/api/waiting/:id` | Edit waiting student |
-| DELETE | `/api/waiting/:id` | Delete waiting student |
-| PUT | `/api/waiting/:id/assign` | Assign waiting student to a seat |
+| PUT | `/api/seats/:id/replace` | Replace the seat occupant |
+| PUT | `/api/seats/:id/remove` | Remove the student from a seat |
+| GET / POST | `/api/waiting` | Get the waiting list / add a waiting student |
+| PUT | `/api/waiting/:id` | Edit a waiting student |
+| PUT | `/api/waiting/:id/assign-seat` | Assign a waiting student to a seat |
+| DELETE | `/api/waiting/:id` | Delete a waiting student |
 | GET | `/api/inquiries` | Get all inquiries |
-| PUT | `/api/inquiries/:id/move` | Move inquiry to waiting list |
 | GET | `/api/ex-students` | Get ex-students |
-| GET | `/api/dashboard` | Get dashboard stats |
-
----
+| GET | `/api/dashboard/stats` | Get dashboard stats |
+| GET | `/api/booking/all` | Get all bookings |
 
 ## Public Pages
 
-| Route | Page |
-|-------|------|
-| `/` | Landing Page |
-| `/about` | About the Library |
-| `/facilities` | Facilities |
-| `/gallery` | Photo Gallery |
-| `/testimonial` | Testimonials |
-| `/photo-request` | Photo Feature Request |
-| `/dev` | Developer / Creator Page |
-| `/privacy-policy` | Privacy Policy |
-| `/terms-condition` | Terms & Conditions |
+`/` Landing, `/about` About, `/facilities` Facilities, `/gallery` Gallery, `/testimonial` Testimonials, `/photo-request` Photo request, `/dev` Developer, `/privacy-policy` Privacy policy, `/terms-condition` Terms and conditions.
 
----
+## What Broke and What We Improved
 
-## Environment Variables Summary
+### Email delivery
 
-### Backend `.env`
+Sending email reliably took three attempts.
 
-| Variable | Description |
-|----------|-------------|
-| `PORT` | Server port (default: 5000) |
-| `DATABASE_URL` | PostgreSQL connection string |
-| `EMAIL_USER` | Gmail address for sending emails |
-| `EMAIL_PASS` | Nodemailer 16 digit key |
-| `EMAIL_ADMIN_1` | Primary admin email |
-| `EMAIL_ADMIN_2` | Secondary admin email |
-| `DEV_EMAIL` | Developer notification email |
-| `JWT_SECRET` | Secret key for JWT signing |
-| `CLIENT_URL` | Frontend URL |
+| Attempt | What happened | Outcome |
+|---------|---------------|---------|
+| **EmailJS** (from the browser) | Did not work for our needs. Sending from the frontend is not suitable for OTPs and admin alerts. | Dropped |
+| **Nodemailer with Gmail** | Not reliable. It needed an app password and IPv6 workarounds (`family: 6`), and delivery still failed on some networks. | Dropped |
+| **Brevo transactional email API** | Works reliably over HTTPS with an API key and a verified sender. | **Current solution** |
 
-### Frontend `.env`
+**What improved**
+- All emails go through one service, `Backend/services/mailer.js`, using the Brevo API.
+- No Gmail app password and no network-specific IPv6 setting are needed.
+- Admin notifications reach several recipients using BCC.
+- The same service sends OTPs, booking, inquiry and feedback alerts, and security alerts.
 
-| Variable | Description |
-|----------|-------------|
-| `VITE_API_URL` | Backend API base URL |
-| `VITE_CLOUDINARY_CLOUD_NAME` | Cloudinary cloud name |
-| `VITE_CLOUDINARY_UPLOAD_PRESET` | Cloudinary unsigned upload preset |
+### Security
 
----
+- Student OTPs expire after 60 seconds and allow 3 wrong attempts.
+- After 3 OTP requests from one IP, that IP is blocked for 24 hours.
+- Admin login needs a password and an OTP, and returns a JWT.
+- Passwords are hashed with bcrypt.
+- Suspicious admin logins can be reported, which sends an alert email with the IP address.
+
+### Data integrity
+
+- Only empty seats can be assigned.
+- Each seat belongs to a gender zone, and assignments are checked against it.
+- Removing or replacing a student saves them to the ex-student records automatically.
+- Request data is validated with Zod.
 
 ## Notes
 
-- The mailer uses Gmail with **IPv6 forced** (`family: 6`). If emails aren't sending on your network, change it to `4` in `Backend/services/mailer.js`.
+- The maximum number of OTP attempts is set in `Backend/Data/maxAttempts.js`. The OTP expiry is set in the OTP repository files under `Backend/controllers`.
 - All admin routes except login and password reset require a `Bearer <token>` header.
-- OTP expiry and max attempts are configured in `Backend/Data/maxAttempts.js`.
