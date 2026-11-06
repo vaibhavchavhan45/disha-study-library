@@ -3,6 +3,7 @@ import config from "../../config/config.js";
 import { validateFeedback } from "./feedbackValidation.js";
 import { getFeedbackTemplate } from "./feedbackTemplate.js";
 
+
 export const submitFeedbackService = async (data) => {
   const { name, email, category, specify, message, rating } = data;
 

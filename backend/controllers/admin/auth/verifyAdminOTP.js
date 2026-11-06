@@ -7,6 +7,7 @@ import {
   deleteAdminOTP,
 } from "./adminOtpRepository.js";
 
+
 const MAX_ATTEMPTS = 3;
 
 const verifyAdminOTP = async (req, res, next) => {
@@ -63,7 +64,7 @@ const verifyAdminOTP = async (req, res, next) => {
       });
     }
 
-    // OTP correct — delete record and issue JWT
+    // OTP correct then delete record and issue JWT
     await deleteAdminOTP(normalizedEmail, "login");
 
     const adminResult = await pool.query(
@@ -85,7 +86,9 @@ const verifyAdminOTP = async (req, res, next) => {
       token,
       admin,
     });
-  } catch (error) {
+  } 
+  
+  catch (error) {
     next(error);
   }
 };

@@ -1,5 +1,6 @@
 import { sendOTPSchema, verifyOTPSchema } from "../../validation/otpValidationZod.js";
 
+
 export const validateSendOTP = (email) => {
   const result = sendOTPSchema.safeParse({ email });
 
@@ -8,6 +9,7 @@ export const validateSendOTP = (email) => {
     throw { statusCode: 400, message };
   }
 };
+
 
 export const validateVerifyOTP = (email, otp) => {
   const result = verifyOTPSchema.safeParse({ email, otp });

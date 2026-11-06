@@ -14,6 +14,7 @@ import { validateSendOTP, validateVerifyOTP } from "./otpValidation.js";
 import { getOTPTemplate } from "./otpTemplate.js";
 import { generateOTP } from "../otp/otpHelper.js";
 
+
 // send OTP logic
 export const sendOTPService = async (email, ip) => {
   validateSendOTP(email);
@@ -50,7 +51,9 @@ export const sendOTPService = async (email, ip) => {
   if (!block) {
     // First request from this IP
     await insertBlock(ip);
-  } else {
+  } 
+  
+  else {
     const count = block.resend_count + 1;
 
     if (count >= 3) {

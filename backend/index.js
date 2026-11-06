@@ -34,8 +34,6 @@ app.use("/api/ex-students", exStudentRoutes);
 app.use("/api/inquiries", inquiryRoutes);
 app.use("/api/dashboard", dashboardRoutes);
 
-app.use("/api/verdict", verdictRoutes);
-
 app.get("/health", (req, res) => res.send("OK"));
 
 app.use(errorHandler);

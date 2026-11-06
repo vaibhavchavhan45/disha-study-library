@@ -1,6 +1,7 @@
 import pool from "../../../db/db.js";
 
-// Save admin OTP — clears previous OTP for same email + purpose
+
+// Save admin OTP, clears previous OTP for same email + purpose
 export const saveAdminOTPRecord = async (email, otp, purpose) => {
   const expiresAt = new Date(Date.now() + 10 * 60 * 1000); // 10 minutes
 

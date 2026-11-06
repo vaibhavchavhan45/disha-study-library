@@ -52,7 +52,9 @@ const forgotPassword = async (req, res, next) => {
       success: true,
       message: "OTP sent to your email.",
     });
-  } catch (error) {
+  } 
+  
+  catch (error) {
     next(error);
   }
 };

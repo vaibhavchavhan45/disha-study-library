@@ -1,5 +1,6 @@
 import pool from "../../../db/db.js";
 
+
 const getDashboardStats = async (req, res, next) => {
   try {
     const totalSeats = await pool.query(
@@ -32,7 +33,9 @@ const getDashboardStats = async (req, res, next) => {
         inquiriesCount: Number(inquiriesCount.rows[0].count),
       },
     });
-  } catch (error) {
+  } 
+  
+  catch (error) {
     next(error);
   }
 };

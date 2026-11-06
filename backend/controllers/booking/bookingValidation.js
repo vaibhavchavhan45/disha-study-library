@@ -1,5 +1,6 @@
 import { bookingSchema } from "../../validation/bookingValidationZod.js";
 
+
 export const validateBooking = (data) => {
   const result = bookingSchema.safeParse(data);
 

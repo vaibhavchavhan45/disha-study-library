@@ -8,6 +8,7 @@ import {
 
 const MAX_ATTEMPTS = 3;
 
+
 const forgotResetPassword = async (req, res, next) => {
   try {
     const { email, otp, password } = req.body;
@@ -62,7 +63,7 @@ const forgotResetPassword = async (req, res, next) => {
       });
     }
 
-    // OTP correct — update password
+    // OTP correct and update password
     const hashedPassword = await bcrypt.hash(password, 10);
 
     await pool.query(
@@ -77,7 +78,9 @@ const forgotResetPassword = async (req, res, next) => {
       success: true,
       message: "Password reset successful.",
     });
-  } catch (error) {
+  } 
+  
+  catch (error) {
     next(error);
   }
 };

@@ -1,5 +1,6 @@
 import pool from "../../../db/db.js";
 
+
 const deleteWaitingStudent = async (req, res, next) => {
   try {
     const { id } = req.params;
@@ -20,7 +21,9 @@ const deleteWaitingStudent = async (req, res, next) => {
       success: true,
       message: "Student removed from waiting list",
     });
-  } catch (error) {
+  }
+  
+  catch (error) {
     next(error);
   }
 };

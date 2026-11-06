@@ -1,5 +1,6 @@
 import pool from "../../../db/db.js";
 
+
 const removeSeat = async (req, res, next) => {
   try {
     const { id } = req.params;
@@ -18,7 +19,7 @@ const removeSeat = async (req, res, next) => {
 
     const seat = seatResult.rows[0];
 
-    if (seat.status !== "OCCUPIED" && seat.status !== "RESERVED") {
+    if (seat.status !== "OCCUPIED") {
       return res.status(400).json({
         success: false,
         message: "Only occupied or reserved seats can be removed",
@@ -61,7 +62,9 @@ const removeSeat = async (req, res, next) => {
       success: true,
       message: "Seat removed successfully",
     });
-  } catch (error) {
+  } 
+  
+  catch (error) {
     next(error);
   }
 };

@@ -1,5 +1,6 @@
 import pool from "../../../db/db.js";
 
+
 const editWaitingStudent = async (req, res, next) => {
   try {
     const { id } = req.params;
@@ -43,7 +44,9 @@ const editWaitingStudent = async (req, res, next) => {
       success: true,
       message: "Waiting student updated successfully.",
     });
-  } catch (error) {
+  } 
+  
+  catch (error) {
     next(error);
   }
 };

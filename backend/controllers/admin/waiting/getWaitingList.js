@@ -1,5 +1,6 @@
 import pool from "../../../db/db.js";
 
+
 const getWaitingList = async (req, res, next) => {
   try {
     const result = await pool.query(
@@ -26,7 +27,9 @@ const getWaitingList = async (req, res, next) => {
       success: true,
       waitingStudents: result.rows,
     });
-  } catch (error) {
+  } 
+  
+  catch (error) {
     next(error);
   }
 };

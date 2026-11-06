@@ -1,5 +1,6 @@
 import { messageSchema } from "../../validation/messageValidation.js";
 
+
 export const validateMessage = (data) => {
   const result = messageSchema.safeParse(data);
 

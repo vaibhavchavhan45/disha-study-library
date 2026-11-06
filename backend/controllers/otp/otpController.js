@@ -11,12 +11,18 @@ export const sendOTP = async (req, res) => {
     const result = await sendOTPService(req.body.email, ip);
 
     return res.status(200).json(result);
-  } catch (err) {
+  } 
+  
+  catch (err) {
     if (err.statusCode) {
-      return res.status(err.statusCode).json({ message: err.message });
+      return res.status(err.statusCode).json({
+         message: err.message 
+      });
     }
 
-    return res.status(500).json({ message: "Failed to send OTP." });
+    return res.status(500).json({ 
+      message: "Failed to send OTP." 
+    });
   }
 };
 
@@ -30,8 +36,14 @@ export const verifyOTP = async (req, res) => {
       return res.status(400).json({ message: result.message });
     }
 
-    return res.status(200).json({ message: "OTP verified successfully." });
-  } catch (err) {
-    return res.status(500).json({ message: "Failed to verify OTP." });
+    return res.status(200).json({ 
+      message: "OTP verified successfully." 
+    });
+  } 
+  
+  catch (err) {
+    return res.status(500).json({ 
+      message: "Failed to verify OTP." 
+    });
   }
 };

@@ -22,7 +22,9 @@ const addWaitingStudent = async (req, res, next) => {
       success: true,
       message: "Student added to waiting list",
     });
-  } catch (error) {
+  } 
+  
+  catch (error) {
     next(error);
   }
 };

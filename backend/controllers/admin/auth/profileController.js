@@ -1,5 +1,6 @@
 import pool from "../../../db/db.js";
 
+
 export const getProfile = async (req, res, next) => {
   try {
     const result = await pool.query(
@@ -7,13 +8,22 @@ export const getProfile = async (req, res, next) => {
       [req.admin.id]
     );
     if (result.rows.length === 0)
-      return res.status(404).json({ success: false, message: "Admin not found" });
+      return res.status(404).json({ 
+          success: false, 
+          message: "Admin not found" 
+      });
 
-    return res.status(200).json({ success: true, admin: result.rows[0] });
-  } catch (error) {
+    return res.status(200).json({ 
+      success: true, 
+      admin: result.rows[0] 
+    });
+  } 
+  
+  catch (error) {
     next(error);
   }
 };
+
 
 export const updateProfile = async (req, res, next) => {
   try {
@@ -31,7 +41,9 @@ export const updateProfile = async (req, res, next) => {
       message: "Profile updated",
       admin: result.rows[0],
     });
-  } catch (error) {
+  } 
+  
+  catch (error) {
     next(error);
   }
 };

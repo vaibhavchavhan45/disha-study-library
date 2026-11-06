@@ -1,6 +1,7 @@
 import pool from "../../../db/db.js";
 import bcrypt from "bcryptjs";
 
+
 const changePassword = async (req, res, next) => {
   try {
     const adminId = req.admin.id;
@@ -40,7 +41,9 @@ const changePassword = async (req, res, next) => {
       success: true,
       message: "Password changed successfully",
     });
-  } catch (error) {
+  } 
+  
+  catch (error) {
     next(error);
   }
 };

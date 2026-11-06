@@ -38,7 +38,9 @@ const getSeats = async (req, res, next) => {
       success: true,
       seats: result.rows,
     });
-  } catch (error) {
+  } 
+  
+  catch (error) {
     next(error);
   }
 };

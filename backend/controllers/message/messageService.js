@@ -6,9 +6,11 @@ import config from "../../config/config.js";
 import { getMessageTemplate } from "./messageTemplate.js";
 import { validateMessage } from "./messageValidation.js";
 
+
 const getRandomMessage = (messages) => {
   return messages[Math.floor(Math.random() * messages.length)];
 };
+
 
 export const getMessageService = async (name, isValid) => {
   validateMessage({ name, isValid });

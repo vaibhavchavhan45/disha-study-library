@@ -1,6 +1,7 @@
 import jwt from "jsonwebtoken";
 import config from "../config/config.js";
 
+
 const authMiddleware = (req, res, next) => {
   try {
     const authHeader = req.headers.authorization;
@@ -19,7 +20,9 @@ const authMiddleware = (req, res, next) => {
     req.admin = decoded;
 
     next();
-  } catch (error) {
+  } 
+  
+  catch (error) {
     return res.status(401).json({
       success: false,
       message: "Invalid or expired token.",

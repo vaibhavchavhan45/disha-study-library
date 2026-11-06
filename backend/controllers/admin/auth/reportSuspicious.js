@@ -2,6 +2,7 @@ import { sendMail } from "../../../services/mailer.js";
 import config from "../../../config/config.js";
 import reportTemplate from "./template/reportTemplate.js";
 
+
 const reportSuspicious = async (req, res, next) => {
   try {
     const { email } = req.body;
@@ -18,8 +19,12 @@ const reportSuspicious = async (req, res, next) => {
       html: reportTemplate(email, ip, time),
     });
 
-    return res.status(200).json({ success: true });
-  } catch (error) {
+    return res.status(200).json({ 
+      success: true 
+    });
+  } 
+  
+  catch (error) {
     next(error);
   }
 };

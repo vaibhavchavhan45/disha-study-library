@@ -6,6 +6,7 @@ import { sendMail } from "../../../services/mailer.js";
 import { saveAdminOTPRecord } from "./adminOtpRepository.js";
 import adminOtpTemplate from "./template/adminOtpTemplate.js";
 
+
 // Generate 6-digit OTP for admin only
 const generateAdminOTP = () => {
   return Math.floor(100000 + Math.random() * 900000).toString();
@@ -70,7 +71,9 @@ const loginAdmin = async (req, res, next) => {
       success: true,
       message: "OTP sent to your email",
     });
-  } catch (error) {
+  } 
+  
+  catch (error) {
     next(error);
   }
 };

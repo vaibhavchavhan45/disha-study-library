@@ -21,7 +21,7 @@ export const submitBookingService = async (data) => {
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(" ");
 
-  // validation
+  // zod validation
   validateBooking({
     fullName,
     email: normalizedEmail,
@@ -66,6 +66,7 @@ export const submitBookingService = async (data) => {
 
   return { message: "Booking submitted successfully." };
 };
+
 
 export const getBookingsService = async () => {
   return await getAllBookings();

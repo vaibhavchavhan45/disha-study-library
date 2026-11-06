@@ -1,5 +1,6 @@
 import pool from "../../../db/db.js";
 
+
 const getExStudents = async (req, res, next) => {
   try {
     const result = await pool.query(
@@ -10,7 +11,9 @@ const getExStudents = async (req, res, next) => {
       success: true,
       exStudents: result.rows,
     });
-  } catch (error) {
+  }
+  
+  catch (error) {
     next(error);
   }
 };

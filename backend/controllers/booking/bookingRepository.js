@@ -1,5 +1,6 @@
 import pool from "../../db/db.js";
 
+
 export const checkTodayBooking = async (email) => {
   const result = await pool.query(
     `
@@ -12,6 +13,7 @@ export const checkTodayBooking = async (email) => {
 
   return result.rows.length > 0;
 };
+
 
 export const insertBooking = async ({
   fullName,
@@ -26,6 +28,7 @@ export const insertBooking = async ({
     [fullName, email, phone, fieldOfPreparation]
   );
 };
+
 
 export const getAllBookings = async () => {
   const result = await pool.query(

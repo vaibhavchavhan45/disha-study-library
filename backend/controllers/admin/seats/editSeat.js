@@ -1,5 +1,6 @@
 import pool from "../../../db/db.js";
 
+
 const editSeat = async (req, res, next) => {
   try {
     const { id } = req.params;
@@ -28,10 +29,10 @@ const editSeat = async (req, res, next) => {
 
     const seat = seatResult.rows[0];
 
-    if (seat.status !== "OCCUPIED" && seat.status !== "RESERVED") {
+    if (seat.status !== "OCCUPIED") {
       return res.status(400).json({
         success: false,
-        message: "Only OCCUPIED or RESERVED seats can be edited.",
+        message: "Only OCCUPIED seats can be edited.",
       });
     }
 
@@ -49,7 +50,9 @@ const editSeat = async (req, res, next) => {
       success: true,
       message: "Student details updated successfully.",
     });
-  } catch (error) {
+  } 
+  
+  catch (error) {
     next(error);
   }
 };

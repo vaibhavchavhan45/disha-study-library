@@ -13,14 +13,20 @@ const replaceSeat = async (req, res, next) => {
     );
 
     if (seatResult.rows.length === 0) {
-      return res.status(404).json({ success: false, message: "Seat not found" });
+      return res.status(404).json({ 
+        success: false, 
+        message: "Seat not found" 
+      });
     }
 
     const oldSeat = seatResult.rows[0];
 
     const gender = getGenderForSeat(oldSeat.seat_number);
     if (!gender) {
-      return res.status(400).json({ success: false, message: "Invalid seat number." });
+      return res.status(400).json({ 
+        success: false, 
+        message: "Invalid seat number." 
+      });
     }
 
     await pool.query(
