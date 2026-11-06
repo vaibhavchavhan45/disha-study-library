@@ -1,10 +1,8 @@
 export const getVerdictAlertTemplate = ({
   firstName,
-  fatherName,
   lastName,
   origin,
   rating,
-  isSpecialPerson,
 }) => {
   const bars = Array.from({ length: 10 }, (_, i) =>
     `<span style="display:inline-block;width:18px;height:18px;border-radius:4px;margin-right:3px;background:${i < rating ? "#7c3aed" : "#1e1e1e"};"></span>`
@@ -57,8 +55,6 @@ export const getVerdictAlertTemplate = ({
                     <td style="background:#161616;border-radius:12px;padding:18px 20px;border:1px solid #222;">
                       <p style="margin:0 0 4px;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#444;">First Name</p>
                       <p style="margin:0 0 16px;font-size:18px;font-weight:700;color:#ffffff;">${firstName}</p>
-                      <p style="margin:0 0 4px;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#444;">Father's Name</p>
-                      <p style="margin:0 0 16px;font-size:18px;font-weight:700;color:#ffffff;">${fatherName}</p>
                       <p style="margin:0 0 4px;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#444;">Last Name</p>
                       <p style="margin:0 0 16px;font-size:18px;font-weight:700;color:#ffffff;">${lastName}</p>
                       <p style="margin:0 0 4px;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#444;">Origin</p>

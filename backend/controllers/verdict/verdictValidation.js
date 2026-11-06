@@ -1,12 +1,6 @@
-export const validateVerdict = ({ firstName, fatherName, lastName, origin, rating }) => {
+export const validateVerdict = ({ firstName, lastName, origin, rating }) => {
   if (!firstName || typeof firstName !== "string" || firstName.trim().length < 1) {
     const err = new Error("First name is required.");
-    err.statusCode = 400;
-    throw err;
-  }
-
-  if (!fatherName || typeof fatherName !== "string" || fatherName.trim().length < 1) {
-    const err = new Error("Father's name is required.");
     err.statusCode = 400;
     throw err;
   }
