@@ -1,3 +1,6 @@
+import "../../Animations/verdictSlider.css";
+
+
 export default function VerdictFormFields({
   form,
   submitting,
@@ -71,28 +74,6 @@ export default function VerdictFormFields({
 
               <span className="absolute left-0 bottom-0 h-[1px] w-0 bg-gradient-to-r from-pink-500 via-fuchsia-500 to-violet-500 transition-all duration-500 group-focus-within:w-full" />
             </div>
-          </div>
-        </div>
-
-        {/* Father's name */}
-        <div className="flex flex-col gap-2 group">
-          <label style={labelStyle}>Father's Name</label>
-
-          <div className="relative">
-            <input
-              style={inputStyle}
-              type="text"
-              name="fatherName"
-              value={form.fatherName}
-              onChange={onFormChange}
-              placeholder="Your father's name"
-              required
-              className="placeholder:text-white/20 placeholder:italic"
-            />
-
-            <span className="absolute left-0 bottom-0 h-[1px] w-full bg-white/5" />
-
-            <span className="absolute left-0 bottom-0 h-[1px] w-0 bg-gradient-to-r from-violet-500 via-fuchsia-500 to-pink-500 transition-all duration-500 group-focus-within:w-full" />
           </div>
         </div>
 
@@ -203,38 +184,6 @@ export default function VerdictFormFields({
           </p>
         </div>
       </form>
-
-      <style jsx>{`
-        .slider {
-          height: 4px;
-          border-radius: 999px;
-          transition: background 0.3s ease;
-        }
-
-        .slider::-webkit-slider-runnable-track {
-          height: 4px;
-          background: transparent;
-          border-radius: 999px;
-        }
-
-        .slider::-webkit-slider-thumb {
-          -webkit-appearance: none;
-          appearance: none;
-          margin-top: -6px;
-          width: 15px;
-          height: 15px;
-          border-radius: 999px;
-          background: #e9d5ff;
-          border: 2px solid #c084fc;
-          box-shadow: 0 0 10px rgba(192, 132, 252, 0.28);
-          transition: 0.25s ease;
-        }
-
-        .slider::-webkit-slider-thumb:hover {
-          transform: scale(1.08);
-          box-shadow: 0 0 14px rgba(192, 132, 252, 0.4);
-        }
-      `}</style>
     </>
   );
 }

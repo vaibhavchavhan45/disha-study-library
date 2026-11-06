@@ -31,14 +31,12 @@ function incrementSubmissionCount() {
 export default function useVerdictForm() {
   const [form, setForm] = useState({
     firstName: "",
-    fatherName: "",
     lastName: "",
     origin: "",
     rating: 5,
   });
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-  const [specialMessage, setSpecialMessage] = useState(null);
   const [error, setError] = useState("");
   const [limitReached, setLimitReached] = useState(false);
   const thankYouRef = useRef(null);
@@ -48,8 +46,7 @@ export default function useVerdictForm() {
     if (!submitted) return;
     const timer = setTimeout(() => {
       setSubmitted(false);
-      setSpecialMessage(null);
-      setForm({ firstName: "", fatherName: "", lastName: "", origin: "", rating: 5 });
+      setForm({ firstName: "", lastName: "", origin: "", rating: 5 });
     }, 60000);
     return () => clearTimeout(timer);
   }, [submitted]);
@@ -82,15 +79,16 @@ export default function useVerdictForm() {
       incrementSubmissionCount();
       if (getSubmissionCount() >= MAX_PER_DAY) setLimitReached(true);
 
-      setSpecialMessage(data.specialMessage || null);
       setSubmitted(true);
 
       setTimeout(() => {
         thankYouRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
       }, 100);
-    } catch {
+    } 
+    catch {
       setError("Something went wrong. Please try again.");
-    } finally {
+    } 
+    finally {
       setSubmitting(false);
     }
   };
@@ -100,7 +98,6 @@ export default function useVerdictForm() {
     setForm,
     submitting,
     submitted,
-    specialMessage,
     error,
     limitReached,
     thankYouRef,

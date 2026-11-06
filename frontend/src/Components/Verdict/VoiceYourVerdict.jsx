@@ -69,7 +69,6 @@ export default function VoiceYourVerdict() {
           <VerdictSuccessCard
             thankYouRef={thankYouRef}
             firstName={form.firstName}
-            specialMessage={specialMessage}
           />
         )}
 

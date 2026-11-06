@@ -6,8 +6,8 @@ const motivationalLines = [
   "Your future self will THANK YOU for not quitting in challenging times",
 ];
 
-export default function VerdictSuccessCard({ thankYouRef, firstName, specialMessage }) {
-  const displayMessage = specialMessage || motivationalLines[Math.floor(Math.random() * motivationalLines.length)];
+export default function VerdictSuccessCard({ thankYouRef, firstName }) {
+  const displayMessage = motivationalLines[Math.floor(Math.random() * motivationalLines.length)];
 
   return (
     <div
