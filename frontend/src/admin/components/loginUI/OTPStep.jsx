@@ -1,4 +1,6 @@
 import OTPBoxes from "../../../Components/CTA/OTPBoxes";
+import { config } from "../../../config/config";
+import { DEMO_OTP } from "./DemoHint";
 
 const OTP_LENGTH = 6;
 const MAX_RESEND = 3;
@@ -62,6 +64,11 @@ export default function OTPStep({
       <div className="mt-1">
         {renderResend()}
       </div>
+            {config.show_demo_hint && (
+        <p className="text-cyan-400/70 text-xs text-center">
+          Demo OTP: <span className="font-mono">{DEMO_OTP}</span>
+        </p>
+      )}
     </div>
   );
 }

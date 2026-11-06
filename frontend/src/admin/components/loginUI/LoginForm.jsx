@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
 import { inputCls, labelCls } from "../styles/authLoginStyles";
+import { config } from "../../../config/config";
+import DemoHint, { DEMO_EMAIL, DEMO_PASSWORD } from "./DemoHint";
 
 export default function LoginForm({ email, setEmail, password, setPassword, loading, onSubmit, onForgotPassword }) {
   const [showPassword, setShowPassword] = useState(false);
@@ -59,6 +61,14 @@ export default function LoginForm({ email, setEmail, password, setPassword, load
           Forgot Password?
         </button>
       </div>
+            {config.show_demo_hint && (
+        <DemoHint
+          onFill={() => {
+            setEmail(DEMO_EMAIL);
+            setPassword(DEMO_PASSWORD);
+          }}
+        />
+      )}
     </form>
   );
 }
