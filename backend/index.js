@@ -13,7 +13,6 @@ import exStudentRoutes from "./routes/admin/exStudents/exStudentRoutes.js";
 import inquiryRoutes from "./routes/admin/inquiries/inquiryRoutes.js";
 import dashboardRoutes from "./routes/admin/dashboard/dashboardRoutes.js";
 
-import verdictRoutes from "./routes/verdictRoutes.js";
 
 const app = express();
 const { port } = config;
